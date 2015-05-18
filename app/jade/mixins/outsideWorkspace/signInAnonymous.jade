@@ -1,0 +1,6 @@
+mixin signInAnonymous
+
+	// Sign In
+	// ==============================================================================================================================
+	SharePoint:SPSecurityTrimmedControl(runat="server", AuthenticationRestrictions="AnonymousUsersOnly")
+		wssuc:Welcome(runat="server", EnableViewState="false")/

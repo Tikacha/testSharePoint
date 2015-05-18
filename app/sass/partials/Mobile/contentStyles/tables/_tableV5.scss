@@ -1,0 +1,73 @@
+/* TOC - MOBILE | CONTENT STYLES | Tables | Table style V3
+----------------------------------------------------------
+
+
+
+*/
+
+@include customSPTable
+(
+  V3,
+  bold 120% "robotoregular",
+  bold 120% "robotoregular",
+  bold 120% "robotoregular",
+  bold 120% "robotoregular",
+
+  // default
+  $outerBorderColor: $no-color, 
+  $innerBorderColor: $no-color,
+  $paddingVariante: 10px,
+
+  //header
+  $headerBorderWidth: 0 0 3px 0,
+  $headerBorderColor: $color2,
+  $headerTextAlign: left,
+  $headerValign: middle,
+  $headerBkg: $color2,
+  $headerColor:$color11,
+
+  //Footer
+  $footerBorderWidth: 2px 0 0 0,
+  $footerBorderColor: $color2,
+  $footerTextAlign: left,
+  $footerValign: middle,
+  $footerBkg: $color2,
+  $footerColor:$color11,
+
+  // First col
+  $firstColBorderRightWidth: 2px,
+  $firstColBorderColor: $color2,
+  //$firstColBkg: $color1,
+  $firstColValign: top,
+  $firstColTextAlign: left,
+
+  // Last col
+  $lastColBorderLeftWidth:2px,
+  $lastColBorderColor: $color2,
+  //$lastColBkg: $color16,
+  $lastColValign: top,
+  $lastColTextAlign: center,
+
+  // Rows
+  $even-row-Bkg: $color11,
+  $odd-row-Bkg: $color11,
+  $rowHoverBkg: $color4,
+  $rowBorderWidth: 1px,
+  $rowBorderColor: $color2,
+  $rowValign:top,
+
+  // Cols
+  $even-col-Bkg: $color11,
+  $odd-col-Bkg: $color11,
+
+  // Cells
+  $colorVarianteTxt: $color3,
+  $colorVariante1: $color11,
+  $colorVariante2: $color5,
+
+  // Responsive
+  $borderTableRWDwidth:0px 0 0 0,
+  $borderRowRWDwidth:0,
+  $borderCellRWDwidth:0 1px 1px,
+  $borderCellFirstChildRWDwidth: 1px
+);

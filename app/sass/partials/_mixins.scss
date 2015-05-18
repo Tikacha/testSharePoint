@@ -1,0 +1,635 @@
+// ====================================================================
+// Any non-Compass mixins used in the project
+// ====================================================================
+
+// Mixin for box-sizing
+// ====================================================================
+
+@mixin bs($bs-type: $defined-bs-type) {
+	-webkit-box-sizing: $bs-type;
+	-moz-box-sizing: $bs-type;
+	box-sizing: $bs-type;
+}
+
+// Mixin for box center aligned
+// ====================================================================
+
+@mixin bca($bcw: 980px) {
+	@extend %block;
+	margin:0 auto;
+	width:$bcw;
+}
+
+
+
+// Mixin for creating pill shaped buttons
+// ====================================================================
+
+@mixin button-links($button-base: darken($color11,10%),$button-hover: darken($color11,95%)) {
+	//border: 1px solid darken($color11,6%);
+	border: 0;
+	padding: .3em .6em;
+	margin-left: .7em;
+	text-decoration: none;
+	@include border-radius(3px);
+	@include text-shadow(0 1px 2px $color11);
+	color: darken($color-link, 20%);
+	background-color: $button-base;
+	@extend %single-transition;
+	&:hover {
+		background-color: $button-hover;
+	}
+}
+
+// Media Query mixin
+@mixin MQ($canvas) {
+	@if $canvas == XS {
+		@media only screen and (min-width: $XS) and (max-width: $S - 1) { @content; }
+	}
+	@else if $canvas == S {
+		@media only screen and (min-width: $S) and (max-width: $M - 1) { @content; }
+	}
+	@else if $canvas == M {
+		@media only screen and (min-width: $M) and (max-width: $L - 1) { @content; }
+	}
+	@else if $canvas == L {
+		@media only screen and (min-width: $L) and (max-width: $XL - 1) { @content; }
+	}
+	@else if $canvas == XL {
+		@media only screen and (min-width: $XL) and (max-width: $XXL - 1) { @content; }
+	}
+	@else if $canvas == XSplus {
+		@media only screen and (min-width: $XS) { @content; }
+	}
+	@else if $canvas == Splus {
+		@media only screen and (min-width: $S) { @content; }
+	}
+	@else if $canvas == Mplus {
+		@media only screen and (min-width: $M) { @content; }
+	}
+	@else if $canvas == Lplus {
+		@media only screen and (min-width: $L) { @content; }
+	}
+	@else if $canvas == XLplus {
+		@media only screen and (min-width: $XL) { @content; }
+	}
+	@else if $canvas == XSneg {
+		@media only screen and (max-width: $XS) { @content; }
+	}
+	@else if $canvas == Sneg {
+		@media only screen and (max-width: $S) { @content; }
+	}
+	@else if $canvas == Mneg {
+		@media only screen and (max-width: $M) { @content; }
+	}
+	@else if $canvas == Lneg {
+		@media only screen and (max-width: $L) { @content; }
+	}
+	@else if $canvas == XLneg {
+		@media only screen and (max-width: $XL) { @content; }
+	}
+	@else if $canvas == StoL {
+		@media only screen and (min-width: $S) and (max-width: $L - 1) { @content; }
+	}
+}
+
+
+// Mixins for WebParts
+// ====================================================================
+
+// WebPart Chrome - global
+// S'applique au container principal de toutes les WP, quelque soit le chrome choisi
+
+
+
+@mixin WP-global-chrome ($WP-bkg, $WP-globalChrome-border-width, $WPborder-color){
+	background:$WP-bkg;
+	border:$WP-globalChrome-border-width+px solid $WPborder-color;
+	display:block
+}
+
+
+
+@mixin background-image-with-ms($image) {
+    @include background-image($image); // Compass default version, for everything but IE 10.
+    background-image: -ms-#{$image}; // Vendor prefixes for IE 10
+}
+
+// Mixins for default SP font
+// ====================================================================
+
+@mixin font-SP($SPFweight,$SPFsize) {
+	font:$SPFweight $SPFsize "Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
+	text-shadow:none;
+}
+
+@mixin font-SPlight($SPFweightlight,$SPFsizelight) {
+	font:$SPFweightlight $SPFsizelight "Segoe UI Semilight","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
+	text-shadow:none;
+}
+
+
+@mixin font-custom1($cFweight,$cFsize) {
+	font:$cFweight $cFsize "robotoregular","HelveticaNeue-Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow:none;
+}
+
+@mixin font-custom2($cFweight,$cFsize) {
+	font:$cFweight $cFsize "robotolight","HelveticaNeue-Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow:none;
+}
+
+@mixin font-custom3($cFweight,$cFsize) {
+	font:$cFweight $cFsize "robotobold","HelveticaNeue-Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow:none;
+}
+
+// Mixins for custom SP style
+// ====================================================================
+
+@mixin customSPStyle($styleName,$styleBkg,$styleColor,$styleDisplay,$styleMargin,$stylePadding) {
+	-ms-name:$styleName;
+	background:$styleBkg;
+	color:$styleColor;
+	display:$styleDisplay;
+	margin:$styleMargin;
+	padding:$stylePadding;
+}
+
+
+// Mixins for custom colors
+// ====================================================================
+
+@mixin customColor($type,$customColorName,$customColor)  {
+
+	@if $type == "color" {
+		.ms-rteForeColor-#{$customColorName} {
+			color:$customColor;
+			-ms-name:$Cie $customColorName;
+			-ms-color:$customColor;
+		}
+	}
+
+	@else if $type == "highlight" {
+		.ms-rteBackColor-#{$customColorName} {
+			background-color:$customColor;
+			-ms-name:$Cie $customColorName;
+			-ms-color:$customColor;
+		}
+	}
+}
+
+
+
+// Mixins for custom font size
+// ====================================================================
+
+@mixin customFontSizes($fontNbr,$fontSize)  {
+	.ms-rteFontSize-#{$fontNbr} {
+		font-size:$fontSize;
+	}
+}
+
+
+// Mixins for custom table
+// ====================================================================
+
+
+@mixin customSPTable (
+	$tableVersion,
+	$headerFont,
+	$footerFont,
+	$firstColFont,
+	$lastColFont,
+
+	// default
+	$outerBorderColor: $no-color,
+	$innerBorderColor: $no-color,
+	$paddingVariante: 10px,
+
+	//header
+	$headerBorderWidth: 0 0 2px 0,
+	$headerBorderColor: $color12,
+	$headerTextAlign: left,
+	$headerValign: middle,
+	$headerBkg: $color11,
+	$headerColor:$color17,
+
+	//Footer
+	$footerBorderWidth: 2px 0 0 0,
+	$footerBorderColor: $color12,
+	$footerTextAlign: left,
+	$footerValign: middle,
+	$footerBkg: $color11,
+	$footerColor:$color17,
+
+	// First col
+	$firstColBorderRightWidth: 2px,
+	$firstColBorderColor: $color12,
+	//$firstColBkg: $color1,
+	$firstColValign: top,
+	$firstColTextAlign: left,
+
+	// Last col
+	$lastColBorderLeftWidth:2px,
+	$lastColBorderColor: $color12,
+	//$lastColBkg: $color16,
+	$lastColValign: top,
+	$lastColTextAlign: center,
+
+	// Rows
+	$even-row-Bkg: $color11,
+	$odd-row-Bkg: $color11,
+	$rowHoverBkg: $color16,
+	$colorRowHover: $color11,
+	$rowBorderWidth: 1px 0 0 0,
+	$rowBorderColor: $color12,
+	$rowValign:top,
+
+	// Cols
+	$even-col-Bkg: $color11,
+	$odd-col-Bkg: $color11,
+
+	// Cells
+	$colorVarianteTxt: $color12,
+	$colorVariante1: $color11,
+	$colorVariante2: $color1,
+
+	// Responsive
+	$borderTableRWDwidth:1px,
+	$borderRowRWDwidth:1px,
+	$rowMarginBottom: 20px,
+	$borderCellRWDwidth:0 0 1px 0,
+	$borderCellFirstChildRWDwidth:1px
+	)
+
+
+
+	{
+
+	.ms-rteTable-#{$tableVersion} {
+		-ms-name:$Cie + " - " + Default table style #{$tableVersion};
+		//text-align:left;
+		//line-height:2;
+		//vertical-align:top;
+		/* [ReplaceColor(themeColor:"Dark1")] */ color:$colorVarianteTxt;
+		font-size:100%;
+		outline:1px solid $outerBorderColor;
+
+		td,
+		th {
+			//font-size:100%;
+			padding:$paddingVariante;
+			//text-align:left;
+		}
+
+		p {
+			@extend %mp0;
+			line-height: normal
+		}
+
+		tr.ms-rteTableHeaderRow-#{$tableVersion},
+		tr.ms-rteTableFooterRow-#{$tableVersion} {
+			/* [ReplaceColor(themeColor:"Light1")] */ background-color:$colorVariante1;
+			/* [ReplaceColor(themeColor:"Accent1")] */ border-top:1px $innerBorderColor solid;
+			/* [ReplaceColor(themeColor:"Accent1")] */ border-bottom:1px $innerBorderColor solid;
+			vertical-align: $headerValign
+		}
+
+		tr.ms-rteTableHeaderRow-#{$tableVersion} {
+			th {
+				background: $headerBkg;
+				border:1px solid $headerBorderColor;
+				border-width:$headerBorderWidth;
+				color:$headerColor;
+				font:$headerFont;
+				text-align: $headerTextAlign;
+				vertical-align:$headerValign
+			}
+
+			.ms-rteTableHeaderFirstCol-#{$tableVersion} {
+
+				vertical-align: $headerValign;
+				border-color:1px solid $firstColBorderColor;
+				border-width:$headerBorderWidth;
+				border-right-width:$firstColBorderRightWidth;
+
+				font:$firstColFont;
+				text-align: $firstColTextAlign
+				//background:$firstColBkg
+			}
+
+			.ms-rteTableHeaderLastCol-#{$tableVersion} {
+				text-align: $headerTextAlign;
+				vertical-align: $headerValign;
+				border-color:1px solid $lastColBorderColor;
+				border-width:$headerBorderWidth;
+				border-left-width:$lastColBorderLeftWidth;
+				font:$lastColFont;
+				//background:$lastColBkg
+			}
+		}
+
+		tr.ms-rteTableFooterRow-#{$tableVersion} {
+
+			td, th {
+				background: $footerBkg;
+				border:1px solid $footerBorderColor;
+				border-width:$footerBorderWidth;
+				color:$footerColor;
+				font:$footerFont;
+				text-align: $footerTextAlign;
+				vertical-align:$footerValign
+			}
+
+			.ms-rteTableFooterFirstCol-#{$tableVersion} {
+				text-align: $footerTextAlign;
+				vertical-align: $footerValign;
+				border-right-width:$firstColBorderRightWidth;
+				border-color:$firstColBorderColor;
+				font:$firstColFont;
+				//background:$firstColBkg
+			}
+
+			.ms-rteTableFooterLastCol-#{$tableVersion}  {
+				border-left-width:$lastColBorderLeftWidth;
+				border-color:$lastColBorderColor;
+				text-align: $lastColTextAlign;
+				font:$lastColFont;
+				//background:$lastColBkg
+			}
+		} 
+
+		th.ms-rteTableHeaderFirstCol-#{$tableVersion},
+		th.ms-rteTableFooterFirstCol-#{$tableVersion} {
+			/* [ReplaceColor(themeColor:"Light1")] */ color:$colorVariante1;
+			/* [ReplaceColor(themeColor:"Accent1")] */ //background-color:$colorVariante2;
+			/* [ReplaceColor(themeColor:"Dark1")] */ border:1px $innerBorderColor solid;
+			vertical-align: $firstColValign;
+			font:$firstColFont;
+			border-right:$firstColBorderRightWidth solid $firstColBorderColor;
+			//background:$firstColBkg;
+		}
+
+		th.ms-rteTableFirstCol-#{$tableVersion},
+		td.ms-rteTableFirstCol-#{$tableVersion} {
+			vertical-align: $firstColValign;
+			font:$firstColFont;
+			text-align: $firstColTextAlign;
+
+
+			//background:$firstColBkg;
+		}
+
+		th.ms-rteTableHeaderOddCol-#{$tableVersion},
+		td.ms-rteTableFooterOddCol-#{$tableVersion} {
+			/* [ReplaceColor(themeColor:"Light1")] */ color:$colorVariante1;
+			/* [ReplaceColor(themeColor:"Accent1")] */ background-color:$colorVariante2;
+			/* [ReplaceColor(themeColor:"Dark1")] */ border:1px $innerBorderColor solid;
+		}
+
+		th.ms-rteTableHeaderEvenCol-#{$tableVersion},
+		td.ms-rteTableFooterEvenCol-#{$tableVersion} {
+			/* [ReplaceColor(themeColor:"Light1")] */ color:$colorVariante1;
+			/* [ReplaceColor(themeColor:"Accent1")] */ background-color:$colorVariante2;
+			/* [ReplaceColor(themeColor:"Dark1")] */ border:1px $innerBorderColor solid;
+		}
+
+		th.ms-rteTableHeaderLastCol-#{$tableVersion},
+		td.ms-rteTableFooterLastCol-#{$tableVersion} {
+			/* [ReplaceColor(themeColor:"Light1")] */ color:$colorVariante1;
+			/* [ReplaceColor(themeColor:"Accent1")] */ background-color:$colorVariante2;
+			/* [ReplaceColor(themeColor:"Dark1")] */ border:1px $innerBorderColor solid;
+			//background:$lastColBkg;
+		}
+
+		tr.ms-rteTableOddRow-#{$tableVersion} {
+			/* [ReplaceColor(themeColor:"Light1-Lighter")] */ background-color:$odd-row-Bkg;
+
+			td {
+				border:1px solid $rowBorderColor;
+				border-width:$rowBorderWidth;
+				vertical-align: $rowValign;
+				border-collapse: collapse;
+			}
+
+			th.ms-rteTableFirstCol-#{$tableVersion} {
+				border:1px solid $rowBorderColor;
+				border-width:$rowBorderWidth;
+				border-right:$firstColBorderRightWidth solid $firstColBorderColor;
+			}
+
+			td.ms-rteTableLastCol-#{$tableVersion} {
+				border:1px solid $rowBorderColor;
+				border-width:$rowBorderWidth;
+				border-left:$lastColBorderLeftWidth solid $lastColBorderColor;
+			}
+
+			&:hover {
+				background-color:$rowHoverBkg;
+				color:$colorRowHover
+			}
+		}
+
+		tr.ms-rteTableEvenRow-#{$tableVersion} {
+			/* [ReplaceColor(themeColor:"Light1")] */ background-color:$even-row-Bkg;
+
+			td {
+				border:1px solid $rowBorderColor;
+				border-width:$rowBorderWidth;
+				vertical-align: $rowValign;
+				border-collapse: collapse;
+			}
+
+			th.ms-rteTableFirstCol-#{$tableVersion} {
+				border:1px solid $rowBorderColor;
+				border-width:$rowBorderWidth;
+				border-right:$firstColBorderRightWidth solid $firstColBorderColor;
+			}
+
+			td.ms-rteTableLastCol-#{$tableVersion} {
+				border:1px solid $rowBorderColor;
+				border-width:$rowBorderWidth;
+				border-left:$lastColBorderLeftWidth solid $lastColBorderColor;
+			}
+
+			&:hover {
+				background-color:$rowHoverBkg;
+				color:$colorRowHover
+			}
+		}
+
+		th.ms-rteTableFirstCol-#{$tableVersion},
+		td.ms-rteTableFirstCol-#{$tableVersion} {
+			/* [ReplaceColor(themeColor:"Dark1")] */ border:1px $innerBorderColor solid;
+			font-weight:bold;
+			border-right:$firstColBorderRightWidth solid $firstColBorderColor;
+			font:$firstColFont;
+			//background:$firstColBkg;
+		}
+
+		td.ms-rteTableLastCol-#{$tableVersion} {
+			/* [ReplaceColor(themeColor:"Dark1")] */ border:1px $innerBorderColor solid;
+			font-weight:bold;
+			border-left:$lastColBorderLeftWidth solid $lastColBorderColor;
+			text-align:$lastColTextAlign;
+			font:$firstColFont;
+			//background:$lastColBkg;
+		}
+
+		// COLS
+		td.ms-rteTableOddCol-#{$tableVersion} {
+			/* [ReplaceColor(themeColor:"Dark1")] */ border:1px $innerBorderColor solid;
+		}
+
+		td.ms-rteTableEvenCol-#{$tableVersion} {
+			/* [ReplaceColor(themeColor:"Dark1")] */ border:1px $innerBorderColor solid;
+		}
+	} //
+
+
+	// IMPORTANT - THE RESPONSIVE TABLE IS WORKING WITH THE JS SCRIPT
+	// ng_responsive_tables.js
+	// By default, settings allows responsive table from -V1 to -V5
+
+	@media (max-width: 480px) {
+		table.ms-rteTable-#{$tableVersion} {
+			color:$colorVarianteTxt;
+			border-width:$borderTableRWDwidth;
+			border-style:solid;
+			border-color:$rowBorderColor;
+		}
+
+		/* CSS Responsive table */
+		table.ms-rteTable-#{$tableVersion},
+		table.ms-rteTable-#{$tableVersion} thead,
+		table.ms-rteTable-#{$tableVersion} tbody,
+		table.ms-rteTable-#{$tableVersion} th,
+		table.ms-rteTable-#{$tableVersion} td,
+		table.ms-rteTable-#{$tableVersion} tr {
+			display: block
+		}
+
+		table.ms-rteTable-#{$tableVersion} thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+		body table.ms-rteTable-#{$tableVersion} tr {
+			border-width: $borderRowRWDwidth;
+			border-color: $rowBorderColor;
+			border-style: solid;
+			border-collapse: collapse;
+			margin-bottom: $rowMarginBottom;
+
+			&:first-child {
+				position: absolute;
+				top: -9999px;
+				left: -9999px
+			}
+		}
+
+		body table.ms-rteTable-#{$tableVersion} tr td {
+			//border: $borderCellRWDwidth ;
+			//border-bottom: $borderCellRWDwidth solid $rowBorderColor;
+			border-width: $borderCellRWDwidth!important;
+			border-color: $rowBorderColor;
+			border-style: solid;
+			border-collapse: collapse;
+			position: relative;
+			padding-left: 50%;
+
+			.ms-rtestate-field & {
+				width:inherit!important;
+			}
+
+			&:first-child {
+				border-width:$borderCellFirstChildRWDwidth!important;
+			}
+
+			&:before {
+				position: absolute;
+				top: 6px;
+				left: 6px;
+				width: 40%!important;
+				padding-right: 10px;
+				text-align: left;
+				word-wrap: break-word;
+				content: attr(data-content);
+				min-height: 50px;
+				@include font-custom3(normal,1em);
+			}
+
+			&.small-padding {
+				padding-top: 5px;
+				padding-bottom: 5px
+			}
+
+			&.medium-padding {
+				padding-top: 15px;
+				padding-bottom: 15px
+			}
+
+			&.large-padding {
+				padding-top: 25px;
+				padding-bottom: 25px
+			}
+		}
+
+	}// End @media max 480px
+
+}
+
+
+// Mixins for custom image
+// ====================================================================
+
+@mixin customImgStyle (
+	$ImgVersion,
+	$ImgMsName,
+	$ImgDisplay,
+	$ImgMargin,
+	$ImgBkg:$no-color,
+	$imgPadding:0,
+	$imgBorder:1px solid $color16,
+	$imgBorderRadius:0,
+	$imgShadowColor:$color18
+	) {
+	.ms-rteImage-#{$ImgVersion} {
+		-ms-name:$Cie #{$ImgMsName};
+		display: $ImgDisplay;
+		/* [ReplaceColor(themeColor:"BackgroundOverlay-Lightest",opacity:"1")] */ background-color:$ImgBkg;
+		/* [ReplaceColor(themeColor:"SubtleLines")] */ border-top:$imgBorder;
+		/* [ReplaceColor(themeColor:"Lines")] */ border-bottom:$imgBorder;
+		/* [ReplaceColor(themeColor:"SubtleLines")] */ border-left:$imgBorder;
+		/* [ReplaceColor(themeColor:"Lines")] */ border-right:$imgBorder;
+		@include border-radius($imgBorderRadius);
+		@include box-shadow($imgShadowColor 2px 2px 5px);
+		padding:$imgPadding;
+	}
+}
+
+
+@mixin customButton($styleMargin,$stylePadding:10px,$styleBkg: $color1,$styleColor:$color11) {
+	background-color:$styleBkg;
+	border:0;
+	color:$styleColor;
+	margin:$styleMargin;
+	padding:$stylePadding;
+	@extend %single-transition;
+
+	a {
+		color: $color11;
+		font-size: 1.3em;
+
+		&:hover {
+			text-decoration:none
+		}
+	}
+
+	&:hover {
+		//@include box-shadow(lighten($color10, 50%) 0 3px 3px 0);//@include box-shadow(lighten($no-color,0%) 0 3px 3px 0);
+		background-color:darken($styleBkg,10%);
+	}
+}

@@ -1,0 +1,9 @@
+mixin deltaPlaceHolderSearchArea
+
+	// Search Area
+	// ==============================================================================================================================
+
+	SharePoint:AjaxDelta#DeltaPlaceHolderSearchArea(BlockElement="true", CssClass="ms-mpSearchBox ms-floatRight", runat="server")
+		asp:ContentPlaceHolder#PlaceHolderSearchArea(runat="server")
+			#searchInputBox
+				SharePoint:DelegateControl(runat="server", ControlId="SmallSearchInputBox")/

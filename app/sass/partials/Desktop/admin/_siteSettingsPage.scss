@@ -1,0 +1,52 @@
+/* TOC - ADMIN - Site settings page
+---------------------------------------------------
+
+* TITLES
+* TOPICS
+* FEATURES PAGE
+
+*/
+
+/* TITLES
+================================================================================================================================================ */
+
+.ms-linksection-title {
+	color:$color12;
+	font-size:160%;
+	margin:1em 0
+}
+
+/* TOPICS
+================================================================================================================================================ */
+
+.ms-linksection-level1 ul li,
+body #idItemHoverTable td {
+	a {
+		font-size:100%;
+
+		&:link {
+			color:$color15;
+			
+		}
+
+		&:visited {
+			color:$color5
+		}
+
+		&:hover {
+			text-decoration: underline
+		}
+	}
+}
+
+body #idItemHoverTable {
+	font-size:100%
+}
+
+
+/* FEATURES PAGE
+================================================================================================================================================ */
+
+.ms-featurestatus {
+	text-align:center
+}

@@ -1,0 +1,9 @@
+mixin breadcrumb
+
+	// Breadcrumb
+	// ==============================================================================================================================
+	#FilAriane.NoPrint.ms-dialogHidden
+		asp:SiteMapPath(runat="server", SiteMapProviders="SPSiteMapProvider,SPXmlContentMapProvider", RenderCurrentNodeAsLink="True", NodeStyle-CssClass="breadcrumbNode", CurrentNodeStyle-CssClass="breadcrumbCurrentNode", RootNodeStyle-CssClass="breadcrumbRootNode", HideInteriorRootNodes="true", SkipLinkText="", pathseparator=" > ")
+			CurrentNodeStyle(CssClass="breadcrumbCurrentNode")/
+			RootNodeStyle(CssClass="breadcrumbRootNode")/
+			NodeStyle(CssClass="breadcrumbNode")/

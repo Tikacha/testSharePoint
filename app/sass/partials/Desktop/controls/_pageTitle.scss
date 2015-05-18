@@ -1,0 +1,52 @@
+/* TOC -  DESKTOP | Controls | Page title
+---------------------------------------------------
+
+* SP Heading 1
+
+*/
+
+// * SP Heading 1
+// ================================================================================================================================================ */
+
+@if ($SPO365public == true) and ($SPO365theme == true)  {
+	.ms-breadcrumb-box {
+		@extend %fl;
+		max-width:650px;padding-top: 20px
+	}
+
+	.pageTitle {
+		/* [ReplaceColor(themeColor:"ContentAccent1")] */ background-color:$no-color;
+		color:$color3;
+		@include font-custom2(normal,3.7em);
+		margin:0;
+		padding:0 0 10px;
+
+		input,
+		.ms-formfieldlabel,
+		.ms-formfieldlabelcontainer,
+		.ms-formfieldvaluecontainer {
+			font:normal 12px "Segoe UI";
+			line-height:17px;
+		}
+	}
+}
+
+@if $Default-SP-siteTitle == false  {
+	.ms-core-pageTitle {
+		display:none
+	}
+}
+
+@else {
+	.ms-core-pageTitle {
+		color:$color2;
+		font-size:2.72em;
+		// @extend %font-lobster;
+		margin:0.67em 0;
+
+		a {
+			color:$color2;
+			// @extend %font-lobster
+		}
+	}
+}

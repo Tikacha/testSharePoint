@@ -1,0 +1,24 @@
+/* TOC - DESKTOP | Controls | Left Navigation | Main
+---------------------------------------------------
+
+* Tree View
+
+*/
+
+// * TREE VIEW
+// ================================================================================================================================================ */
+
+.ms-tv-item,
+.ms-tv-header {
+
+	&:link,
+	&:visited {
+		color:$color12;
+		@include font-SP(normal,100%)
+	}
+
+	&:hover,
+	&:active {
+		color:$color12
+	}
+}

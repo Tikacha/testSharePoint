@@ -1,0 +1,91 @@
+/* TOC - CONTENT STYLES - Lists
+---------------------------------------------------
+* Lists
+	**	unordered list
+	**	ordered list
+	
+*/
+
+
+/* LISTS
+============================================================================================================================================================================*/
+
+.ms-rtestate-field {
+
+/** LISTS | Unordered list
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	ul {
+		margin:0.75em 0 0 0.5em;
+		padding:0 1em;
+		
+		li {
+			//list-style-type: none;
+			padding:5px 0 5px 10px;
+
+			// triangular list bullet
+			
+			&:before { 
+				// cf http://www.artishock.net/coding/css-list-styling-using-ascii-special-characters/
+				//content:"\009b \0020";
+				//font-size:1.5em;
+
+			
+			//    content:"";
+			//    border-color: transparent $color17;
+			//    border-style: solid;
+			//    border-width: 0.35em 0 0.35em 0.55em;
+			//    display: block;
+			//    height: 0;
+			//    width: 0;
+			//    left: -1em;
+			//    top: 1.05em;
+			//    position: relative;
+			}
+		}
+	}
+
+
+
+/** LISTS | Ordered list
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	ol {	     
+	    margin: 0;
+	    margin-left: 4em;
+	    padding: 0;
+	     
+	    counter-reset: li-counter;
+
+	    .ms-rteStyle-Cercles {
+	    	-ms-name:"Ordered list - Cercles";
+	    	list-style-type: none;
+		    display: inline-block;
+		    position: relative;left:-0.2em;
+		    margin-bottom: 10px;
+		    padding-left: 0.5em;
+		    min-height: 3em;
+
+		    &:before {
+			    position: absolute;
+			    top: 0;
+			    left: -1.33em;
+			    width: 1.4em;
+			    height: 1.4em;
+			     
+			    font-size: 2.5em;
+			    line-height: 1.2;
+			    text-align: center;
+			    color:$color11;
+			 
+			    border: 1px solid $color16;
+			    border-radius: 50%;
+			    background-color: $color12;
+			    content: counter(li-counter);
+			    counter-increment: li-counter;
+		    }
+		}
+	} 
+}
+
+

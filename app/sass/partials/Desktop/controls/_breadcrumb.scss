@@ -1,0 +1,30 @@
+/* TOC - DESKTOP | Controls | Breadcrumb style
+---------------------------------------------------
+
+
+*/
+
+#FilAriane {
+	color:$color12;
+	margin-bottom:10px;
+	@include font-SP(normal,100%);
+
+	a {
+		color:$color12;
+		margin:0 2px;
+		text-decoration:none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&.breadcrumbRootNode {
+			margin-left:0
+		}
+
+		&.breadcrumbCurrentNode {
+			color:$color12
+		}
+	}
+
+}

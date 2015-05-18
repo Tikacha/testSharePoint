@@ -1,0 +1,226 @@
+/* TOC - MOBILE | Controls | Ribbon
+---------------------------------------------------
+* RIBBON MAIN CONTAINER
+* RIBBON LINE 1
+	** left section
+		*** left align
+		*** right align
+	** right section
+* RIBBON LINE 2
+	** left section
+	** right section
+		*** tabs
+
+*/
+
+// * RIBBON MAIN CONTAINER
+// ================================================================================================================================================ */
+
+#ms-designer-ribbon {}
+
+
+
+// * RIBBON LINE 1
+// ================================================================================================================================================ */
+
+#suiteBarDelta{}
+
+// Contextual drop down
+body .o365cs-nav-headerContextMenu {
+	@include box-shadow($color12 3px 3px 6px -4px, $color12 -3px 3px 6px -4px);
+
+	.o365cs-contextMenu {
+		background-color:$color11
+	}
+
+	.o365cs-contextMenuItemHover {// on mouse hover 
+		background-color:rgba($color15,0.125);
+	}
+}
+
+
+
+// ** RIBBON LINE 1 | Left section
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+body .o365cs-theme.o365cs-nav-header {
+	display:table;
+	height:30px;
+	line-height:normal;
+	width:100%;
+
+	.o365cs-nav-leftAlign, // left align section
+	.o365cs-nav-headerRegion,
+	.o365cs-p-bg,
+	.o365cs-p-bgh:hover {
+		background-color:$color15
+	}
+
+	// right align section
+	.o365cs-topnavLink, 
+	.o365cs-spo-topnavLink {
+		color:$color11;
+		padding:0 8px;
+		margin:0;
+
+		&:hover {
+			background-color:rgba($color11, 0.5);
+			color: $color11
+		}
+
+	}
+	// hide bkg for logo on mouse over
+	.o365cs-nav-leftAlign {
+		.o365cs-topnavLink, 
+		.o365cs-spo-topnavLink {
+			&:hover {
+				background-color:transparent
+			}
+		}
+	}
+}
+
+
+
+
+// *** RIBBON LINE 1 | Left section | Left align
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+body .o365cs-nav-header {
+
+	// Logo container
+	.o365cs-nav-branding,
+	.o365cs-nav-tenantBranding {
+		//padding-left: 8px
+	}
+
+	// Logo link
+	.o365cs-nav-bposLogo {
+		@extend %iblock;
+		padding-top:4px;
+		padding-left: 8px
+	}
+}
+
+// *** RIBBON LINE 1 | Left section | Right align
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+
+// ** RIBBON LINE 1 | Right section
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+body .o365cs-theme.o365cs-nav-header .o365cs-spo-topbar {
+	background-color:rgba($color14,0.78)
+}
+
+
+
+// * RIBBON LINE 2
+// ================================================================================================================================================ */
+#s4-ribbonrow {
+	//D height:35px
+}
+
+#globalNavBox, 
+.ms-clientcontrol-chromeheader {
+	background-color:rgba($color14,0.78)
+}
+
+.ms-cui-topBar2 {
+	border-bottom:1px solid $color16;
+	//D height:34px
+}
+
+// ** RIBBON LINE 2 | Left section
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+.ms-cui-tts, 
+.ms-cui-tts-scale-1, 
+.ms-cui-tts-scale-2 {
+	//D float:left
+}
+
+// ** RIBBON LINE 2 | Left section | Main Tabs - selected / hover
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+.ms-cui-tt-s.ms-browseTab {
+
+	> .ms-cui-tt-a {
+		background-color:$color11;
+		border-color:$color16
+	}
+}
+
+.ms-cui-tt-s.ms-browseTab > .ms-cui-tt-a:hover,
+.ms-cui-tt-a:hover,
+.ms-cui-tt[aria-selected="true"] .ms-cui-tt-a:hover {
+	background-color:$color11;
+	border-color:$color16
+}
+
+
+.ms-cui-tt-s.ms-browseTab > .ms-cui-tt-a > .ms-cui-tt-span,
+.ms-cui-tt-a > .ms-cui-tt-span  {
+	color:$color12!Important
+}
+
+
+
+// ** RIBBON LINE 2 | Left section | Main Tabs - Body
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-cui-tabBody {
+	background:$color11;
+	border-bottom-color:$color16
+}
+
+.ms-cui-groupSeparator {
+	border-right-color:$color16
+}
+
+
+// ** RIBBON LINE 2 | Right section
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+//  Links
+.ms-promotedActionButton-text {
+	color:$color12
+}
+
+//  icons container
+.ms-promotedActionButton-icon {
+	//D margin-right:5px
+}
+
+
+
+// *** RIBBON LINE 2 | Right section | Tabs
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-cui-cg.ms-cui-cg-or, 
+.ms-cui-ct-topBar-or,
+.ms-cui-tabBody-or {//default formating tabs
+	border-color:$color1!important
+}
+
+.ms-cui-cg.ms-cui-cg-tl, 
+.ms-cui-ct-topBar-tl,
+.ms-cui-tabBody-tl {//tables formating tabs
+	border-color:$color2!important
+}
+
+.ms-cui-cg.ms-cui-cg-mg,
+.ms-cui-ct-topBar-mg,
+.ms-cui-tabBody-mg {//Images formating tab
+	border-color:$color3!important
+}
+
+.ms-cui-cg.ms-cui-cg-gr,
+.ms-cui-ct-topBar-gr,
+.ms-cui-tabBody-gr {//Link formating tab
+	border-color:$color4!important
+}
+
+
+.ms-cui-cg.ms-cui-cg-pp,
+.ms-cui-ct-topBar-pp, 
+.ms-cui-tabBody-pp {//WP formating tab
+	border-color:$color7!important
+}

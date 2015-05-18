@@ -1,0 +1,207 @@
+/* TOC - MOBILE | LAYOUTS | main
+---------------------------------------------------
+
+* BODY
+* HEADER
+* TOP NAV
+* CONTENT WRAPPER
+* LEFT NAVIGATION
+* CONTENT
+* FOOTER
+* DIVERS
+
+*/
+
+
+
+// * BODY
+// ================================================================================================================================================ */
+body {
+    font-size: 100%;
+    line-height: 1.4;
+    // creates the tiled background to show off opacity
+    //@include background(image-url("line.png"));
+    //@include background(linear-gradient(top, #fff, #fefefe));
+    //@extend %font-sansation;
+    // Modernizr fallback for when there is no fontface support
+    .no-fontface & {
+        font-size: 1.05em;
+    }
+}
+
+body,
+.ms-core-defaultFont,
+#pageStatusBar,
+.ms-status-msg,
+.js-callout-body {
+	@extend %font-robotoRegular;
+}
+
+#ms-#{$SPO365themeApplied}-table {
+	width: 100%
+}
+
+.mm-page, html.mm-opened .mm-page form, html.mm-opened #mm-blocker form {
+	margin-top:-6px;
+}
+
+.headerWrapper {
+	width:100%
+}
+
+.ms-backgroundImage {
+	background-image: none;
+}
+
+
+
+// * HEADER
+// ================================================================================================================================================ */
+.headerWrapper {
+	background-color:$color6;
+	width:100%;
+	position: fixed;
+	z-index: 10;
+
+	&.scrolling {
+		@include box-shadow(rgba($color10,0.2) 0px 2px 2px);
+	}
+}
+
+#titlerow {
+	background-color: $no-color;
+	min-height:70px;
+	padding:0;
+	width:100%;
+}
+
+#titleAreaBox {
+	background-color:$color6;
+}
+
+.headerR {
+	@extend %fr;
+	padding-top: 25px
+}
+
+// * TOP NAV
+// ================================================================================================================================================ */
+
+.topNavWrapper {
+	background-color:$color1;
+	width:100%;
+
+	> div {
+		width:100%
+	}
+}
+
+// * CONTENT WRAPPER
+// ================================================================================================================================================ */
+#contentrow {
+	background:transparent image-url('Bkg.jpg') no-repeat 0;
+	@include background-size(cover);
+}
+
+.contentwrapper {
+	background:transparent
+}
+
+.ms-#{$SPO365themeApplied}-content-table > div {
+	background-color: $color11;
+	padding-top:70px; // headerWrapper height
+	width:100%;
+}
+
+.ms-pub-contentLayout {
+	max-width: 100%
+}
+
+/* LEFT NAVIGATION
+================================================================================================================================================ */
+
+// #sideNavBox {
+//	background:$no-color;
+//	//D float:left;
+
+
+//	@if ($SPO365public == true) and ($SPO365theme == true)  {
+
+//		padding:$leftNavPadding;
+//	}
+
+//	@else {
+//		margin-left:$leftNavMarginLeft;
+//		margin-right:$leftNavMarginRight;
+//	}
+
+//	max-width:$leftNavWidth;
+//	width:$leftNavWidth;
+//}
+
+// * CONTENT
+// ================================================================================================================================================ */
+
+#DeltaPlaceHolderMain {
+	min-height: 312px;
+	padding: 70px 0 0;
+
+	& > div {
+		padding:10px
+	}
+}
+
+#contentBox {
+  background: $no-color;
+  margin-left: 0!important
+//  margin-right: $rightMarginContentZone;
+// margin-left: $leftMarginContentZone
+}
+
+// * FOOTER
+// ================================================================================================================================================ */
+
+#DeltaPlaceHolderFooter {
+	background-color:$color6;
+	color:$color2;
+	//height:140px;
+	padding:10px;
+	text-align: center;
+
+	#footer {
+		background-color:$color6;
+	}
+}
+
+.logoFooter {
+	display: none
+}
+
+#DeltaPlaceHolderPageHeader {
+	float: none;
+	text-align: center
+}
+
+
+
+// * DIVERS
+// ================================================================================================================================================ */
+
+
+/* clearfix */		
+/* slightly enhanced, universal clearfix hack */
+.clearfix:after {
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0
+}
+
+.clearfix {display:inline-block}
+
+/* start commented backslash hack \*/
+
+* html .clearfix {height:1%}
+.clearfix {display:block}

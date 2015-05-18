@@ -1,0 +1,57 @@
+/* TOC - DESKTOP | CONTENT STYLES | Default Images styles
+---------------------------------------------------------
+
+	* Default SP image styles
+
+*/
+
+
+// * Default SP image styles
+// ============================================================================================================================================================================*/
+
+.ms-rteImage-0 {
+	-ms-name:"No border";
+}
+
+.ms-rteImage-1 {
+	-ms-name:"Thin line border";
+	/* [ReplaceColor(themeColor:"BodyText",opacity:"1")] */ background-color:#444;
+	/* [ReplaceColor(themeColor:"BodyText-Darker",opacity:"1")] */ border:1px solid #333;
+	/* [RecolorImage(themeColor:"SubtleBodyText",method:"Tinting")] */ background-image:url("/_layouts/15/images/tabtitlerowbottombg.png?rev=37");
+	background-repeat:repeat-x;
+	background-position:top;
+}
+
+.ms-rteImage-2 {
+	-ms-name:"Table border";
+	padding:2px;
+	/* [ReplaceColor(themeColor:"SubtleLines")] */ border-top:1px solid #c6c6c6;
+	/* [ReplaceColor(themeColor:"Lines")] */ border-bottom:1px solid #ababab;
+	/* [ReplaceColor(themeColor:"SubtleLines")] */ border-left:1px solid #c6c6c6;
+	/* [ReplaceColor(themeColor:"Lines")] */ border-right:1px solid #ababab;
+}
+
+.ms-rteImage-3 {
+	-ms-name:"Dark border";
+	padding:15px;
+	/* [ReplaceColor(themeColor:"BodyText-Darker",opacity:"1")] */ background-color:#333;
+	/* [ReplaceColor(themeColor:"BodyText",opacity:"1")] */ border:1px solid #444;
+	/* [RecolorImage(themeColor:"BodyText-Darker",method:"Tinting")] */ background-image:url("/_layouts/15/images/tabtitlerowbottombg.png?rev=37");
+	background-attachment:fixed;
+	background-repeat:repeat-x;
+	background-position:left bottom;
+}
+
+.ms-rteImage-4 {
+	-ms-name:"Light border";
+	padding:6px;
+	padding-bottom:33px;
+	/* [ReplaceColor(themeColor:"BackgroundOverlay-Lightest",opacity:"1")] */ background-color:#F2F2F2;
+	/* [ReplaceColor(themeColor:"SubtleLines")] */ border-top:1px solid #c6c6c6;
+	/* [ReplaceColor(themeColor:"Lines")] */ border-bottom:1px solid #ababab;
+	/* [ReplaceColor(themeColor:"SubtleLines")] */ border-left:1px solid #c6c6c6;
+	/* [ReplaceColor(themeColor:"Lines")] */ border-right:1px solid #ababab;
+	background-image:url("/_layouts/15/images/selbg.png?rev=37");
+	background-repeat:repeat-x;
+	background-position:top;
+}

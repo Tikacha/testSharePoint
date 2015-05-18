@@ -1,0 +1,366 @@
+/* TOC - DESKTOP | Controls | Calendar
+---------------------------------------------------
+
+* MINI-CALENDAR
+	** Containers
+	** Views
+		*** Main header
+		*** Body
+		*** All days view
+		*** Footer
+		*** Month view
+* Calendar View
+	** Header
+	** Months View
+		*** Main container
+		*** Header
+		*** Columns
+		*** Rows
+	** Weeks and days views
+		*** Main container
+		*** Header row
+		*** HHeader column
+		*** Lines borders for week and day views
+		*** For current day
+		*** Day view only
+	** In common in views
+
+*/
+
+// * MINI-CALENDAR
+// ================================================================================================================================================ */
+
+// ** MINI-CALENDAR | Containers
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+#DatePickerDiv,
+.ms-acal-apanel-outer {
+	margin:10px 0 0
+}
+
+
+#DatePickerDiv {
+
+	.ms-quickLaunch {
+		border:1px $color16 solid;
+		@include font-SP(normal,100%);
+
+		a {
+			@extend %font-SP;
+		}
+	}
+}
+
+
+// ** MINI-CALENDAR | Views
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+// ** MINI-CALENDAR | Views | Days view
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+table.ms-picker-table {
+	background-color:$color11;
+
+	// Main Header
+	.ms-picker-header & {
+		background:$color11 none;
+		border-bottom-color:$color16;
+	}
+
+	.ms-picker-month {
+		color:$color12;
+		font-size:100%
+	}
+
+	// Body
+	.ms-picker-body & {background:$color11}
+
+
+	//  All Days view
+
+	td.ms-picker-daycenter{
+		font-size:100%;
+
+		// All Days - Date link
+		a {
+			color:$color15!important
+		}
+	}
+
+	// All days view - day header
+
+	.ms-picker-dayheader {
+		background-color:$color11;
+		border-bottom-color:$color16;
+		color:$color12
+	}
+
+	// All Days view - on mouse hover
+
+	td.ms-picker-daycenterOn {
+		border-color:$color16
+	}
+
+	// All Days view - Current date
+
+	td.ms-picker-today {
+		border-color:$color13;
+
+		a {
+			color:$color12!important
+		}
+	}
+
+	// All days view - Selected date
+
+	td.ms-picker-dayselected {
+		background-color:$color2
+	}
+
+	// Footer 
+	td.ms-picker-footer {
+		background-color:$color16;
+		color:$color12;
+		font-size:100%
+	}
+}
+
+
+
+// ** MINI-CALENDAR | Views | Month view
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+.ms-picker-monthcenter,
+.ms-picker-monthcenterOn {
+
+	a {
+
+		&:link {
+			color:$color15!important;
+			font-size:100%
+		}
+
+		&:visited {
+			color:$color5
+		}
+	}
+}
+
+// Month view - selected month
+.ms-quickLaunch table.ms-picker-table td.ms-picker-monthselected {
+	background:$color16 none;
+	border-color:$color16;
+
+	a:link {
+		color:$color12;
+		font-size:100%
+	}
+}
+
+
+
+// ** MINI-CALENDAR | Calendars in view
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// Main container
+.ms-acal-apanel-outer {
+	padding:10px 0 0 0
+}
+
+// 2nd container
+.ms-acal-apanel {
+	border-color:#e2e2e2;
+	margin:0 0 20px 0
+}
+
+.ms-acal-apanel-title {
+
+	//*titre
+	span {
+		color:$color15;
+		margin-left:5px;
+
+		&:hover {
+			color:$color12
+		}
+	}
+}	
+
+
+// * CALENDAR VIEW
+// ================================================================================================================================================ */
+
+
+// ** CALENDAR VIEW | Header
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-acal-header {}
+
+.ms-acal-display {
+	color:$color12
+}
+
+
+// ** CALENDAR VIEW | Month view
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// *** CALENDAR VIEW | Month view | Main container
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-acal-month {}
+
+
+// *** CALENDAR VIEW | Month view | Header
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-acal-month-top {
+	border-color:$color16;
+	color:$color12
+}
+
+// *** CALENDAR VIEW | Month view | Columns
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// first column
+tr.ms-acal-summary-dayrow {
+	> td {
+		/* [ReplaceColor(themeColor:"SubtleLines")] */ border:solid 1px $color16;
+		border-bottom-style:none;
+	}
+
+	th {
+		background-color:$no-color;
+		border-color:$color16;
+
+		// first column hover cell
+		&.ms-acal-hover {
+			background:$no-color none;
+			border-color:$color16!important;
+		}
+	}
+
+	// cell
+	td div {
+		background:$color11;
+		color:$color15;
+
+		&:hover {
+			background:$color15;
+			border-color:$color16;
+			color:$color11;
+			text-decoration:none
+		}
+	}
+}
+
+// *** CALENDAR VIEW | Month view | Rows
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+tr.ms-acal-summary-itemrow {
+
+	> td {
+		/* [ReplaceColor(themeColor:"SubtleLines")] */ border:solid 1px $color16;
+		/*border-bottom-style:none;*/border-top-style:none;
+	}
+}
+
+
+
+// ** CALENDAR VIEW | WEEK and DAY views
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// *** CALENDAR VIEW | WEEK and DAY views | Main container
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-acal-detail {}
+
+// *** CALENDAR VIEW | WEEK and DAY views | Header row
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-acal-week-top td {
+	color:$color12;
+
+	&.ms-acal-hover div {
+		background:$color12 none
+	}
+	
+	div {
+		border-color:$no-color
+	}
+}
+
+// *** CALENDAR VIEW | WEEK and DAY views | Header column
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+html .ms-acal-detailtime {
+	
+	a { 
+
+		span {
+			color:$color12
+		}
+	}
+} 
+
+
+// *** CALENDAR VIEW | WEEK and DAY views | Lines borders for week and day views
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-acal-hour00,
+.ms-acal-hour30 {
+
+	td,
+	.ms-acal-detailtime {
+		border-color:$color16
+	}
+}
+
+.ms-acal-week-top td {
+	border-color:$color16
+}
+
+
+// *** CALENDAR VIEW | WEEK and DAY views | for current day
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-acal-week-top td.ms-acal-today, 
+tr td div.ms-acal-today {
+	border-color:$color16!important;
+	background:$color12 none;
+	color:$color11
+}
+
+// *** CALENDAR VIEW | WEEK and DAY views | Day view only
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+//  Header
+.ms-acal-day-top {
+	border-color:$color16;
+	color:$color12
+}
+
+
+// ** CALENDAR VIEW | In COMMON in views
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+//  Cell Clicked
+
+.ms-acal-vitem {
+	background-color:$color16;
+	border-bottom:1px solid $color16
+}
+
+
+//  Cell outday
+
+.ms-acal-outday {
+	// month view
+	background-color:$color14;
+	border-bottom:solid $color14;
+
+	// day and week view
+	th.ms-acal-detailtime ~ & {
+		background-color: $color14;
+		border-bottom:1px solid $color11;
+	}
+}

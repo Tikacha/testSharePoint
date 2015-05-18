@@ -1,0 +1,101 @@
+/* TOC - MOBILE | Controls | Ribbon update
+---------------------------------------------------
+// RIBBON UPDATE - SEPTEMBER 2014
+
+// We have also recently updated the top nav bar. The updated top nav bar is now persistent across the suite, 
+//bringing not only a more consistent user experience including dynamically scaling the number of menu items shown, 
+//but notifications such as new mail, reminders, and system alerts. The top nav bar is now slightly taller making it even more touch friendly.
+
+* RIBBON LINE 1
+	** left section
+	** right section
+* DROP DOWNS
+*/
+
+
+/* RIBBON LINE 1
+================================================================================================================================================ */
+
+
+/** RIBBON LINE 2 | Left section
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+#ms-designer-ribbon {
+
+	.o365spo.o365cst.o365cs-base .o365cs-topnavBGColor, 
+	.o365cs-topnavBGColor.o365spo.o365cst.o365cs-base {
+		background-color:$color15
+	} 
+
+	// Left Section | Logo
+	 .o365spo.o365cst.o365cs-base .o365cs-o365logo {
+	 	//D color:$color11
+	 }
+
+	.o365cs-nav-header16 .o365cs-nav-bposLogoHorizontalPadding {
+		//D padding-left:20px;
+		//D padding-right:20px
+	}
+
+	// Left Section | Links
+
+	.o365spo.o365cst.o365cs-base {
+
+		.o365cs-topnavText {
+			//D color:$color11;
+
+			&:hover {
+				background-color:rgba($color11, 0.5);
+				//D color: $color11
+			}
+		}
+	}
+
+	/** RIBBON LINE 2 | Right section
+	------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+	.o365spo.o365cst.o365cs-base .o365cs-spo-topbar {
+		background-color:rgba($color14,0.78);
+
+		button {
+			color:$color17
+		}
+	}
+
+}
+
+
+/* DROP DOWNS
+================================================================================================================================================ */
+
+body .o365cs-nav-contextMenu {
+	border:1px solid $color16;
+	border-top:0;
+	@include box-shadow(rgba($color10,.2) 0 0 10px);
+	//box-shadow:0 0 10px rgba($color1,.9);
+	//D min-width:180px!important;
+	//D max-width:375px
+}
+
+// Drop Downs Items
+body .o365cs-nav-contextMenu.o365spo .o365cs-contextMenu.o365cst.o365cs-base {
+
+	// Normal
+	.o365cs-contextMenuItem {
+		background-color:rgba($color11,0.125);
+		color:$color17;
+		@include font-SP(normal,15px);
+		//D padding:10px 0
+	}
+
+	.o365cs-contextMenuInactiveItem {
+		@include font-SP(normal,15px);
+		//D padding:10px 0
+	}
+
+	// Hover
+	.o365cs-contextMenuItemHover {
+		background-color:rgba($color15,0.125)
+	}
+}

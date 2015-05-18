@@ -1,0 +1,60 @@
+/* TOC - ADMIN - List / Library settings page
+---------------------------------------------------
+* Header section
+	** List information title
+	** List category description
+	** sections links
+
+*/
+
+
+/* HEADER SECTION
+================================================================================================================================================ */
+
+.ms-listedit {
+
+	.ms-pageinformation {
+		// details information 
+		color:$color17;
+
+		.ms-standardheader {
+			background:$color11;// Bkg-color List information title
+			@include font-SP(bold,100%);
+		}
+	}
+				
+/** HEADER SECTION | List information title
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	.ms-linksectionheader {
+		color:$color12;
+		@include font-SP(normal,160%);
+		padding:0!important;
+
+		//Sections title
+		.ms-standardheader {
+			background:$color11;				
+			color:$color12;
+			@include font-SP(normal,100%)				
+		}
+	}
+
+
+/** HEADER SECTION | List category description
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+	.ms-descriptiontext {
+		color:$color12;
+		@include font-SP(normal,100%)
+	}
+
+/** HEADER SECTION | Section links
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	.ms-descriptiontext a,
+	.ms-gb a, 
+	.ms-gb2 a {
+		color:$color-link;
+		@include font-SP(normal,100%)
+	}
+}
+

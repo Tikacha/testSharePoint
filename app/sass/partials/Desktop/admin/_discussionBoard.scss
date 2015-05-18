@@ -1,0 +1,226 @@
+/* TOC - ADMIN - Discussion board
+---------------------------------------------------
+* TOOLBAR
+* DISCUSSION CONTAINER
+* DISCUSSION DISPLAY
+* REPLIES
+
+*/
+
+
+/* TOOLBAR
+================================================================================================================================================ */
+
+// toolbar border bottom
+
+.ms-comm-forumHeaderContainer {
+	border-bottom:1px solid $color16
+}
+
+// ul
+.ms-comm-postList{
+	//D margin:0;
+	//D padding-left:0;
+
+	// li
+	&Item {
+		//D margin-top:0.5em;
+		//D margin-bottom:0.7em;
+	}
+}
+
+/* DISCUSSION CONTAINER
+================================================================================================================================================ */
+
+.ms-comm-postSubjectColumn {
+	//D max-width:600px;
+	// text-overflow:ellipsis
+
+	a {
+		color:$color-link
+	}
+
+	// footer text
+	.ms-metadata, 
+	.ms-descriptiontext {color:$color17}
+
+	// separator
+	.ms-comm-metalineItemSeparator {border-right:1px solid $color16}
+
+	// footer items
+	.ms-comm-metalineItem {
+		//D padding-right:8px;
+		//D margin-right:8px;
+
+		a {
+			color:$color17;
+
+			&:hover {
+				color:$color-link
+			}
+		}
+	}
+
+}
+
+/* DISCUSSION DISPLAY
+================================================================================================================================================ */
+
+
+// post main container
+
+.ms-comm-forumContainer {
+	//D max-width:690px
+}
+
+// Discussion header
+
+.ms-comm-threadSubjectContainer {
+	// Discussion header - Title
+	.ms-textXLarge {
+		@include font-SPlight(normal,1.46em);
+		color:$color-link
+	}
+}
+
+// Discussion header - expand collapse icon
+
+.ms-comm-postExpander {
+	//D height:16px;
+	//D margin:-2em auto 0;
+	//D width:16px
+}
+
+// Discussion header - Replies number
+
+.ms-comm-statsInlineContainer {
+	margin:11px 0 17px
+}
+
+// Post body
+
+.ms-comm-rootBestBackground {
+	/* [ReplaceColor(themeColor:"SubtleEmphasisBackground")] */ background-color:$color14
+}
+
+//.ms-comm-rootPostContainer {
+	//D padding:18px 19px;
+.ms-comm-postMainContainer {	
+
+	.ms-table {
+
+		div.ms-tableCell + div {
+			//width:800px
+		}
+	}
+
+	// Post author title
+	.ms-comm-authorTitle {
+		@include font-SPlight(normal,1.46em);
+		
+		a {
+			color:$color-link;
+
+			.ms-comm-postReplyListItem & {
+				color:$color12;
+				font-size: 100%
+			}
+		}
+
+
+	}
+
+	// Discussion txt
+	.ms-comm-postBodyThreaded {
+		@include font-SPlight(normal,1.15em);
+
+		.ms-comm-postReplyListItem & {
+			color:$color12;
+			font-size: 100%
+			
+		}
+
+		~ span,
+		~ span a {
+			color:$color12;
+
+			.ms-comm-postReplyListItem & {
+				color:$color12
+			}
+		}
+
+		~ span a:hover {
+			color:$color-link
+		}
+	}
+}
+
+// Discussion Author Pic
+.ms-comm-authorPicture {
+	margin-right:10px
+}
+
+// Reply header
+.ms-comm-allRepliesHeader {
+	//D margin-top:22px;
+	//D margin-bottom:17px
+}
+
+// All replies title
+.ms-comm-replyHeader {
+	//D padding:3px;
+	//D margin-top:8px
+}
+
+// Oldest - Newest links
+.ms-comm-filterList{
+	//D margin:0;
+	//D padding:3px
+
+	.ms-pivotControl-container {
+
+		.ms-pivotControl-surfacedOpt, 
+		.ms-pivotControl-overflowDot {
+			color:$color12
+		}
+
+		.ms-pivotControl-surfacedOpt-selected, 
+		.ms-pivotControl-overflowDot-selected {
+			color:$color-link
+		}
+	}
+}
+
+/* REPLIES
+================================================================================================================================================ */
+
+.ms-comm-postReplyListItem {
+	margin-bottom:21px
+}
+
+
+// post reply container
+
+.ms-comm-postReplyContainer {
+
+}
+
+// post reply button
+
+.ms-comm-postReplyButtonContainer {
+	
+	// enabled
+
+	button {
+		background-color:$color15;
+		border-color:$color15;
+		color:$color11
+	}
+
+	// disabled
+
+	button[disabled] {
+		background-color:$color16;
+		border-color:$color16;
+	}
+}

@@ -1,0 +1,595 @@
+/* TOC - DESKTOP | Site templates | Search
+---------------------------------------------------
+
+* osssearchresults (Default SP Search results page)
+	** Refinement panel
+		*** Level 1
+		*** Level 2
+		*** Expand collapse refinement panel - arrows
+		*** histogram and slider
+	** Search controls
+		*** Search drop down
+		*** Search icon
+	** Search results
+		*** result title link
+		*** Search item summary
+		*** Link title
+		*** Search scopes
+		*** Search footer
+* ENTERPRISE SEARCH
+	** Default page
+	** Search results
+	** Advanced search
+
+
+*/
+
+// * osssearchresults
+// ================================================================================================================================================ */
+
+
+// ** osssearchresults | refinement panel
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// main refinement container
+.ms-ref-ctrl {
+	background:$no-color;
+	width:$leftNavWidth
+}
+
+// Specific refinement container
+.ms-ref-refiner {
+	//D padding:0 20px 0 0;
+
+	#Container {
+		//D padding:0
+		//D padding-bottom:23px
+	}
+}
+
+// *** osssearchresults | refinement panel | level 1
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-ref-refinername {
+
+	&:link,
+	&:visited {
+		/* [ReplaceColor(themeColor:"BodyText")] */ color:$color17;
+		@include font-SP(normal,133.6666667%);
+		padding:0 0 8px 0;
+		border:0;
+		width:$leftNavWidth - 20;
+		//D display:block;
+		//D cursor:pointer
+	}
+
+	&:hover {
+		background-color:$no-color;
+
+		> .ms-ref-uparrow {
+			//D display:inline-block;
+		}
+	}
+
+	&:active {
+		//D outline-style:none;
+	}
+
+}
+
+
+// *** osssearchresults | refinement panel | level 2
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-ref-refiner #Value,
+.ms-ref-unsel-toggle,
+#OtherValue,
+#SubmitValue {
+	//D display:block;
+	//D padding:4px 0;
+	width:$leftNavWidth - 20;	
+}
+
+.ms-ref-refiner #Value a,
+.ms-ref-unsel-toggle {
+	//D cursor:pointer;
+	background-color:$no-color;
+	//D border:0;
+	//D line-height:20px;
+}
+
+
+.ms-ref-name {
+	color:$color12;
+	@include font-SP(normal,100%);
+
+	&:hover {
+		color:$color12!important;
+		text-decoration:none
+	}
+}
+
+.ms-ref-unselSec,
+div[id$="SliderLoadContainer"] {
+	background:$no-color;
+	padding-top:0;
+	padding-bottom:0
+}
+
+// *** osssearchresults | refinement panel | expand collapse refinement panel - arrows
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-ref-uparrow,
+.ms-ref-downarrow {
+	//D width:16px;
+	//D height:16px;
+	//D margin-top:5px;
+	//D float:right;
+}
+
+.ms-ref-uparrow {
+	//D /* [RecolorImage(themeColor:"CommandLinks",includeRectangle:{x:57,y:57,width:16,height:16})] */ background:url("/_layouts/15/images/searchresultui.png?rev=38") no-repeat -57px -57px;
+	//D display:none
+}
+
+.ms-ref-downarrow {
+	//D /* [RecolorImage(themeColor:"CommandLinks",includeRectangle:{x:87,y:1,width:16,height:16})] */ background:url("/_layouts/15/images/searchresultui.png?rev=38") no-repeat -87px -1px;
+	//D display:inline-block
+}
+
+// *** osssearchresults | refinement panel | histogram and slider
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.histogram_container,
+.slider_extent_label_section,
+.slideronly_container {
+	margin-left:auto;
+	margin-right:auto
+}
+
+.slideronly_container {
+	padding-top:20px;
+	width:$leftNavWidth - 20;
+}
+
+// show more link
+#sideNavBox .ms-commandLink {
+	color:$color-link;
+
+	> div {
+		text-decoration:none
+	}
+
+	&:visited,
+	&:hover {
+		color:$color-link
+	}
+}
+#sideNavBox .ms-commandGlyph {
+	color:$color-link;
+
+	&:visited {
+		color:$color-link
+	}
+}
+
+#sideNavBox .handle_label {
+	color:$color-link
+}
+
+
+// input show more people
+.ms-ref-pplPicker {
+
+}
+
+// labels histogram
+.slider_extent_label_section {
+
+}
+
+.histogram_bar_active {
+	//D height:2px;
+	//D display:block;
+	/* [ReplaceColor(themeColor:"SubtleLines")] */ background-color:$color13;
+	/* [ReplaceColor(themeColor:"SubtleLines")] */ border-left:1px solid $color13;
+	/* [ReplaceColor(themeColor:"SubtleLines")] */ border-right:1px solid $color13;
+	/* [ReplaceColor(themeColor:"AccentLines")] */ border-top:2px solid $color15;
+}
+
+// labels slider
+.ms-ref-ctrl .ms-ref-selSec .ms-ref-filterSel, 
+.ms-ref-ctrl .ms-ref-allSec .ms-ref-filterSel {
+	display:block;
+	//color:$color11
+}
+
+.ajax__multi_slider_default .inner_rail_horizontal {
+	background-color:$color-link;
+	border-bottom:1px solid $color-link;
+	border-top:1px solid $color-link;
+}
+
+body .slider_tick_active {
+	background-color:$color-link;
+	border:1px solid $color-link	
+}
+
+
+
+// ** osssearchresults | Search Control 
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// *** osssearchresults | Search Control | Search DropDown
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.ms-srch-sbLarge .ms-srch-sb-navLink {
+	top:0
+}
+
+// *** osssearchresults | Search Control | Search icon
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-srch-sbLarge > .ms-srch-sb-searchLink {
+	//background:url(../img/searchIcon.png) no-repeat 2px -4px;
+	//display:inline-block;
+	//height:33px;
+	//width:48px
+}
+
+.ms-srch-sb-searchLink img {
+	//visibility:hidden
+}
+
+
+
+// ** osssearchresults | Search results
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-srch-siteSearchResults {
+	background:$no-color;
+}
+
+.ms-srch-item {
+	//D clear:both;
+	margin:10px 0px 10px -10px;
+	padding:5px 20px 5px 10px;
+	//D overflow:hidden;
+	//D width:500px;
+
+	&:hover {
+		background-color:$no-color;
+
+		&:nth-child(2n) {
+			background-color:$no-color
+		}
+	}
+
+	// Alternating
+	&:nth-child(2n) {
+		background-color:$no-color
+	}
+}
+
+
+// *** osssearchresults | Search results | result title link
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-srch-item-title {
+	h3 {
+		margin:auto
+	}
+
+	a {
+		color:$color-link;
+		//@extend %font-robotoRegular;
+		//font-size:1em;
+		font:1em arial;
+
+		&:link,
+		&:visited {
+			color:$color-link;
+
+			body .ms-WPBody & {
+				color:$color-link
+			}	
+		}
+	}
+}
+
+// *** osssearchresults | Search results | Search item summary
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-srch-item-summary {
+	//D padding-top:2px;
+	//D display:inline-block;
+
+	.ms-WPBody &,
+	.ms-wpContentDivSpace & {
+		color:$color17;
+		//@extend %font-robotoRegular;
+		//font-size:1em;
+		font:1em arial;
+	}
+
+	.ms-srch-item-highlightedText {
+		/* [ReplaceColor(themeColor:"BodyText")] */ color:$color17;
+		//D font-weight:bold;
+	}
+}
+
+
+
+// *** osssearchresults | Search results | Link title
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-srch-item-path {
+	color:$color1;
+	//@extend %font-robotoRegular;
+	//font-size:1em;
+	font:1em arial;
+}
+
+
+// *** osssearchresults | Search results | Search scopes
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-srch-upscope-top {
+	//D margin:-12px 10px 15px 0px;
+}
+
+.ms-srch-upscope-bottom {
+	//D margin:35px 10px 45px 0px;
+}
+
+
+// *** osssearchresults | Search results | Search footer
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-srch-resultFooter {
+	/* [ReplaceColor(themeColor:"SubtleBodyText")] */ color:$color18;
+	//D text-align:center;
+
+	a{
+		/* [ReplaceColor(themeColor:"SubtleBodyText")] */ color:$color18;
+		//D text-align:center;
+
+		&:hover {
+			/* [ReplaceColor(themeColor:"CommandLinksHover")] */ color:$color-link;
+			//D text-decoration:none;
+		}
+	}
+}
+
+.ms-srch-result {
+
+	// Paging
+	// ------
+
+	#Paging {
+		//D list-style-type:none;
+		//D padding:0;
+		//D margin:45px 0 30px;
+		//D text-align:center;
+
+		li {
+			display:inline;
+		}
+
+		a {
+			text-decoration:none;
+
+			&:hover 			{
+				/* [ReplaceColor(themeColor:"AccentText")] */ color:$color-link;
+			}
+		}
+	}
+
+	// Paging - Current page
+	#PagingSelf {
+
+		a {
+			//D margin:0;
+			//D padding:1px 7px 4px 8px;
+			//D position:relative;
+			//D top:1px;
+			/* [ReplaceColor(themeColor:"AccentText")] */ color:$color-link;
+			//D font-weight:bold;
+		}
+	}
+
+	// Paging - not current page
+	#PagingLink {
+		a {
+			//D margin:0;
+			//D padding:1px 7px 4px 8px;
+			//D position:relative;
+			//D top:1px;
+			/* [ReplaceColor(themeColor:"SubtleBodyText")] */ color:$color18;
+		}
+	}
+
+	// Paging previous and next buttons 
+	.ms-promlink-button-enabled {
+		/* [ReplaceColor(themeColor:"ButtonBorder")] */ border-color:$color21;
+		/* [ReplaceColor(themeColor:"BackgroundOverlay")] */ background-color:rgba($color11,0.85 );
+
+		&-hover,
+		&:hover {
+			/* [ReplaceColor(themeColor:"ButtonHoverBorder")] */ border-color:$color21;
+			/* [ReplaceColor(themeColor:"ButtonHoverBackground")] */ background-color:rgba($color15,0.125 );		
+		}
+
+		.ms-core-needIEFilter & {
+			background-color:$no-color;
+			/* [ReplaceColor(themeColor:"BackgroundOverlay")] */ -ms-filter:"progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#d8ffffff,endColorstr=#d8ffffff)";
+		}		
+	}
+
+
+	// Number of results
+	//------------------
+
+	#ResultCount {
+		//D display:block;
+		@include font-SP(normal,100%)
+	}
+
+
+	// Results footer
+	// --------------
+
+	#ResultFooter {
+		@include font-SP(normal,100%);
+
+		//D margin:15px 0 45px 0;
+		//D text-align:center;
+
+		li {
+			//D padding:0 15px
+		}
+
+		img	{
+			//D padding-right:10px;
+			//D position:relative;
+			//D top:3px;
+		}
+	}
+}
+
+
+// * ENTERPRISE SEARCH
+// ================================================================================================================================================ */
+
+// ** ENTERPRISE SEARCH | Default page
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-srch-sbLarge-fullWidth {
+	width:450px
+}
+
+// ** ENTERPRISE SEARCH | Search results 
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+// *** ENTERPRISE SEARCH | Search results | Top filter
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// Main container
+.ms-srchnav-list {
+	//D display:inline;
+	//D padding-left:0px;
+}
+
+.ms-srchnav-item {
+	//D padding:0px 20px 0px 0px;
+	//D display:inline-block;
+
+	&:first-child {
+		//D margin-left:0px;
+	}
+}
+
+// List of search filters
+.ms-srchnav-link {
+	/* [ReplaceColor(themeColor:"Navigation")] */ color:$color12;
+	
+	// Standard link
+	&:link,
+	&:visited {
+		/* [ReplaceColor(themeColor:"Navigation")] */ color:$color12;
+
+		body .ms-WPBody & {
+			/* [ReplaceColor(themeColor:"Navigation")] */ color:$color12;
+		}
+	}
+
+	// current filter
+	&-selected:link,
+	&-selected:visited {
+		/* [ReplaceColor(themeColor:"NavigationAccent")] */ color:$color-link;
+	}
+}
+
+.ms-srchnav-link,
+.ms-srchnav-link-selected {
+	
+	&:hover {
+
+		body .ms-WPBody & {
+			/* [ReplaceColor(themeColor:"NavigationHover")] */ color:$color-link;
+			//D text-decoration:none;
+		}
+	}
+
+	&:active {
+
+		body .ms-WPBody & {
+			/* [ReplaceColor(themeColor:"NavigationHover")] */ color:$color-link;
+			//D text-decoration:none;
+		}
+	}
+}
+
+
+// ** ENTERPRISE SEARCH | Advanced Search
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// Main container
+
+.srch-advancedtable {
+	@include border-radius(0);
+	/* [ReplaceColor(themeColor:"Light2-Lightest")] */ border:1px solid $color16;
+	/* [ReplaceColor(themeColor:"Light2")] */ background:$color14;
+	//D margin:40px auto;
+	//D padding:0 25px 25px;
+}
+
+
+// Heading
+
+td.ms-advsrchHeadingText{
+	@include font-SP(normal,1.3);
+	/* [ReplaceColor(themeColor:"Dark1")] */ color:$color18;
+}
+
+div.ms-advsearch-header{
+	//D margin-top:25px;
+	//D margin-bottom:5px;
+}
+
+// labels
+td.ms-advsrchText-v1{
+	//D padding-right:4px;
+	//D text-align:right;
+	/* [ReplaceColor(themeColor:"Dark1-Medium")] */ color:$color18;
+}
+
+// inputs and selects
+td.ms-advsrchText-v2{
+	/* [ReplaceColor(themeColor:"Dark1-Medium")] */ color:$color18;
+	//D vertical-align:middle;
+
+	select {
+		/* [ReplaceColor(themeColor:"Dark1-Medium")] */ color:$color18;
+		//D vertical-align:bottom;
+		//D width:120px;
+	}
+}
+
+// inputs
+.ms-advsrchText-v2box{
+	/* [ReplaceColor(themeColor:"Light2-Medium")] */ border:1px solid $color21;
+	@include font-SP(normal,1em);
+	//D font-size:1em;
+	//D font-family:verdana,tahoma,sans-serif;
+	//D height:15px;
+	width:200px
+}
+
+// Search button
+
+.ms-advsrchbutton{
+	//D text-align:right;
+}

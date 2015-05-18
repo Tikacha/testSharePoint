@@ -1,0 +1,373 @@
+/* TOC - MOBILE | Webparts
+---------------------------------------------------
+* WEBPARTS ZONE
+	** WP zone
+	** WP zone cell
+* WEBPARTS
+	** WebPart chrome
+	** WebPart Header
+		*** WebPart Title
+	** WebPart Content
+	** WebPart Links
+	** WebPart Spacing
+
+// * SELECTED WEBPART (Checked)
+// 	** Main
+// 	** Header
+// 	** Title
+// 	** Content
+
+// * WEBPARTS LISTS AND LIBRARIES
+// 	** Header
+// 	** Content
+
+*/
+
+
+
+// * TEXT LAYOUT and WEBPART ZONES
+// ================================================================================================================================================ */
+
+.ms-SPZone > .s4-wpcell,
+.ms-SPZone > .s4-wpcell-plain,
+.ms-rtestate-write > .ms-rte-wpbox > div > .s4-wpcell,
+.ms-rtestate-write > .ms-rte-wpbox > div > .s4-wpcell-plain {
+	border-color:$color1;
+	padding:0 10px;
+}
+
+
+// * TEXT LAYOUT ZONES ( with wiki text layout)
+// ================================================================================================================================================ */
+
+.ms-rte-layoutszone-outer {
+	background:$no-color
+}
+
+.ms-rte-layoutszone-inner-editable {
+	/* [ReplaceColor(themeColor:"SubtleLines")] */ border:1px solid $color13;
+	margin:0;/*Default:1*/
+	padding:10px 10px 0;
+	min-height:100px !important;/*default*/
+}
+
+
+// * WEBPART ZONES
+// ================================================================================================================================================ */
+
+// ** WEBPARTS ZONES | Titre de la zone webpart
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-SPZoneLabel {
+	color:$color12;
+	padding:10px 0px 5px;
+	text-transform:uppercase
+}
+
+
+
+// ** WEBPARTS ZONES | Conteneur principal de la zone webpart
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-SPZone {
+	background-color:$no-color;
+	border:1px solid $color13;
+
+	&:hover {
+		border:1px solid $color1;
+	}
+
+	&.ms-webpart-zone {
+		padding:0
+	}
+}
+
+// ** WEBPARTS ZONES | Section "Add a webpart"
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-SPZone > div:first-child {
+	padding:10px!important;
+}
+
+.ms-WPAddButton{
+	background-color:$color2;
+	border:0;
+	@include border-radius;
+	padding:10px 0;
+
+	&:hover {
+		border:0
+	}
+	& a {
+		color:$color10;
+		font: bold 100% $WP-Body-font
+	}
+}
+
+
+// * WEBPARTS
+// ================================================================================================================================================ */
+
+
+// ** WEBPARTS | WebPart Chrome - global
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+@if $WP-globalChrome-border-width > 0 {
+	// For lists and libraries
+	.s4-wpcell > .ms-webpart-chrome, 
+	.s4-wpActive > .ms-webpart-chrome,
+	// For WP
+	.ms-webpart-chrome {
+		@include WP-global-chrome ($WP-bkg, $WP-globalChrome-border-width, $WPborder-color);
+		@include border-radius;
+		padding: $WP-padding;
+
+		// For lists and libraries
+		.s4-wpcell > &, 
+		.s4-wpActive > & {
+			border-color:$color1;
+		} 
+
+		// Specific to Search WP in MasterPage
+		#searchInputBox & {
+			background:$no-color none;
+			border:0;
+			@include border-radius(0);
+			padding:0;
+		}
+	}
+}
+
+
+// ** WEBPARTS | WebPart Header 
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-webpart-chrome-title {
+	background-color:$no-color;
+	// @include background(image-url("line.png"), linear-gradient(top, darken($color-brand, 10%) 0px, darken($color-brand, 10%) 5px, lighten(complement($color-brand), 10%) 5px, complement($color-brand) 100%));
+	@include border-top-radius(0);
+	// border-bottom:$WP-Title-border-width+px solid $WP-Title-border-color;
+	margin-bottom:0;// attention au decalage entre la border-bottom et la bordure .ms-WPBorder si chrome est de type title and border et margin >=1
+
+	// Header container of selected webpart in edit mode
+	.ms-SPZone > .s4-wpActive &, 
+	.ms-rtestate-write > .ms-rte-wpbox > div > .s4-wpActive & {
+		background-color: $no-color;
+		border-bottom-width:0;
+		border-top:0 solid #5a6870;
+		color:$color11;
+	}
+}
+
+
+// *** WEBPARTS |  WebPart Header | WP title and icon
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-webpart-titleText {
+	font-size:1.46em;
+	padding-left:$WP-padding;
+	margin:0.5em 0;
+	white-space: normal;
+
+	// For lists and libraries
+	.s4-wpcell &,
+	.s4-wpActive & {
+		padding-left:$WP-padding;
+	}
+
+	&.ms-webpart-titleText,
+	& > a {
+		color:$color3;
+		@extend %block;
+		font-family:$WP-Title-font;// the placeholder is not working here
+		font-size:2.2em;
+		// @extend %headline-text-shadow;
+
+	}
+
+	// in edit mode, the following class is added to the h2 tag of the title
+	&.ms-webpart-titleText-withMenu {
+		color:$color12;
+
+		// in edit mode, for a selected webpart
+		.ms-SPZone > .s4-wpActive &, 
+		.ms-rtestate-write > .ms-rte-wpbox > div > .s4-wpActive & {color:$color11}
+
+	}
+
+	& > a:link,
+	& > a:visited,
+	& > a:hover {
+		/* [ReplaceColor(themeColor:"CommandLinksHover")] */ color:$color5;
+		text-decoration: none
+	}
+
+	& > a:active {
+		/* [ReplaceColor(themeColor:"CommandLinksPressed")] */ color:$color7;
+	}
+
+	/* Icon at the left of the title */
+	& > img {
+		// height:16px; // default value
+		// width:16px; // default value
+	}
+}
+
+
+// *** WEBPARTS |  WebPart Header | WP control box in edit mode (include check box and arrow for drop down menu)
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-webpart-controlBox {}
+.ms-webpart-controlBox-hide {}
+.ms-webpart-controlBox-show {}
+
+/* Arrow */
+.js-webpart-menuCell {}
+
+/* Check box*/
+input[id^="SelectionCbxWebPart"]{}
+
+
+
+/*** WEBPARTS |  WebPart Header | WP drop down edit menu
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// Drop Down WP
+//.ms-core-menu-hasIcons,
+//.ms-core-menu-hasIcons > .ms-core-menu-list {
+//	margin:0;
+//	padding:0;
+
+//	> .ms-core-menu-item,
+//	> .ms-core-menu-separator {
+//		padding:0!important;
+//		margin:0;
+
+//		&:before {
+//			content:"";
+//		}
+//	}
+//}
+
+
+/** WEBPARTS | WP Content
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+/*
+.ms-wpContentDivSpace {margin:0}	
+
+.ms-WPBorder, 
+.ms-WPBorderBorderOnly {border-color:#ced8de}
+*/
+
+.ms-WPBody,
+.ms-wpContentDivSpace {
+	// linear gradient for IE old version < ie10
+	// @include filter-gradient($color11, $color11, vertical);
+	// linear gradient ??? for ie10 - cf: http://joshuapaling.com/post/compass-background-gradients-not-working-ie10
+	// @include background-image-with-ms(linear-gradient(top, $color11 0%, $color11 100%));
+	// border radius
+	// @include border-bottom-radius;
+	// default text color
+	color:$color12;
+	padding:$WP-padding;
+
+	// WP content in edit mode for a selected webpart
+	.ms-SPZone > .s4-wpActive &, 
+	.ms-rtestate-write > .ms-rte-wpbox > div > .s4-wpActive & {
+		background:$color11 none;
+	}
+
+	// Specific to Search WP in MasterPage
+	#searchInputBox & {
+		background:$no-color none;
+		border:0;
+		@include border-radius(0);
+		padding:0
+	}
+
+	.ms-mpSearchBox & {
+		padding:0
+	}
+
+	// OOTB search - results section
+
+	.ms-srch-siteSearchResults & {
+		padding:0
+	}
+}
+
+
+
+
+/** WEBPARTS | links
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+body .ms-WPBody a {
+	color:$color-link;
+
+	&:link,
+	&:visited {
+		color:$color-link
+	}
+
+	&:hover,
+	&:active {
+		color:$color-link;
+		text-decoration: underline
+	}
+}
+
+
+/** WEBPARTS | WP spacing
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+@if $Support-SharePoint-2013 == false {
+	.ms-PartSpacingVertical {
+		margin-top:20px // default:12px
+	}
+}
+
+@else {
+	.ms-webpartzone-cell{margin-bottom:10px}
+}
+
+
+/* SELECTED WEBPART (Checked)
+================================================================================================================================================ */
+
+// Main
+
+// .ms-SPZone > .s4-wpActive, 
+// .ms-rtestate-write > .ms-rte-wpbox > div > .s4-wpActive {
+// 	/*padding-bottom:43px*/padding:0 10px
+// }
+
+
+
+/** SELECTED WEBPART | Header
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+/*
+body .s4-wpActive .ms-WPHeader td {
+	background-color: #5a6870!important;
+	border-bottom-width:0;
+	border-top:4px solid #5a6870
+}
+*/
+
+
+/** SELECTED WEBPART | Title
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+/*
+body .s4-wpActive .ms-WPTitle, 
+body .s4-wpActive .ms-WPTitle a { 
+	color:#fff!important;
+	padding-left:5px
+}
+*/
+
+
+/** SELECTED WEBPART | Content 
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+/*
+.s4-wpActive .s4-wpTopTable {border:1px #5a6870 solid!important}
+*/

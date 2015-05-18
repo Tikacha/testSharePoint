@@ -1,0 +1,55 @@
+/* TOC - DESKTOP | CONTENT STYLES | Standard styles
+---------------------------------------------------
+* DEFAULT SP STYLES
+
+*/
+
+// * DEFAULT SP STYLES
+// ============================================================================================================================================================================*/
+
+
+.ms-rteStyle-Normal {
+	/* [ReplaceColor(themeColor:"BackgroundOverlay",opacity:"1")] */ background-color:$color11;
+	/* [ReplaceColor(themeColor:"BackgroundOverlay")] */ background-color:rgba( $color11,0.85 );
+	/* [ReplaceColor(themeColor:"BodyText")] */ color:$color17;
+	/* [ReplaceFont(themeFont:"body")] */ @include font-SP(normal,108.333333%); //D font-family:"Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
+	//D font-size:13px;
+	//D font-weight:normal;
+}
+
+
+.ms-rteStyle-Byline,
+.ms-rteStyle-Quote,
+.ms-rteStyle-IntenseQuote {
+	font-style:italic;
+	/* [ReplaceColor(themeColor:"BodyText")] */ color:$color17;
+}
+
+.ms-rteStyle-Emphasis,
+.ms-rteStyle-IntenseEmphasis {
+	font-style:italic;
+	/* [ReplaceColor(themeColor:"ContentAccent1")] */ color:$color15;
+}
+
+.ms-rteStyle-References,
+.ms-rteStyle-IntenseReferences {
+	/* [ReplaceColor(themeColor:"SubtleBodyText")] */ color:$color18;
+}
+
+.ms-rteStyle-IntenseQuote,
+.ms-rteStyle-IntenseEmphasis,
+.ms-rteStyle-IntenseReferences {
+	text-decoration:underline;
+}
+
+.ms-rteStyle-Comment,
+.ms-rteStyle-Accent1 {
+	/* [ReplaceColor(themeColor:"ContentAccent1")] */ color:$color15;
+}
+
+.ms-rteStyle-Caption,
+.ms-rteStyle-Accent2 {
+	/* [ReplaceColor(themeColor:"ContentAccent2")] */ color:$color19;
+}
+
+

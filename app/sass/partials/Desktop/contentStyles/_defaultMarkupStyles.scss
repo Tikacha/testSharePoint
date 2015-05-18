@@ -1,0 +1,83 @@
+/* TOC - DESKTOP | CONTENT STYLES | Markup styles
+---------------------------------------------------
+	* DEFAULT SP MARKUP STYLES
+
+*/
+
+
+// * DEFAULT SP MARKUP STYLES
+// ============================================================================================================================================================================*/
+
+
+.ms-rtestate-field h1,
+h1.ms-rteElement-H1,
+.ms-rtestate-field h2,
+h2.ms-rteElement-H2 {
+	line-height:1.4;
+	/* [ReplaceColor(themeColor:"ContentAccent1")] */ color:#0072C6;
+}
+
+.ms-rtestate-field h3,
+h3.ms-rteElement-H3 {
+	line-height:1.4;
+}
+
+.ms-rtestate-field h4,
+h4.ms-rteElement-H4 {
+	line-height:1.6;
+	/* [ReplaceColor(themeColor:"SubtleBodyText")] */ color:#777;
+}
+
+h1.ms-rteElement-H1B,
+h2.ms-rteElement-H2B,
+h3.ms-rteElement-H3B,
+h4.ms-rteElement-H4B {
+	/* [ReplaceColor(themeColor:"ContentAccent2")] */ color:#00485B;
+}
+
+.ms-rtestate-field p,
+p.ms-rteElement-P {
+	//D margin:0 0 10px 0;
+	line-height:1.6;
+	margin:0
+}
+
+.ms-rteElement-Hr {
+	/* [ReplaceColor(themeColor:"Lines")] */ background-color:#ababab;
+	height:1px;
+}
+
+.ms-rteElement-Callout1 {
+	color:#660000;
+	background-color:#fef4e4;
+	float:left;
+	width:25em;
+	padding:10px;
+	border:1px solid #FD9F08;
+}
+
+.ms-rteElement-Callout2 {
+	color:#353738;
+	background-color:#f2f2f2;
+	float:right;
+	width:25em;
+	padding:10px;
+	border:1px solid #36B000;
+}
+
+.ms-rteElement-Callout3 {
+	font-style:italic;
+	color:#CA0078;
+	float:right;
+	width:25em;
+	padding:10px;
+}
+
+.ms-rteElement-Callout4 {
+	color:#005677;
+	float:right;
+	width:20em;
+	padding:10px;
+	background-color:#d8f4ff;
+	border:1px solid #00ADEE
+}

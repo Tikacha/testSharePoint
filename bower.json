@@ -1,0 +1,13 @@
+{
+  "name": "appname",
+  "version": "0.0.1",
+  "dependencies": {
+    "modernizr": "latest",
+    "html5shiv": "latest",
+    "jquery-mmenu": "latest",
+    "jquery": "latest"
+  },
+  "devDependencies": {}
+}
+
+

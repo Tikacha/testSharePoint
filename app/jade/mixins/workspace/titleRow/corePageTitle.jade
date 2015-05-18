@@ -1,0 +1,20 @@
+mixin deltaPlaceHolderPageTitleInTitleArea
+	// Page title
+	// ==============================================================================================================================
+	SharePoint:AjaxDelta#DeltaPlaceHolderPageTitleInTitleArea(runat="server")
+		asp:ContentPlaceHolder#PlaceHolderPageTitleInTitleArea(runat="server")
+			SharePoint:SPTitleBreadcrumb(runat="server", RenderCurrentNodeAsLink="true", SiteMapProvider="SPContentMapProvider", CentralAdminSiteMapProvider="SPXmlAdminContentMapProvider", SkipLinkText="")
+				PATHSEPARATORTEMPLATE
+					SharePoint:ClusteredDirectionalSeparatorArrow(runat="server")/
+
+
+mixin deltaPlaceHolderPageDescription
+	// Page Description
+	// ==============================================================================================================================
+	SharePoint:AjaxDelta#DeltaPlaceHolderPageDescription(blockelement="true", CssClass="ms-displayInlineBlock ms-normalWrap", runat="server")
+		a#ms-pageDescriptionDiv(href='javascript:;', style='display:none', data-accessibility-nocheck='true')
+			span#ms-pageDescriptionImage
+		span#ms-pageDescription.ms-accessible
+			asp:ContentPlaceHolder#PlaceHolderPageDescription(runat="server")
+		SharePoint:ScriptBlock(runat="server")
+			| _spBodyOnLoadFunctionNames.push("setupPageDescriptionCallout");

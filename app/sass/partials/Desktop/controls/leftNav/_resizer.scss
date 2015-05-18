@@ -1,0 +1,31 @@
+/* TOC - DESKTOP | Controls | Left Navigation | Main
+---------------------------------------------------
+
+* Resizer
+
+*/
+
+
+
+// * RESIZER
+// ================================================================================================================================================ */
+
+// nav resizer between TreeView/QL and metadata navigation
+
+.ms-navresizer-horizontal {
+	//D margin-right:1px;
+	//D cursor:n-resize;
+	//D height:5px;
+	/* [ReplaceColor(themeColor:"SubtleLines")] */ border-top:1px solid $color16;
+	/* [ReplaceColor(themeColor:"SubtleEmphasisBackground")] */ background-color:$color16;
+}
+
+
+// nav resizer between sideNavBox and contentBox
+
+ .ms-navresizer-vertical {
+	//D cursor:e-resize;
+	/* [ReplaceColor(themeColor:"SubtleLines")] */ border-left:1px solid $color16;
+	//D margin-left:1px;
+	//D width:5px
+}

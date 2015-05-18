@@ -1,0 +1,35 @@
+mixin sideNavBox
+	// QuickLaunch
+	// ==============================================================================================================================
+	SharePoint:AjaxDelta#DeltaPlaceHolderLeftNavBar(BlockElement="true", CssClass="ms-core-navigation", role="navigation", runat="server")
+		asp:ContentPlaceHolder#PlaceHolderLeftNavBar(runat="server")
+			SharePoint:DelegateControl(runat="server", ControlId="QuickLaunchTop")/
+			a#startNavigation(name='startNavigation', tabIndex='-1')
+			asp:ContentPlaceHolder#PlaceHolderLeftNavBarTop(runat="server")/
+			asp:ContentPlaceHolder#PlaceHolderQuickLaunchTop(runat="server")/
+			asp:ContentPlaceHolder#PlaceHolderLeftNavBarDataSource(runat="server")/
+			asp:ContentPlaceHolder#PlaceHolderCalendarNavigator(runat="server")/
+			asp:ContentPlaceHolder#PlaceHolderLeftActions(runat="server")/
+
+			.ms-core-sideNavBox-removeLeftMargin
+
+				SharePoint:SPNavigationManager#QuickLaunchNavigationManager(runat="server", QuickLaunchControlId="V4QuickLaunchMenu", ContainedControl="QuickLaunch", EnableViewState="false")
+					SharePoint:delegatecontrol(runat="server", ControlId="QuickLaunchDataSource")
+						Template_Controls
+							asp:SiteMapDataSource#QuickLaunchSiteMap(SiteMapProvider="SPNavigationProvider", ShowStartingNode="False", StartingNodeUrl="sid:1025", runat="server")/
+					SharePoint:AspMenu#V4QuickLaunchMenu(runat="server", EnableViewState="false", DataSourceId="QuickLaunchSiteMap", UseSimpleRendering="true", Orientation="Vertical", StaticDisplayLevels="3", AdjustForShowStartingNode="true", MaximumDynamicDisplayLevels="0", SkipLinkText="")/
+
+				SharePoint:SPNavigationManager#TreeViewNavigationManagerV4(runat="server", ContainedControl="TreeView", CssClass="ms-tv-box")
+					SharePoint:SPLinkButton#idNavLinkSiteHierarchyV4(runat="server", NavigateUrl="~site/_layouts/15/viewlsts.aspx", Text="<%$Resources:wss,treeview_header%>", accesskey="<%$Resources:wss,quiklnch_allcontent_AK%>", CssClass="ms-tv-header")/
+					SharePoint:DelegateControl(runat="server", ControlId="TreeViewAndDataSource")
+						template_controls
+							SharePoint:SPHierarchyDataSourceControl#TreeViewDataSourceV4(runat="server", RootContextObject="Web", IncludeDiscussionFolders="true")/
+							SharePoint:SPRememberScroll#TreeViewRememberScrollV4(runat="server", onscroll="javascript:_spRecordScrollPositions(this);", style="overflow: auto;")
+								SharePoint:SPTreeView#WebTreeViewV4(runat="server", ShowLines="false", DataSourceId="TreeViewDataSourceV4", ExpandDepth="0", SelectedNodeStyle-CssClass="ms-tv-selected", NodeStyle-CssClass="ms-tv-item", SkipLinkText="", NodeIndent="12", ExpandImageUrl="/_layouts/15/images/tvclosed.png?rev=27", ExpandImageUrlRtl="/_layouts/15/images/tvclosedrtl.png?rev=27", CollapseImageUrl="/_layouts/15/images/tvopen.png?rev=27", CollapseImageUrlRtl="/_layouts/15/images/tvopenrtl.png?rev=27", NoExpandImageUrl="/_layouts/15/images/tvblank.gif?rev=27")/
+
+
+				asp:ContentPlaceHolder#PlaceHolderQuickLaunchBottom(runat="server")
+					.ms-core-listMenu-verticalBox
+						SharePoint:ClusteredSPLinkButton#idNavLinkViewAll(runat="server", PermissionsString="ViewFormPages", NavigateUrl="~site/_layouts/15/viewlsts.aspx", Text="<%$Resources:wss,AllSiteContentMore%>", ToolTip="<%$Resources:wss,AllSiteContentMore%>", accesskey="<%$Resources:wss,quiklnch_allcontent_AK%>", CssClass="ms-core-listMenu-item ms-core-listMenu-heading")/
+
+			SharePoint:DelegateControl(runat="server", ControlId="QuickLaunchBottom")/

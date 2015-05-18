@@ -1,0 +1,31 @@
+/* TOC - CONTENT STYLES - Videos
+---------------------------------------------------
+* Player
+* Overlay
+  
+*/
+
+/* PLAYER
+============================================================================================================================================================================*/
+
+.mediaPlayerContainer {
+	//D position:relative;
+	//D float:left;
+	background-color:$color3;
+	//D cursor:default !important;
+}
+
+
+/* OVERLAY
+============================================================================================================================================================================*/
+
+.mediaPlayerTitleOverlay {
+	//D position:absolute;
+	//D top:0px;
+	//D left:0px;
+	//D z-index:1;
+	//D height:20px;
+	background-color:$color1;
+	//D opacity:0.7;
+	//D width:100%;
+}

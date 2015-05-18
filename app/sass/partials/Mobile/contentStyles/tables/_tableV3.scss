@@ -1,0 +1,27 @@
+/* TOC - MOBILE | CONTENT STYLES | Tables | Table style V3
+---------------------------------------------------
+
+
+
+*/
+
+// Compass table
+// cf http://compass-style.org/reference/compass/utilities/tables/alternating_rows_and_columns/
+
+
+.ms-rteTable-V3 {
+	ms-name:"ICCAIA - Default table style 3";
+	max-width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+
+table.ms-rteTable-V3 {
+   $table-color: $color2;
+   @include table-scaffolding;
+   @include inner-table-borders(1px, darken($table-color, 40%));
+   @include outer-table-borders(1px);
+   @include alternating-rows-and-columns($table-color, adjust-hue($table-color, -120deg), #222222);
+}
+

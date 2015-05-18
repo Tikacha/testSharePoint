@@ -1,0 +1,11 @@
+mixin deltaTopNavigation
+
+	// Top Navigation
+	// ==============================================================================================================================
+	SharePoint:ajaxdelta#DeltaTopNavigation(BlockElement="true", CssClass="ms-displayInline ms-core-navigation", role="navigation", runat="server")
+		SharePoint:DelegateControl#topNavigationDelegate(runat="server", ControlId="TopNavigationDataSource")
+			Template_Controls
+				asp:SiteMapDataSource#topSiteMap(ShowStartingNode="False", SiteMapProvider="SPNavigationProvider", runat="server", StartingNodeUrl="sid:1002")/
+
+		asp:ContentPlaceHolder#PlaceHolderTopNavBar(runat="server")
+			SharePoint:AspMenu#TopNavigationMenu(runat="server", EnableViewState="false", DataSourceID="topSiteMap", AccessKey="<%$Resources:wss,navigation_accesskey%>", UseSimpleRendering="true", UseSeparateCss="false", Orientation="Horizontal", StaticDisplayLevels="2", AdjustForShowStartingNode="true", MaximumDynamicDisplayLevels="2", SkipLinkText="")/

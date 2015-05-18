@@ -1,0 +1,132 @@
+/* TOC - DESKTOP | Controls | Dialog Box
+---------------------------------------------------
+* BACKGROUND
+* DIALOG BOX
+	** Title
+	** Buttons
+	** Content
+* FORMS IN DIALOG BOX
+
+*/
+
+
+// * BACKGROUND behind dialog box
+// ================================================================================================================================================ */
+
+.ms-dlgOverlay {
+	background-color:$color10;
+	filter: alpha(opacity=70)
+}
+
+
+// * DIALOG BOX
+// ================================================================================================================================================ */
+
+// External Border
+.ms-dlgContent {
+	border:1px $color10 solid
+}
+
+// Internal Border
+.ms-dlgBorder {
+	border:1px $color10 solid
+}
+
+
+// ** DIALOG BOX | Title
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// Main container title / button bar */
+.ms-dlgTitle {
+	background-color:$color11;
+	//background-image:url('/_layouts/images/bgximg.png')
+}
+
+
+// Text of the title
+.ms-dlgTitleText {
+	color:$color12;
+	@include font-SP(normal,160%);
+}
+
+
+// ** DIALOG BOX | Buttons  (Full size, close)
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-dlgTitleBtns a .s4-clust img {}
+
+
+
+// ** DIALOG BOX | Content
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// iFrame container
+
+.ms-dlgFrameContainer {}
+
+// Cntainer
+
+html.ms-dialog #s4-workspace {
+	background:$color11
+}
+
+html.ms-dialog #s4-bodyContainer, 
+html.ms-dialog #s4-bodyContainer > div {
+	border-width:0;
+	padding:0;
+	//width:100%!important
+	width:auto
+}
+
+html.ms-dialog #main {
+	height:100%!important
+}
+
+html.ms-dialog .nightandday .s4-ca {
+	padding:0
+}
+
+
+// * FORMS IN DIALOG BOX (Display/Edit mode)
+// ================================================================================================================================================ */
+
+// Labels
+
+html.ms-dialog .ms-standardheader {
+	color:$color10;
+	@include font-SP(normal,100%);
+	font-weight:bold;
+}
+
+// Fields
+
+html.ms-dialog .ms-formbody, 
+html.ms-dialog .ms-formbody * {
+	color:$color10;
+	@include font-SP(normal,100%);
+} 
+
+// Bkg fields
+
+html.ms-dialog .ms-formbody {
+	background-color:$color11
+}
+
+// Separation border of labels and fields
+
+html.ms-dialog .ms-formlabel, 
+html.ms-dialog .ms-formbody {
+	border-color:$color16;
+}
+
+// Fields border
+
+html.ms-dialog .ms-formbody input, 
+html.ms-dialog .ms-formbody select, 
+html.ms-dialog .ms-formbody textarea, 
+html.ms-dialog .ms-inputuserfield {
+	border:1px $color16 solid
+}
+
+
+

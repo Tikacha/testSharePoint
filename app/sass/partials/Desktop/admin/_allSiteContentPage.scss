@@ -1,0 +1,157 @@
+/* TOC - ADMIN - Page All site content
+---------------------------------------------------
+* Toolbar
+* Apps
+	** container
+	** hover
+	** image section
+	** description section
+	** Title
+* Add new site
+	** container
+	** link
+	** subsite link
+
+*/
+
+
+/* Toolbar- Liens: create, site workflows et All site content
+================================================================================================================================================ */
+
+// Sections header
+
+.ms-vl-sectionHeaderRow {
+	/* [ReplaceColor(themeColor:"SubtleLines")] */ border-bottom:solid 1px $color13;
+
+	// title container
+	.ms-vl-sectionHeader {
+		margin-bottom:8px;
+		display:inline-block;
+
+		.ms-webpart-titleText {
+			@include font-SP(normal,1.46em);
+			text-shadow: none
+		}
+	}
+
+	// toolbar link settings (right hand)
+	.ms-calloutLink {
+
+		&:link,
+		&:visited {
+			/* [ReplaceFont(themeFont:"body")] */ @include font-SP(normal,100%);
+			/* [ReplaceColor(themeColor:"SubtleEmphasisCommandLinks")] */ color:$color12;
+			text-transform:uppercase;
+			text-decoration:none;
+		}
+	}
+}
+
+/* Apps
+================================================================================================================================================ */
+
+/** Apps | container
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-vl-apptile,
+.ms-vl-apptile-tenant {
+	display:inline-block;	
+	min-height:96px;
+	margin-right:13px;
+	margin-bottom:16px;	
+	vertical-align:top;
+	white-space:nowrap;
+	width:288px;
+}
+
+/** Apps | hover
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-vl-apptilehover:hover {
+	/* [ReplaceColor(themeColor:"HoverBackground")] */ background-color:rgba($color15,0.125 );
+}
+
+/** Apps | Image section
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-vl-appimage {
+
+	& a {
+		background-color:$color15
+	}
+
+	// add an app tile
+	& a#appadd {
+		background-color:transparent
+	}
+}
+
+/** Apps | Description section
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-vl-appinfo,
+.ms-vl-appinfo-tenant {
+	margin-left:5px;
+	margin-right:5px
+}
+
+/** Apps | Title
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-vl-apptitleouter {
+	max-height:3em
+}
+
+.ms-vl-apptitle,
+a.ms-vl-apptitle:visited {
+	border:1px solid $no-color;
+	/* [ReplaceColor(themeColor:"BodyText")] */ color:$color17;
+	@include font-SP(normal,120%);
+	line-height:1.2;
+	text-decoration:none
+}
+
+.ms-metadata, 
+.ms-descriptiontext {
+
+	.ms-vl-apptitle & {
+		color:$color17;
+		@include font-SP(normal,100%);
+	}
+}
+
+
+
+/* Add new site
+================================================================================================================================================ */
+
+/* Add new site | container
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-vl-appnewsubsitelink {
+	margin-bottom:8px
+}
+
+/** Add new site | link
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-heroCommandLink {
+	color:$color15;
+
+	&:visited {
+		color:$color15
+	}
+}
+
+/** Add new site | subsite link
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.ms-vl-siteicon {
+	padding-right:11px;
+
+	+ .ms-draggable {
+		color:$color15
+	}
+}
+

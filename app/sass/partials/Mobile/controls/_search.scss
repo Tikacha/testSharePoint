@@ -1,0 +1,227 @@
+/* TOC - MOBILE | Controls | Search
+---------------------------------------------------
+
+* SEARCH BORDER
+* SEARCH INPUT
+* DROP DOWN
+	** Button Arrow
+	** Drop down list
+* SEARCH ICON
+
+*/
+
+
+// * SEARCH BORDER
+// ================================================================================================================================================ */
+
+// Search
+
+#mSearchClicked {
+	display:inline-block
+}
+
+#mSearchLink {
+	display: inline-block;
+	background: image-url('searchIconMobile.png');
+	background-image: image-url('searchIconMobile.svg'), none;
+	background-repeat:no-repeat;
+	background-position: 0;
+	color:$color-link;
+	padding-left:30px;
+	margin-right: 10px;
+	width: 50px;
+
+	.no-svg & {
+		background: image-url('searchIconMobile.png') no-repeat 0;
+		height:30px;
+		padding-left: 40px;
+		margin-top: -5px
+	}
+}
+
+#searchContainer {
+	display:none;
+	background:#fff;
+	box-shadow: 0px 3px 5px #999999;
+	padding:20px;
+	border:1px solid #e3e3e3;
+	border-radius:5px;
+	position:absolute;
+	top:70px;
+	right:5px;
+	width:250px;
+	z-index:11
+}
+
+#searchrow {
+	padding:0
+}
+
+#DeltaPlaceHolderSearchArea {
+	max-width: 320px
+}
+
+#searchInputBox {
+	//margin:0 20px;
+	//padding-top:10px
+}
+
+.ms-srch-sb-border {
+	@include border-radius(12px);
+	background-color:$color11;
+	border:1px solid $color2;
+	height:40px;
+	width:100%;
+
+	&:hover {
+		border:1px solid $color2;
+	}
+
+	// Focus
+	&Focused {
+		@include border-radius(12px);
+	}
+}
+
+.ms-srch-sb-borderFocused {
+	@include border-radius(12px);
+	background-color:$color11;
+	border:1px solid $color2;
+	height:40px;
+	width:100%
+}
+
+
+// * SEARCH INPUT
+// ================================================================================================================================================ */
+
+.ms-srch-sb > input {
+	background-color:$no-color;
+	color:$color2;
+	@include font-SP(italic,100%);
+	height:36px;
+	margin:0 0 0 5px;
+	padding:2px 1px 0 10px;
+	width:80%;
+
+	&:focus {
+		border-style:none;
+		color:$color2;
+		outline-style:none;
+	}
+}
+
+
+// * DROP DOWN
+// ================================================================================================================================================ */
+
+
+// ** DROP DOWN | Arrow before search icon
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-srch-sb-navLink,
+.ms-srch-sb-searchLink {
+	display:inline-block;
+	cursor:pointer;
+	vertical-align:top;
+	background-color:transparent;
+	border:1px solid transparent;
+	position:relative;
+	overflow:hidden;
+
+	&:hover {
+		/* [ReplaceColor(themeColor:"ButtonHoverBackground",opacity:"1")] */ background-color:$color13;
+		/* [ReplaceColor(themeColor:"ButtonHoverBackground")] */ background-color:$color13;
+	}
+
+	&:active,
+	> img:active,
+	&.ms-srch-sb-navLink-menuOpen,
+	&.ms-srch-sb-navLink-menuOpen:hover	{
+		/* [ReplaceColor(themeColor:"ButtonPressedBackground",opacity:"1")] */ background-color:$color13;
+		/* [ReplaceColor(themeColor:"ButtonPressedBackground")] */ background-color:$color13;
+	}
+}
+
+
+// ** DROP DOWN | Drop Down list
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-qSuggest-container {
+	background-color:$color11;
+	@include border-radius(0px);
+	@include box-shadow(rgba($color1,0.47) 0 0 7px 0);
+	margin:-1px 0 0 -1px;
+	padding:5px 0
+}
+
+.ms-qSuggest-list {
+	@extend %mp0
+}
+
+// Drop down items
+
+.ms-qSuggest-listItem {
+	margin:0;
+	padding:7px 10px
+}
+
+// Drop down items hover
+
+.ms-qSuggest-hListItem {
+	/* [ReplaceColor(themeColor:"HoverBackground",opacity:"1")] */ background-color:$color14;
+	/* [ReplaceColor(themeColor:"HoverBackground")] */ background-color:rgba($color14,0.5 )
+}
+
+
+
+// * SEARCH ICON
+// ================================================================================================================================================ */
+
+
+@if $Default-SP-search-icon == true {
+	.ms-srch-sb {
+
+		// drop down icon container
+		> .ms-srch-sb-navLink {
+			height:20px;
+			width:20px
+		}
+
+		// search icon container
+		> .ms-srch-sb-searchLink {
+			margin-left:-1px;
+			height:20px;
+			width:20px;
+		}
+
+	}
+}
+
+@else {
+	.ms-srch-sb {
+		> a.ms-srch-sb-searchLink {
+
+			background: image-url('searchIconMobile.png');
+			background-image: image-url('searchIconMobile.svg'), none;
+			background-repeat:no-repeat;
+			background-position: 0;
+			background-size: 30px 30px;
+
+
+			margin-left:-15px;
+			height:35px;
+			width:30px;
+
+			> img {
+				visibility: hidden
+			}
+		}
+	}
+
+	.no-svg .ms-srch-sb > a.ms-srch-sb-searchLink {
+		background:$no-color image-url('searchIcon_30x30.png') no-repeat 0 5px;
+	}
+}
+
+

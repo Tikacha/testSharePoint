@@ -1,0 +1,20 @@
+/* TOC - MOBILE | Controls | Breadcrumb style
+---------------------------------------------------
+
+* Header and footer sections
+
+*/
+
+
+@if $SPO365public == true {
+	.ms-#{$SPO365themeApplied}-pageheader {
+		@extend %fn;
+		max-width:240px;
+		margin-top:25px;
+
+		& .ms-rtestate-field {
+			display:block!important;
+			margin: 0 auto
+		}
+	}
+}

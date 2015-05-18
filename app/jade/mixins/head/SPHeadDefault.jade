@@ -1,0 +1,98 @@
+mixin SPmetas
+	// Metas
+	// ==============================================================================================================================
+	meta(http-equiv='X-UA-Compatible', content='IE=10')
+	meta(name='GENERATOR', content='Microsoft SharePoint')
+	meta(http-equiv='Content-type', content='text/html; charset=utf-8')
+	meta(http-equiv='Expires', content='0')
+
+mixin SPRobot
+
+	// Robots
+	// ==============================================================================================================================
+	SharePoint:RobotsMetaTag(runat='server')/
+mixin SPFavicon
+
+	// Favicon / Windows Tile
+	// ==============================================================================================================================
+	SharePoint:SPShortcutIcon(runat="server", IconUrl="/_layouts/15/images/favicon.ico?rev=27")/
+	SharePoint:SPPinnedSiteTile(runat="server", TileUrl="/_layouts/15/images/SharePointMetroAppTile.png", TileColor="#0072C6")/
+
+mixin SPPageTitle
+
+	// Page title
+	// ==============================================================================================================================
+	SharePoint:PageTitle(runat="server")
+		asp:ContentPlaceHolder#PlaceHolderPageTitle(runat="server")/
+
+mixin SPScriptsAndCss
+
+	// Scripts and CSS
+	// ==============================================================================================================================
+	SharePoint:StartScript(runat="server")/
+	SharePoint:CssLink(runat="server", Version="15")/
+
+	link(href='https://emmanuelbaron.sharepoint.com/_layouts/15/1033/styles/corev15.css', type='text/css', rel='stylesheet')/
+	link(href='https://emmanuelbaron.sharepoint.com/_layouts/15/1033/styles/searchv15.css', type='text/css', rel='stylesheet')/
+
+	SharePoint:CacheManifestLink(runat="server")/
+	SharePoint:ScriptLink(language="javascript", name="core.js", OnDemand="true", runat="server", Localizable="false")/
+	SharePoint:ScriptLink(language="javascript", name="menu.js", OnDemand="true", runat="server", Localizable="false")/
+	SharePoint:ScriptLink(language="javascript", name="callout.js", OnDemand="true", runat="server", Localizable="false")/
+	SharePoint:ScriptLink(language="javascript", name="sharing.js", OnDemand="true", runat="server", Localizable="false")/
+	SharePoint:ScriptLink(language="javascript", name="suitelinks.js", OnDemand="true", runat="server", Localizable="false")/
+	SharePoint:CustomJSUrl(runat="server")/
+	SharePoint:SoapDiscoveryLink(runat="server")/
+
+mixin SPAdditionnalHeaderPlaceholder
+
+	// Additionnal header placeholder
+	// ==============================================================================================================================
+	SharePoint:AjaxDelta#DeltaPlaceHolderAdditionalPageHead(Container="false", runat="server")
+		asp:ContentPlaceHolder#PlaceHolderAdditionalPageHead(runat="server")/
+		SharePoint:DelegateControl(runat="server", ControlId="AdditionalPageHead", AllowMultipleControls="true")/
+
+mixin SPOtherDefaultStyles
+
+	// Default Inline Styles
+	// ==============================================================================================================================
+	<![CDATA[ [if IE 9] ]]>
+	style(type='text/css').
+		//<![CDATA[
+			.ms-core-animation-transparent {
+				opacity:0;
+			}
+			.ms-isBot .ms-core-animation-transparent {
+				opacity:1;
+			}
+		//]]>
+	<![CDATA[ [endif] ]]>
+
+	<!--[if lte IE 8]>
+	style(type='text/css').
+		//<![CDATA[
+		.ms-core-animation-transparent,
+			.ms-core-animation-transparent img {
+				-ms-filter:"alpha(opacity=0)";
+		}
+		.ms-isBot .ms-core-animation-transparent,
+		.ms-isBot .ms-core-animation-transparent img {
+			-ms-filter:"";
+		}
+		//]]>
+	<![endif]-->
+
+mixin SPOtherDefaultScripts
+
+	// Default Inline Scripts
+	// ==============================================================================================================================
+	script(type='text/javascript').
+		//<![CDATA[
+		var g_pageLoadAnimationParams = { elementSlideIn : "sideNavBox", elementSlideInPhase2 : "contentBox" };
+		//]]>
+
+mixin SPCoreSharePointCSS
+
+	// Core SharePoint CSS
+	// ============================================================================================================================== 
+	SharePoint:CssRegistration(Name="Themable/corev15.css", runat="server")/

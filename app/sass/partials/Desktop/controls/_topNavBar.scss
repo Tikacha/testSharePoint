@@ -1,0 +1,169 @@
+/* TOC - DESKTOP | Controls | Top navigation bar
+---------------------------------------------------
+* TOP NAV BAR - MAIN CONTAINER
+* TOP NAV BAR - LEVEL 1
+* TOP NAV BAR - LEVEL 2
+* TOP NAV BAR - DROP DOWN LEVEL 1
+* TOP NAV BAR - DROP DOWN LEVEL 2
+
+*/
+
+// * TOP NAV BAR MAIN CONTAINER
+// ================================================================================================================================================ */
+
+
+
+// .ms-breadcrumb-box {
+//	@extend %w100p;
+//	height:69px
+// }
+
+
+// .ms-breadcrumb-top {
+//	background:$no-color;
+//	white-space:nowrap
+// }
+
+
+// .ms-core-listMenu-horizontalBox {
+//	color:$color1
+// }
+
+
+
+#DeltaTopNavigation {
+	@extend %block;
+	// @extend %w100p;
+	background-color:$color1;
+	color:$color11;
+	height:69px;
+	padding-left: 20px
+}
+
+
+// * TOP NAV BAR LEVEL 1
+// ================================================================================================================================================ */
+
+.ms-core-listMenu-horizontalBox {
+	@extend %w100p;
+
+	> ul {
+		@extend %w100p;
+		position: relative;
+	}
+
+
+	li.static {// level 1
+
+		> .ms-core-listMenu-item {
+			@include font-custom3(normal,20px);
+			border:1px solid $no-color;
+			line-height: 2;
+			padding:10px;
+			margin-right:0px;
+			text-decoration:none;
+			text-transform:none;
+
+			&:link,
+			&:visited {
+				color:$color11
+			}
+
+			&:hover {
+				background:$no-color
+			}
+
+			// Selected item - border
+			&.selected > span > span,
+			&:hover > span > span {
+				padding-bottom: 10px;
+				border-bottom:4px solid $color11;
+			}
+		}
+	}
+
+	// Selected
+	.ms-core-listMenu-selected {// root
+
+		&:link,
+		&:visited {
+			background-color:$no-color;
+			/* [ReplaceColor(themeColor:"NavigationAccent")] */ color:$color11!important
+		}
+	}
+
+	.additional-background.dynamic-children {// item with drop down
+		padding-right:16px;
+		/* [RecolorImage(themeColor:"BodyText",method:"Filling")] */ background-image:image-url("TopNav_DropDownArrow_8x8.png"); // icon of the arrowdrop down
+		background-repeat:no-repeat;
+		background-position:right center;
+		cursor:pointer
+	}
+
+
+	// Edit link button
+
+	.ms-navedit-editLinksText {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+
+	.ms-navedit-editLinksText > span > .ms-metadata,
+	.ms-core-listMenuEdit > tr > .ms-navedit-linkCell > .ms-core-listMenu-item {
+		color:$color11;
+
+		&.dynamic .ms-navedit-flyoutArrow {
+			color:$color1
+		}
+	}
+}
+
+
+
+
+// * TOP NAV BAR LEVEL 2
+// ================================================================================================================================================ */
+
+
+// * TOP NAV BAR DROP DOWN LEVEL 1
+// ================================================================================================================================================ */
+
+ul.dynamic {
+	/* [ReplaceColor(themeColor:"BackgroundOverlay",opacity:"1")] */ background-color:$color11;
+	/* [ReplaceColor(themeColor:"DialogBorder")] */ border:1px solid $no-color;
+	@include border-radius(4px);
+	@include box-shadow(rgba($color10,0.2) 0 6px 6px 0);
+
+	padding:10px 0 0;
+
+	li {
+		list-style-type: none;
+	}
+
+	// link
+	.ms-core-listMenu-item {
+		color:$color1;
+		font-size:100%;
+		padding:0 10px 10px;
+		text-decoration: none;
+
+		&:hover {
+			background-color:$no-color;
+			color:$color10
+		}
+	}
+
+	.ms-core-listMenu-horizontalBox & {
+		.dynamic-children.additional-background { // item with drop down - arrow icon
+			/* [RecolorImage(themeColor:"BodyText",method:"Filling")] */ background-image:url("/_layouts/15/images/menu-right.gif?rev=37")
+		}
+	}
+
+	ul {// level 2 and more drop down
+		/* [ReplaceColor(themeColor:"BackgroundOverlay",opacity:"1")] */ background-color:$color11
+	}
+ }
+
+// * TOP NAV BAR DROP DOWN LEVEL 2
+// ================================================================================================================================================ */

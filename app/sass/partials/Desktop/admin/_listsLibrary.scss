@@ -1,0 +1,387 @@
+/* TOC - ADMIN - Lists / Libraries
+---------------------------------------------------
+* TOOLBAR
+	** Container
+	** Buttons
+		*** Disabled
+* VIEWS
+* LINKS
+* DROP DOWNS
+* SEARCH BOX
+* HEADERS
+* ROWS
+	** Callouts
+	** Alternating rows
+	** Selected row
+
+*/
+
+/* TOOLBAR
+================================================================================================================================================ */
+
+/** TOOLBAR | container
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.ms-list-addnew-aligntop.ms-list-addnew {
+	padding-bottom:8px
+}
+
+.ms-qcb-zone {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	white-space:nowrap
+}
+
+.ms-qcb-leftzone {
+	margin-left:-10px
+}
+
+/** TOOLBAR | Buttons
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.ms-qcb-button {
+	border:0;
+	background:$no-color;
+	color:$color15;
+	cursor:pointer;
+	margin:0;
+	padding:3px 10px 5px;
+	
+	&:hover {
+		background:none;
+		color:$color15;
+		text-decoration:none;
+	}
+}
+
+
+/*** TOOLBAR | Buttons | Disabled
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+button[disabled="disabled"].ms-qcb-button {
+	background-color:$no-color;
+	color:$color13;
+}
+
+
+/* VIEWS
+================================================================================================================================================ */
+
+
+.ms-csrlistview-controldiv {
+	padding-bottom:9px
+}
+
+.ms-pivotControl-container {
+	margin-right:30px;
+	padding-bottom:7px
+}
+
+
+/* LINKS
+================================================================================================================================================ */
+
+.ms-pivotControl-surfacedOpt, 
+.ms-pivotControl-overflowDot {
+	color:$color12;
+	@include font-SP(normal,100%);
+
+	&:hover {
+		color:$color12
+	}
+
+	&-selected {
+		color:$color15;
+		@include font-SP(normal,100%);
+	}
+}
+
+
+/* DROP DOWNS
+================================================================================================================================================ */
+
+// drop down - container || Work also for Columns filters drop downs 
+
+
+@if $DropDownsToolBarAndColumnsEqual == True {
+
+	.ms-core-menu-box,
+	.ms-core-menu-boxBig {
+
+		@include box-shadow($color12 0 0 7px 0);
+		/* [ReplaceColor(themeColor:"BackgroundOverlay",opacity:"1")] */ background-color:$color11;
+		padding:0;
+		/* [ReplaceColor(themeColor:"DialogBorder")] */ border:1px solid $color16;
+
+		// drop down - items
+
+		li:hover {
+			background-color:rgba($color15,0.125)
+		}
+
+		a span {
+			color:$color12
+		}
+
+	} 	
+}
+
+@else {
+
+
+	.ms-core-menu-box,
+	.ms-core-menu-boxBig {
+
+		@include box-shadow($color12 0 0 7px 0);
+		/* [ReplaceColor(themeColor:"BackgroundOverlay",opacity:"1")] */ background-color:$color11;
+		padding:0;
+		/* [ReplaceColor(themeColor:"DialogBorder")] */ border:1px solid $color16;
+
+		// drop down - items
+
+		li:hover {
+			background-color:rgba($color15,0.125)
+		}
+
+		a span {
+			color:$color12
+		}
+
+
+		// LISTS LIBRARIES | Headers | Columns filters drop downs 
+
+		.ms-listviewtable & {
+			@include box-shadow($color1 0 0 17px 0);
+			/* [ReplaceColor(themeColor:"BackgroundOverlay",opacity:"1")] */ background-color:$color11;
+			padding:0;
+			/* [ReplaceColor(themeColor:"DialogBorder")] */ border:1px solid $color16;
+
+			// drop down - items
+
+			li:hover {
+				background-color:rgba($color1,0.125)
+			}
+
+			a span {
+				color:$color12
+			}
+
+		}		
+
+	} 
+}
+
+
+/* SEARCH BOX
+================================================================================================================================================ */
+
+.ms-InlineSearch-Outline {
+	
+
+/** SEARCH BOX | Container
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+	&-Empty {
+		border-color:$color13;
+	}
+
+	&-Baseline{
+		width:178px;
+		border-style:solid;
+		border-width:1px;
+		height:22px;
+		padding:0 0 0 5px;
+		margin:-4px 0 0;
+
+		// input
+
+		> input.ms-InlineSearch-SearchBox-Baseline {
+			background-color:$no-color;
+			border-width:0;
+			color:$color12;
+			margin:0;
+			padding:0;
+			width:152px			
+		}
+	}
+}
+
+
+/** SEARCH BOX | Icon
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.ms-inlineSearch-searchImg {
+	// icon
+	visibility:visible;
+	background:$no-color none;
+
+	// Search box - icon container 1
+	&SpanStandard {
+		border:1px solid transparent
+	}
+
+	// Search box - icon container 2
+	&SpanBase  {
+		margin:0 0 0 4px;
+		width:20px;
+		height:20px
+	}
+
+	// Hover
+	&Hover {
+		background-color:rgba($color15,0.125)
+	}
+}
+
+
+/* HEADERS
+================================================================================================================================================ */
+
+.ms-viewheadertr {
+
+	> th,
+	> td {
+		background-color:$no-color;
+
+		&:hover {
+			background-color:rgba($color15,0.125)
+		}
+
+		a {
+			font-size: 1.2em
+		}
+	}
+
+	// presence icon
+	
+	> th > div > img:first-child {
+		padding-right:5px	
+	}
+}
+
+
+a.ms-headerSortTitleLink{
+	color:$color15;
+	@include font-SP(normal,120%);
+}
+
+
+ 
+/* ROWS
+================================================================================================================================================ */
+
+
+.ms-listviewtable .ms-itmhover {
+	background-color:rgba($color11,1)
+}
+
+
+
+/** ROWS | Callouts
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+// Main container
+.js-callout-mainElement {
+	/* [ReplaceColor(themeColor:"BackgroundOverlay",opacity:"1.0")] */ background-color:$color11;
+	border-style:solid;
+	border-width:1px;
+	/* [ReplaceColor(themeColor:"DialogBorder")] */ border-color:$color16;
+	@include box-shadow(rgba($color10,0.47) 0 0 7px 0); //D box-shadow:0px 0px 7px 0px rgba(0,0,0,0.47);
+	//D max-width:640px;
+	//D min-height:100px;
+}
+
+// Icon arrow left
+
+.js-callout-beakLeft {
+	@include box-shadow(rgba($color10,0.47) 0 0 7px 0); 
+	/* [ReplaceColor(themeColor:"DialogBorder")] */ border-color:$color16;
+}
+
+// second container
+.js-callout-content {
+	/* [ReplaceColor(themeColor:"BackgroundOverlay",opacity:"1.0")] */ background-color:$color11;
+	padding:0;
+	//D max-width:640px;
+	//D overflow-x:hidden;
+	//D word-wrap:break-word;
+}
+
+// Callout header
+.js-callout-headerArea {
+	background-color:rgba($color11,0.48);
+	margin:0;
+
+	// Title
+	> div + div {
+		padding:0 0 14px 20px
+	}
+
+	// Nbre of views
+	.js-callout-usage {
+		background-color: $color14;
+		height:40px
+	}
+}
+
+// Callout body
+.js-callout-body {
+	margin:0 20px
+	//D padding-bottom:25px;
+	//D max-height:420px;
+}
+
+// Callout footer
+.js-callout-footerArea {
+	/* [ReplaceColor(themeColor:"SubtleEmphasisBackground")] */ background-color:rgba($color14,0.78);
+	padding:11px 20px 11px 20px;
+	overflow:visible;
+}
+
+
+/** ROWS | Alternating rows
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.ms-listviewtable .ms-alternating {
+	background-color:rgba($color15,0.125)
+}
+
+
+/** ROWS | Selected row
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.s4-itm-selected {
+
+	 > .ms-vb-imgFirstCell.ms-vb-imgFirstCell {
+	 	background-color:rgba($color15,0.25);
+	 	border-right-color:rgba($color15,0.25)
+	 }
+
+	 > *,
+	 &:hover > *,
+	 .ms-list-itemLink-td,
+	 &:hover .ms-list-itemLink-td {
+	 	background-color:rgba($color15,0.25)
+	 }
+}
+
+
+.ms-itmHoverEnabled:hover > td{
+	background-color:#dce5e4!important	
+}
+
+
+
+.ms-lightbox-header, 
+.ms-lightbox-footer, 
+.ms-lightbox-surface > img, 
+.ms-lightbox-surface > iframe {
+	//D padding:0 19px;
+	background-color:$color1!important
+}

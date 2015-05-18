@@ -1,0 +1,57 @@
+/* TOC - CONTENT STYLES - Markup styles
+---------------------------------------------------
+
+* CUSTOM SP MARKUP STYLES
+	** title
+	** Sub-title
+
+*/
+
+
+/* CUSTOM SP MARKUP STYLES
+============================================================================================================================================================================*/
+
+
+/** CUSTOM STYLES | Title
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+H1.ms-rteElement-ICCAIATitle {
+	@include font-custom2(normal,2.7em);
+
+	-ms-name:"ICCAIA Title";
+	color:$color3;
+	margin:0;
+	padding:10px 0;
+	//O @include text-shadow(0px 0px 0px $color16);
+}
+
+/** CUSTOM STYLES | Sub-Title
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+H2.ms-rteElement-SubTitleICCAIA {
+	@include font-custom2(normal,2.2em);
+
+	-ms-name:"ICCAIA Subtitle";
+	background-color:$no-color;
+	color:$color3;
+	margin:0;
+	padding:5px 0;
+	//O @include text-shadow(0px 0px 0px $color16);
+}
+
+/** CUSTOM STYLES | Heading 3
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+H3.ms-rteElement-ICCAIAheading2 {
+	-ms-name:"ICCAIA Heading 3";
+	@include font-custom2(normal,1.85em);
+	background-color:$no-color;
+	color:$color1;
+	margin:0;
+	padding:5px 0;
+	//O @include text-shadow(0px 0px 0px $color16);
+
+	.ms-rtestate-field & {
+		color:$color1;
+	}
+}

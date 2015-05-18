@@ -1,0 +1,71 @@
+/* TOC - CONTENT STYLES - Standard styles
+---------------------------------------------------
+
+* CUSTOM SP STYLES
+	** Standard
+	** Links
+	** Table cells
+	
+*/
+
+
+/* CUSTOM STYLES
+============================================================================================================================================================================*/
+// Mixin customSPStyle($styleName,$styleBkg,$styleColor,$styleDisplay,$styleMargin,$stylePadding) 
+
+
+/** CUSTOM STYLES | Standards
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.ms-rteStyle-style1 {
+	@include customSPStyle($Cie + " - Text",$no-color,$color17,inline,0,0); 
+	@include font-custom1(normal,100%);
+}
+
+
+.ms-rteStyle-style2 {
+	@include customSPStyle($Cie + " - Hide text for desktop",$no-color,$color17,inline,0,0);
+	display:none
+}
+
+
+
+/** CUSTOM STYLES | Links
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.ms-rteStyle-Link1 {
+	-ms-name: $Cie + " - Link Style 1";
+	color:$color-link;
+	text-decoration:none;
+}
+
+
+.ms-rteStyle-Link2 {
+	-ms-name: $Cie + " - Link Style 2  -  dotted underline";
+	color:$color-link;
+	text-decoration:none;
+	border-bottom:1px dotted $color-link
+}
+
+.ms-rteStyle-Link3 {
+	-ms-name: $Cie + " - Link Style 3 - For URL of websites outside of ICCAIA";
+	color:$color-link;
+	text-decoration:none;
+	background:image-url('iconLinkOut.png') no-repeat 100% -2px;
+	padding-right:16px;
+}
+
+
+
+/* CUSTOM STYLES | table - cell vertical align
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@each $vAlign in top, middle, bottom {
+	.ms-rteStyle-V#{$vAlign},
+	td.ms-rteStyle-V#{$vAlign} {
+		-ms-name:$Cie +  " - Table Cell - Vertical Align" #{$vAlign};
+		vertical-align:#{$vAlign};
+		display:block
+	}
+
+}// Cf Main.min.js pour appliquer le style au TD parent

@@ -1,0 +1,93 @@
+include mixins/head/register
++MPregister
+!!! html
+html(xmlns:mso='urn:schemas-microsoft-com:office:office', xmlns:msdt='uuid:C2F41010-65B3-11d1-A29F-00AA00C14882')
+	head(runat='server')
+		include mixins/head/SPHeadDefault
+		+SPmetas
+		+SPRobot
+		+SPFavicon
+		+SPPageTitle
+		+SPScriptsAndCss
+		+SPAdditionnalHeaderPlaceholder
+		//+SPOtherDefaultStyles
+		//+SPOtherDefaultScripts
+		+SPCoreSharePointCSS
+		
+		include mixins/head/SPHeadCustom
+		+customCSS
+		+customScripts
+
+	body
+
+		include mixins/outsideWorkspace/accessibility
+		+MPaccessibility
+
+		include mixins/outsideWorkspace/ribbon
+		+MPRibbon
+
+		include mixins/outsideWorkspace/signInAnonymous
+		+signInAnonymous
+
+		#s4-workspace.ms-core-overlay
+			#s4-bodyContainer
+				
+					
+						#s4-titlerow.ms-dialogHidden.s4-titlerowhidetitle
+							#titleAreaBox.ms-noList.ms-table.ms-core-tableNoSpace
+								#titleAreaRow.ms-tableRow
+									block titleAreaRow
+										#siteIcon.ms-tableCell.ms-verticalAlignTop
+											include mixins/workspace/titleRow/siteLogo
+											+SPSiteLogo
+
+										.ms-breadcrumb-box.ms-tableCell.ms-verticalAlignTop
+											.ms-breadcrumb-top
+												.ms-breadcrumb-dropdownBox(style='display:none;')
+													include mixins/workspace/titleRow/breadcrumbDropDown
+													+deltaBreadcrumbDropdown
+
+												include mixins/workspace/titleRow/topNavigation
+												+deltaTopNavigation
+
+											h1#pageTitle.ms-core-pageTitle
+												include mixins/workspace/titleRow/corePageTitle
+												+deltaPlaceHolderPageTitleInTitleArea
+												+deltaPlaceHolderPageDescription
+
+										.ms-tableCell.ms-verticalAlignTop
+											include mixins/workspace/titleRow/groupActionsArea
+											+deltaPlaceHolderGroupActionsArea
+
+
+										.ms-tableCell.ms-verticalAlignTop
+											include mixins/workspace/titleRow/searchArea
+											+deltaPlaceHolderSearchArea
+
+				
+					#contentRow
+						#sideNavBox.ms-dialogHidden.ms-forceWrap.ms-noList
+							include mixins/workspace/contentRow/sideNavBox
+							+sideNavBox
+
+						#contentBox(aria-live='polite', aria-relevant='all')
+							block contentBox
+								include mixins/snippets/breadcrumb
+								+breadcrumb
+
+								include mixins/workspace/contentRow/contentBox
+								+deltaPlaceHolderMain
+
+								#notificationArea.ms-notif-box
+
+
+						include mixins/workspace/contentRow/deltaFormDigest
+						+deltaFormDigest
+
+
+						.ms-hide
+							include mixins/workspace/contentRow/hiddenPlaceHolders
+							+hiddenPlaceHolders
+
+		include mixins/workspace/bottomScriptBlock
+		+bottomScriptBlock

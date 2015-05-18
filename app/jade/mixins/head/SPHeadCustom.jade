@@ -1,0 +1,47 @@
+mixin customCSS
+
+	// Custom CSS
+	// ==============================================================================================================================
+	
+
+	// build:css(.tmp) css/main.css
+	link(href='css/main.css', type='text/css', rel='stylesheet', ms-design-css-conversion="no")
+	// endbuild
+
+
+
+
+
+mixin customScripts
+
+	// Custom Scripts
+	// ==============================================================================================================================
+	
+	// build:js(.) js/vendors/html5shiv.min.js
+	<!--[if lt IE 9]>
+	script(src='bower_components/html5shiv/dist/html5shiv.min.js')
+	script(src='bower_components/html5shiv/dist/html5shiv-printshiv.min.js')
+	<![endif]-->
+	// endbuild
+	
+
+	
+	// build:js(.) js/vendors/modernizr.js
+	script(src='bower_components/modernizr/modernizr.js')
+	// endbuild
+	
+
+	
+	// build:js(.) js/vendors/jquery.min.js
+	script(src='bower_components/jquery/dist/jquery.min.js')
+	// endbuild
+	script(src='js/main.js')
+	
+
+	
+
+	
+	// build:js(.) js/vendors/mmenu.min.all.js
+	script(src='bower_components/jquery-mmenu/source/jquery.mmenu.min.all.js')
+	// endbuild
+	

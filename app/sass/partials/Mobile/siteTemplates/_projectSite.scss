@@ -1,0 +1,326 @@
+/* TOC - Site templates - Project site
+---------------------------------------------------
+
+* PROJECT SUMMARY
+    ** Main container
+    ** Left section
+        *** Task title
+        *** Due in ...
+    ** Right section
+    ** Edit Buttons section
+
+*/
+
+
+
+/* PROJECT SUMMARY
+================================================================================================================================================ */
+
+/* PROJECT SUMMARY | Main container
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-psum-outermost-area {
+    /* [ReplaceColor(themeColor: "SubtleLines")] */ border-top-color: $color13;
+
+    //D border-top-width: 1px;
+    //D border-top-style: solid;
+    //D position: relative;
+}
+
+
+/** PROJECT SUMMARY | Left section
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-psum-countdown {
+    /* [ReplaceColor(themeColor: "SubtleLines")] */ border-right-color: $color13;
+    
+    //D border-right-width: 1px;
+    //D border-right-style: solid;
+    //D width: 132px;
+}
+
+
+.ms-psum-countdown-contents {
+    //D margin: 25px 10px 25px 5px;
+    //D vertical-align: top;
+}
+
+.ms-psum-countdown, 
+.ms-psum-countdown-firstRun {
+    //D height: 100%;
+    //D float: left;
+}
+
+
+//
+.ms-psum-countdown-firstRun {
+    /* [ReplaceColor(themeColor: "SubtleEmphasisBackground")] */ background-color: #f1f1f1;
+
+	.ms-core-needIEFilter & {
+		/* [ReplaceColor(themeColor: "SubtleEmphasisBackground")] */ -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#c6efefef, endColorstr=#c6efefef)";
+	}
+}
+
+.ms-psum-countdown-firstRun-contents {
+    //D vertical-align: middle;
+    //D text-align: center;
+    //D margin: 38px 25px 38px 15px;
+    //D text-wrap: none;
+}
+
+
+/*** PROJECT SUMMARY | Left section | Task title
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-psum-heading-task-text { 
+	@include font-SP(lighter,1.5em);
+
+	//D line-height:1.5em; 
+	//D max-height: 4.5em; 
+	//D overflow: hidden; 
+	//D text-overflow: ellipsis
+}
+
+
+/*** PROJECT SUMMARY | Left section | Due in ...
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// Due in label
+.ms-psum-heading-text { 
+	@include font-SP(lighter,1.5em);
+	//D overflow: hidden; 
+	//D text-overflow: ellipsis; 
+	
+	> * { 
+		display: inline-block
+	}
+}
+
+// Due in number of days
+.ms-psum-countdown-number { 
+	@include font-SP(lighter,2.53em);
+
+	.ms-accentText & {
+		/* [ReplaceColor(themeColor:"AccentText")] */ color:$color1
+	}
+}
+.ms-psum-countdown-days { 	
+	@include font-SP(lighter,1.5em);
+
+	.ms-accentText & {
+		/* [ReplaceColor(themeColor:"AccentText")] */ color:$color1
+	}
+}
+
+
+/** PROJECT SUMMARY | Right section
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-psum-headlines-area {
+    //D margin-left: 132px;
+}
+
+// timeline 
+.ms-tl-mainArea{
+	//D border:1px solid;
+	//D height:25px;
+	//D outline-style:none;
+	//D position:absolute;
+}
+
+.ms-tl-mainAreaTitle{
+	//D cursor:default;
+	//D display:inline-block;
+	//D outline-style:none;
+	//D padding-top:2px;
+	//D text-align:center;
+}
+
+// timeline - today
+.ms-tl-today{
+	//D position:absolute;
+	//D vertical-align:top;
+	//D white-space:nowrap;
+	//D border-left:1px solid;
+	//D text-align:center;
+	//D z-index:14;
+	//D cursor:default;
+	//D outline-style:none;
+}
+
+.ms-tl-todayLabel{
+	color:$color1;
+	
+	//D position:absolute;
+	//D text-align:center;
+	//D z-index:14;
+	//D cursor:default;
+	//D outline-style:none;
+}
+
+// timeline - timescale
+.ms-tl-timescale{
+	//D position:absolute;
+	//D overflow:hidden;
+	//D z-index:4;
+	//D cursor:default;
+	//D outline-style:none;
+}
+
+
+
+/** PROJECT SUMMARY | Edit Buttons section
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+.ms-psum-add-edit-buttons {
+    //D position: absolute;
+    //D top: 0px;
+    //D right: 0px;
+    //D text-align: right;
+    //D vertical-align: top;
+    //D padding-top: 5px;
+}
+
+.ms-psum-add-edit-link {
+    //D padding-left: 13px;
+}
+
+.ms-psum-add-edit-button-label {
+   //D  vertical-align: middle;
+   //D text-transform: uppercase; 
+   //D  padding-left: 3px;
+   color:$color1!important
+}
+
+.ms-psum-addIcon, 
+.ms-psum-editIcon {
+    //D display: inline-block;
+    //D overflow: hidden;
+    //D background-image: url("/_layouts/15/images/spcommon.png?rev=37");
+    //D vertical-align: middle;
+}
+
+.ms-psum-addIcon {
+    //D height: 16px;
+    //D width: 16px;
+    //D background-position: -200px -84px;
+}
+
+.ms-psum-editIcon {
+    //D height: 16px;
+    //D width: 16px;
+    //D background-position: -73px -202px;
+}
+
+.ms-psum-heading-number { 
+	font-size: 1.53em 
+} 
+
+.ms-psum-item-details { 
+	font-size: 0.82em 
+}
+
+.ms-psum-paging-buttons {
+    //D float:right;
+    //D margin-top: 4px;
+}
+
+.ms-psum-titleArea-footer {
+    //D height: 0px;
+    //D clear: both;
+}
+
+.ms-psum-rotating-area {
+   //D  position: relative;
+   //D  min-height: 50px; 
+}
+
+.ms-psum-timeline-container {
+    //D margin-top: 25px;
+    //D margin-left: 22px;
+}
+
+.ms-psum-headline {
+    //D margin-top: 15px; 
+    //D max-width: 800px;
+}
+.ms-psum-headline-visible, 
+.ms-psum-headline-hidden {
+    //D position: absolute;
+    //D top: 0px;
+    //D height: 100%;
+    //D width:100%;
+}
+
+.ms-psum-headline-visible {
+    //D left: 0px;
+}
+
+.ms-psum-headline-hidden {
+    //D left: 100%;
+    //D display:none;
+}
+
+.ms-psum-headline-first-panel {
+    //D float: left;
+    //D position:absolute;
+    //D height: 100%;
+}
+.ms-psum-headline-others-panel {
+    /* [ReplaceColor(themeColor: "SubtleLines")] */ border-left-color: $color13;
+    //D float: left;
+    //D position:absolute;
+    //D height: 100%;
+}
+
+.ms-psum-panel-heading {
+    //D margin-left: 22px;
+}
+
+.ms-psum-panel-empty {
+    //D margin-left: 22px;
+    //D margin-top: 25px;
+}
+
+.ms-psum-preview-separator {
+    /* [ReplaceColor(themeColor: "Lines")] */ color: #ababab;
+
+    //D margin-left: 14px;
+    //D margin-right: 14px;   
+}
+
+.ms-psum-item-columns {
+    //D position: relative;
+}
+
+.ms-psum-item-column {
+    //D float: left;
+    //D width: 240px;
+    //D height: 100%;
+    //D margin-left: 22px;
+}
+
+.ms-psum-panel-footer {
+    //D height: 0px;
+    //D clear: both;
+}
+
+.ms-psum-item {
+    //D margin-top: 10px;
+}
+
+.ms-psum-truncated {
+    //D white-space: nowrap;
+    //D overflow: hidden;
+    //D text-overflow: ellipsis;
+}
+
+.ms-psum-late {
+    color: $color1;
+}
+
+.ms-psum-assignTo {
+    //D margin-left: 4px;
+    //D margin-right: 4px;
+}
+
+

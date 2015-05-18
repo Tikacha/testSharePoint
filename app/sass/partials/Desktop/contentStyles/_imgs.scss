@@ -1,0 +1,66 @@
+/* TOC - DESKTOP | CONTENT STYLES | Custom Images styles
+---------------------------------------------------
+
+	* Custom SP image styles
+		** Basic
+		** RWD fixed width picture
+
+*/
+
+// * Custom SP image styles
+// ============================================================================================================================================================================*/
+
+// Basic
+@include customImgStyle (
+	V1,
+	Standard,
+	0 5px 5px 0,
+	$color2,
+	0,
+	1px solid $color16,
+	10px,
+	$color18
+);
+
+// RWD - Fixed size for small pictures
+@include customImgStyle (
+	RWD1,
+	Fixed size for small pics,
+	inline,
+	0,
+	$no-color,
+	0,
+	0x solid $color16,
+	0,
+	$no-color
+);
+
+// RWD - pictures hidden for mobiles and tablets only
+@include customImgStyle (
+	RWD2,
+	Hidden image for mobiles tablets,
+	inline,
+	0,
+	$no-color,
+	0,
+	0x solid $color16,
+	0,
+	$no-color
+);
+
+// RWD - pictures hidden for desktops only
+@include customImgStyle (
+	RWD3,
+	Hidden image for desktop only,
+	none,
+	0,
+	$no-color,
+	0,
+	0x solid $color16,
+	0,
+	$no-color
+);
+
+.ms-formfieldvaluecontainer img.ms-rteImage-RWD3 {
+	display:inline-block;
+}

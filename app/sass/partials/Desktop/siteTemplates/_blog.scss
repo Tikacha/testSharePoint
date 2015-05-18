@@ -1,0 +1,371 @@
+/* TOC - DESKTOP | Site templates | Blog
+---------------------------------------------------
+
+* LEFT NAVIGATION
+
+* BASIC VIEW
+	** Main container
+	** Container of all posts
+	** Blog title
+	** Blog date
+	** Post content
+	** Footer links
+* BLOG TOOLS
+* BOXED VIEW
+* INLINE VIEW
+* POST DETAILS
+
+*/
+
+
+// * LEFT NAVIGATION
+// ================================================================================================================================================ */
+
+// ul
+.ms-blog-listMenu-root {
+	width:$leftNavWidth;
+
+	.ms-core-listMenu-verticalBox & {
+		
+		// li level 1
+		.ms-blog-quickLinksTitle {
+
+			&.ms-blog-quickLinksTitle {
+				@include font-SP(bold,1.2em);
+			}
+		}
+
+		// li level 2
+		.ms-blog-quickLinksEntry {
+			//D padding:5px 20px
+
+			// Add category
+			&.ms-commandLink{
+			//	text-decoration: underline
+			}	
+		}
+	}
+}
+
+#monthlyarchiveviewtitle {
+	@include font-SP(bold,1.2em);
+	color:$color12;
+
+	&:hover {
+		background-color:$no-color;
+		color:$color-link
+	}
+}
+
+
+// * BASIC VIEW
+// ================================================================================================================================================ */
+
+// Main container (2 columns)
+.ms-blog-MainArea {
+	min-width:560px;
+	max-width:860px;
+	@extend %w100p;
+}
+
+
+
+// ul - container of all posts (Left Col.)
+.ms-blog-postList {
+	padding:0;
+	list-style-type:none;
+	margin-top:0;
+	margin-right:24px;
+	margin-bottom:0;
+	min-width:370px;
+	max-width:670px;
+
+
+// ** BASIC VIEW | Blog title
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	h1 {
+		/* [ReplaceFont(themeFont:"large-heading")] */ @include font-SPlight(200,2.3em);
+		/* [ReplaceColor(themeColor:"SubtleBodyText")] */ color:$color18;
+
+		a {		
+			&:link,
+			&:visited,
+			&:hover,
+			&:active {
+				color:$color-link
+			}
+		}		
+	}
+
+// ** BASIC VIEW | Date
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	.ms-metadata {
+		color:$color17;
+		@include font-SPlight(normal,0.9em);
+
+		a {
+			color:$color17;
+			@include font-SPlight(normal,1em);
+
+			&:hover {
+				text-decoration: underline
+			}			
+		}
+		
+	}
+
+// ** BASIC VIEW | Post content
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	.ms-blog-postBody {
+		color:$color17;
+		@include font-SP(normal,1em);
+		//D padding-top:5px;
+		//D overflow:hidden;
+
+		img {
+			max-width:100%;
+		}
+	}
+
+// ** BASIC VIEW | Footer links
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	.ms-blog-commandSpace {
+		//D padding-top:5px;
+
+		// Number of comments
+		.ms-blog-command-noLeftPadding {
+			padding-right: 8px
+		}
+
+		// Separator
+		.ms-comm-metalineItemSeparator {
+			border-right:1px solid $color16
+		}
+
+		//commands
+		.ms-blog-command {
+			//D padding:0 8px
+		}
+
+		.ms-secondaryCommandLink {
+			color:$color17;
+
+			&:visited,
+			&:hover {
+				color:$color-link
+			}
+		} 
+
+		.ms-secondaryCommandLink:visited, 
+		.ms-commandGlyph:hover {
+			color:$color-link
+		}
+	}
+}
+
+
+// * BLOG TOOLS
+// ================================================================================================================================================ */
+
+// Contain blog tools and Pic section (Right Col.)
+.ms-blog-LeftColumn {
+	//D width:190px;
+	//D word-wrap:break-word;
+	//D overflow-x:hidden;
+
+	.ms-blog-adminLinks{
+		/* [ReplaceColor(themeColor:"SubtleEmphasisBackground",opacity:"1")] */ background-color:lighten($color14, 0.75%);
+		/* [ReplaceColor(themeColor:"SubtleEmphasisBackground")] */ background-color:lighten($color14, 0.75%);
+		//D padding:9px 14px 10px 14px;
+		//D min-width:170px;
+		//D display:inline-block;
+		//D margin-bottom:6px;
+
+		// WP title
+		.ms-webpart-titleText {
+			padding-left:0
+		}
+
+		// Links
+		.ms-comm-adminLinksListItem {
+			//D margin-bottom:5px;
+
+			a {
+				background:transparent none;
+				padding-left:0
+			}
+		}
+
+		// Title: "Change post layout"
+		.ms-blog-skinSelectorLabel {
+			//D margin:5px 0px 6px;
+		}
+
+		// Select to be able to change post layout
+		.ms-blog-skinSelector {
+			@include font-SP(normal,1em);
+		}
+	}
+
+	// Default Pic below 
+	.ms-blog-aboutImage {
+		width:198px;
+		text-align:center
+	}
+
+
+	.ms-calloutLink:link,
+	a.ms-calloutLink:visited,
+	.ms-calloutLinkDisabled,
+	.ms-commandLink,
+	.ms-commandLink:visited,
+	.ms-secondaryCommandLink,
+	.ms-secondaryCommandLink:visited {
+		/* [ReplaceFont(themeFont:"body")] */ @include font-SP(normal,1em);
+		/* [ReplaceColor(themeColor:"SubtleEmphasisCommandLinks")] */ color:$color-link;
+		//D text-transform:uppercase;
+		//D text-decoration:none;
+	}
+}
+
+.ms-blog-postDivider {
+	//D height:35px;
+}
+
+
+
+
+// * BOXED VIEW
+// ================================================================================================================================================ */
+
+.ms-blog-postBox{
+	/* [ReplaceColor(themeColor:"BackgroundOverlay")] */ background-color:rgba($color11,0.85);
+	/* [ReplaceColor(themeColor:"Lines")] */ border:1px solid $color13;
+	border-radius:2px;
+	//D overflow:visible;
+	//D padding:32px;
+	//D padding-left:0px;
+
+	&.ms-shadow {
+		@include box-shadow(rgba($color10,0.47) 0 0 7px 0);
+	}
+}
+
+// Date container
+.ms-blog-postBoxDate {
+	/* [ReplaceColor(themeColor:"EmphasisBackground")] */ background-color:$color-link;
+	/* [ReplaceColor(themeColor:"EmphasisBorder")] */ border-color:$color-link;
+	//D border-style:solid;
+	//D border-width:1px;
+	/* [ReplaceColor(themeColor:"EmphasisText")] */ color:$color11;
+	//D width:77px;
+	//D height:41px;
+	//D float:left;
+	//D text-align:center;
+
+	> div {
+		@include font-SP(normal,0.9em);
+	}
+
+	.ms-blog-dateText {
+		@include font-SPlight(bold,1.46em);
+	}
+}
+
+// Post container
+.ms-blog-postBoxMargin {
+	//D margin-left:88px
+}
+
+
+// * INLINE VIEW
+// ================================================================================================================================================ */
+
+.ms-blog-postInlineDate {
+	//D border-style:solid;
+	//D border-width:1px;
+	/* [ReplaceColor(themeColor:"Lines")] */ border-color:$color16;
+	//D border-left:none;
+	//D border-right:none;
+	//D height:45px;
+	//D float:left;
+	//D text-align:center;
+	//D width:38px;
+
+	// day
+	> div:first-child {
+		 @include font-SPlight(normal,1.46em);
+	}
+
+	// Month
+	.ms-blog-boldMonth {
+		@include font-SP(bold,0.9em);
+		text-transform:uppercase
+	}
+
+	+ div > .ms-blog-postInlineMargin {
+		//D margin-left: 52px
+	}
+}
+
+
+// * POST DETAILS
+// ================================================================================================================================================ */
+
+.ms-blog-postDividerHr {
+	//D margin:0;
+	//D margin-top:21px;
+	border-color:$color16
+}
+
+
+// title
+.ms-blog-postComments {
+	//D padding-top:20px
+	//margin:1em 0
+}
+
+// comments
+.ms-blog-postComment {
+	//D padding-bottom:10px;
+
+	// User Pic + Presence - Main container
+	> div > div > .ms-tableCell:first-child {
+		display:none;
+	}
+
+	// Comment container
+	.ms-blog-postHeader {
+		//D padding-left:10px;
+		
+		// Comment
+		> .ms-textSmall {
+			font-size:0.9em
+		}
+
+		// Date
+		> .ms-metadata {
+			font-size:0.9em
+		}
+	}
+}
+
+.ms-comm-postReplyTextBox{
+	border:1px solid $color16;
+	color:$color12;
+	@include border-radius(3px);
+	//D background-color:transparent;
+	//D margin-top:12px;
+	//D margin-bottom:6px;
+	//D padding:5px 10px;
+	//D resize:none;
+
+	&:hover,
+	&:focus {
+		border-color:$color13
+	}
+}

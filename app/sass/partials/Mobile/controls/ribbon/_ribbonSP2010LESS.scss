@@ -1,0 +1,225 @@
+// LESS VERSION DU RUBAN SP2010 A CONVERTIR EN SASS
+
+#s4-ribbonrow {
+
+ .ms-cui-tabContainer {
+            background: url('@{image-root}/ribbon/tools_bg_vert.png') repeat-y left top #fff !important;
+
+                                     .ms-cui-tabBody {
+                                                  border-bottom:0px;
+                                                  background: url('@{image-root}/ribbon/tools_bg_hor.png') repeat-x left top transparent !important;
+                                                  border:0px !important;
+                                                  overflow:visible;
+                                                  padding:10px 10px 10px;   
+                                                  margin:0px 0 0 0 !important;
+                                     }
+
+                         }
+
+                         a:hover {
+                                     text-decoration:none !important;
+                         }
+
+                         .s4-trc-container-menu {
+                                     border-color: transparent;
+                                     margin:1px 0px !important;
+                         }
+
+                         .ms-cui-ribbonTopBars {
+                                     margin-top:0px;
+
+                                     .ms-cui-topBar2 {
+                                                  border:0px solid #eee !important;
+                                                  border-bottom:0px solid #eee !important;
+                                                  height:auto !important;
+                                                  min-height:0px!important;
+                                                  border:0px solid #fff !important;
+                                                  margin:0px  !important;
+                                                  overflow:hidden !important;
+
+                                                  .ms-cui-cg-t {
+                                                              padding-top: 1px;
+                                                  }
+
+                                                  .ms-cui-tt-s a span {
+                                                              color:#333 !important;
+                                                  }
+
+                                                  .ms-cui-tt-span {
+                                                              color:#333;
+                                                              padding-top:1px !important;
+                                                              margin:0px !important;
+                                                  }
+
+                                                  // Tabs
+                                                  ul.ms-cui-tts {
+                                                              overflow: visible;
+                                                              //display:none;
+
+                                                              // Hide the Browse Tab
+                                                              .ms-browseTab {
+                                                                           //display:none !important;
+                                                              }
+
+                                                              // Tab
+                                                              li.ms-cui-tt {
+                                                                           background: none;
+
+                                                                           // Selected
+                                                                           &.ms-cui-tt-s {
+                                                                                       background:transparent !important;
+
+                                                                                       a.ms-cui-tt-a {
+                                                                                                   background: url('@{image-root}/ribbon/tab-right.png') repeat-y right top transparent !important;
+                                                                                                   padding-right:12px !important;
+
+                                                                                                   span.ms-cui-tt-span{
+                                                                                                               background: url('@{image-root}/ribbon/tab-left.png') no-repeat left top transparent !important;
+                                                                                                               color:#333 !important;
+                                                                                                   }
+
+                                                                                                   &:hover {
+                                                                                                               background: url('@{image-root}/ribbon/tab-right.png') repeat-y right top transparent !important;
+
+                                                                                                               span.ms-cui-tt-span{
+                                                                                                               background: url('@{image-root}/ribbon/tab-left.png') no-repeat left top transparent !important;
+                                                                                                               }
+                                                                                                   }
+                                                                                       }
+                                                                           }
+
+                                                                           a.ms-cui-tt-a {
+                                                                                       font-weight:normal;
+                                                                                       position: relative;
+                                                                                       background: transparent!important;
+                                                                                       padding-right:12px !important;
+
+                                                                                       &:hover {
+                                                                                                   position: relative;
+                                                                                                   text-decoration: none;
+                                                                                                   background: url('@{image-root}/ribbon/tab-right-hover.png') repeat-y right top transparent !important;
+
+                                                                                                   span.ms-cui-tt-span {
+                                                                                                               background: url('@{image-root}/ribbon/tab-left-hover.png') no-repeat left top transparent !important;
+                                                                                                   }
+
+                                                                                       }
+
+                                                                                       span.ms-cui-tt-span {
+                                                                                                   display: block;
+                                                                                                   height: 30px !important;
+                                                                                                   zoom: 1;
+                                                                                                   padding: 4px 0px 0 11px !important;
+                                                                                                   background:  transparent !important;
+                                                                                                   color:#333 !important;
+                                                                                                   font-family:@main-fontfamily!important;
+                                                                                                   font-size:12px !important;
+                                                                                       }
+
+                                                                                       span.ms-cui-hidden {                                          
+                                                                                       }
+                                                                           }
+                                                              }
+
+                                                              // Tab w/o category
+                                                              > li.ms-cui-tt {
+                                                                           margin: 6px 0 0 0 !important;
+                                                              }
+
+                                                              // Tab Category
+                                                              li.ms-cui-cg {
+                                                                          background: url('@{image-root}/ribbon/category-tab.png') repeat-x left top transparent;
+                                                                           border: none;
+                                                                           text-align:center;
+                                                                           height: auto;
+                                                                           margin-bottom: 0 !important;
+                                                                           margin-top:0px !important;
+                                                                           padding-left:5px !important;
+                                                                           padding-right:5px !important;
+                                                                           margin-left:5px !important;
+                                                                           margin-right:5px !important;
+                                                                           padding-bottom:0px !important;
+
+                                                                           &.ms-cui-cg-s .ms-cui-tt-a {
+                                                                                       background-color: transparent!important;
+                                                                                       border: none !important;
+
+                                                                                       span.ms-cui-tt-span {
+                                                                                                   height:18px !important;
+                                                                                       }
+
+                                                                           }
+                                                                           a.ms-cui-tt-a {
+                                                                                       span.ms-cui-tt-span {
+                                                                                                   height:18px !important;
+                                                                                       }
+                                                                           }
+
+                                                                           div.ms-cui-cg-i {
+                                                                                       height: auto;
+                                                                                       border: none;
+                                                                                       font-weight:bold !important;
+
+                                                                                       div.ms-cui-cg-t {
+                                                                                                   background: none;
+
+                                                                                                   span.ms-cui-cg-t-i{
+                                                                                                               color: #333 !important;
+                                                                                                   }
+                                                                                       }
+                                                                           }
+
+                                                                           ul.ms-cui-ct-ul {
+                                                                                       height: auto;
+                                                                                       overflow: visible;
+                                                                                       background-color: transparent;
+                                                                                       border-bottom: none !important;
+                                                                           }
+                                                              }
+                                                  }
+
+                                                  // Site Action and Show/Hide Ribbon Buttons
+                                                  .ms-cui-TabRowLeft {
+                                                              padding-left:0px;
+                                                              padding-top:6px;
+                                                              margin-top:0px;
+                                                              margin-bottom:0px;
+                                                  }
+                                                  ul.ms-cui-tts li.ms-cui-tt.ms-cui-tt-s a.ms-cui-tt-a span.ms-cui-hidden {
+                                                              //display: block;
+                                                  }
+
+                                                  .ms-cui-tt,
+                                                  .ms-cui-tts,
+                                                  .ms-cui-tt-a,
+                                                  .ms-cui-tt-s,
+                                                  .ms-cui-tt-span{
+                                                              .resetall;
+                                                  }
+                                     }
+                         }
+
+                         .ms-siteactionsmenu, .s4-breadcrumb-anchor, .s4-breadcrumb-menu, .ms-qatbutton  {
+                                     margin-top:6px !important;
+                                     margin-left:5px;
+                                     padding:0px !important;
+
+                         }
+
+                         .ms-qatbutton  {
+                                     margin-bottom:10px !important;
+                                     margin-top:4px !important;
+                         }
+
+                         .ms-cui-groupTitle {
+                                     text-transform: uppercase;
+                                     background-color: #999!important;
+                                     margin: 1px 3px;
+                                     width: auto !important;
+                                     color: #fff !important;
+                                     padding: 1px 5px !important;
+                                     font-size: 11px;
+                                     color: #eee;
+                         }
+
+}

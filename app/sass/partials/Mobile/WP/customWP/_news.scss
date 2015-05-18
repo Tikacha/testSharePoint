@@ -1,0 +1,115 @@
+/* TOC - DESKTOP | WebParts | Custom Webpart | News
+---------------------------------------------------
+
+* NEWS HOME PAGE
+* ALL NEWS
+
+*/
+
+
+// * WP | News HP
+// ================================================================================ */
+
+.ms-WPBody,
+.ms-wpContentDivSpace {
+
+	#newsSection & {
+		background-image: none;
+		color:darken($color11, 13%);
+		padding: 10px 0;
+	}
+
+
+	.newsTitle {
+		//@extend %font-robotoBold;
+		font-size:116.6666667%;
+		padding-bottom: 5px
+	}
+
+	.newsTitle a,
+	.newsSum {
+		color:darken($color11, 13%)!important;
+	}
+
+}
+
+#newsSection h2 {
+	background: image-url('NewsTitleIcon_46x46.png') no-repeat 0;
+	background-size: 40px 40px;
+	color:darken($color11, 13%);
+	@extend %block;
+	font-family:$WP-Title-font;// the placeholder is not working here
+	font-size:2.2em;
+	margin: 0.25em;
+	padding-left: 60px
+}
+
+#newsCont {
+	padding-bottom: 5px
+}
+
+.pic {
+	padding:5px 0 5px 60px;
+
+	img {
+		margin:0 20px 0 0;
+		max-width:100px
+	}
+}
+
+.newsTitle {
+	background: image-url('NewsItemIcon_48x48.png') no-repeat 0
+}
+
+.newsTitle,
+.newsSum {
+	padding:0 10px 0 60px
+}
+
+.txtCont {
+	color:darken($color11, 13%);
+	width:100%;
+	//margin-left:10%
+}
+.noRollupImg, .rollupImg {
+	margin-bottom:20px;
+	width:100%
+}
+
+.all.news {
+	@include customButton(20px 0);
+	float: right;
+	height:28px;
+	text-transform: uppercase
+}
+
+// * WP | All News
+// ================================================================================ */
+
+#allNewsSection {
+	background-color:$color2;
+	padding-top: 20px
+}
+
+
+@media screen and (max-width:1024px) {
+
+	.newsTitle {
+		background-image:image-url('NewsItemIconMobile_48x48.svg');
+		background-repeat: no-repeat;
+		background-position: 100% -8px;
+		background-size: 48px 48px;
+		padding-left: 20px;
+		padding-right:60px;
+
+		.no-svg & {
+			background-image:image-url('NewsItemIconMobile_48x48.png');
+		}
+	}
+
+	.newsSum, 
+	.pic {
+		display: none
+	}
+
+}

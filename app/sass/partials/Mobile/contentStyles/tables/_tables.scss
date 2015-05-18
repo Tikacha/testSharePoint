@@ -1,0 +1,119 @@
+/* TOC - MOBILE | CONTENT STYLES | Tables
+---------------------------------------------------
+
+* CUSTOM SP STYLE MIXIN
+* Responsive table
+
+*/
+
+/* CUSTOM SP STYLE MIXIN
+============================================================================================================================================================================*/
+
+// Custom SP table
+
+// Liste of parameters for customSPTable mixin
+
+//  (
+//  $tableVersion,
+//  $headerFont,
+//  $footerFont,
+//  $firstColFont,
+//  $lastColFont,
+
+// default
+//  $outerBorderColor: $no-color, 
+//  $innerBorderColor: $no-color,
+//  $paddingVariante: 10px,
+
+//header
+//  $headerBorderWidth: 0 0 2px 0,
+//  $headerBorderColor: $color12,
+//  $headerTextAlign: left,
+//  $headerValign: middle,
+//  $headerBkg: $color11,
+//  $headerColor:$color17,
+
+//Footer
+//  $footerBorderWidth: 2px 0 0 0,
+//  $footerBorderColor: $color12,
+//  $footerTextAlign: left,
+//  $footerValign: middle,
+//  $footerBkg: $color11,
+//  $footerColor:$color17,
+
+// First col
+//  $firstColBorderRightWidth: 2px,
+//  $firstColBorderColor: $color12,
+//  //$firstColBkg: $color1,
+//  $firstColValign: top,
+//  $firstColTextAlign: left,
+
+// Last col
+//  $lastColBorderLeftWidth:2px,
+//  $lastColBorderColor: $color12,
+//  //$lastColBkg: $color16,
+//  $lastColValign: top,
+//  $lastColTextAlign: center,
+
+// Rows
+//  $even-row-Bkg: $color11,
+//  $odd-row-Bkg: $color11,
+//  $rowHoverBkg: $color16, 
+//  $rowBorderWidth: 1px 0 0 0,
+//  $rowBorderColor: $color12,
+//  $rowValign:top,
+
+
+// Cols
+//  $even-col-Bkg: $color11,
+//  $odd-col-Bkg: $color11,
+
+// Cells
+//  $colorVarianteTxt: $color12,
+//  $colorVariante1: $color11, 
+//  $colorVariante2: $color1
+
+// Responsive
+// $borderTableRWDwidth:1px,
+// $borderRowRWDwidth:1px,
+// $rowMarginBottom: 20px,
+// $borderCellRWDwidth:0 0 1px 0,
+// $borderCellFirstChildRWDwidth:1px
+//  )
+
+
+
+
+
+
+
+
+
+/* Responsive table
+============================================================================================================================================================================*/
+
+@media screen and (max-width:768px) {
+
+// Default SP table - clean without borders
+  table.ms-rteTable-0 {
+    width:100%!important;
+    height:auto!important;
+
+    td {
+      .ms-rtestate-field &,
+      .ms-WPBody & {
+        display:block;
+        width:100%!important
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

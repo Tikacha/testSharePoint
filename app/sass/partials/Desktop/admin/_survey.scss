@@ -1,0 +1,154 @@
+/* TOC - ADMIN - Surveys
+---------------------------------------------------
+* TOOLBAR
+	** Container
+		*** active button
+		*** Inactive button
+		*** Views selector
+* SURVEY INFORMATION
+* FOOTER LINKS
+* GRAPHICAL SUMMARY
+	** Labels
+	** Bars
+
+
+*/
+
+
+
+/* TOOLBAR
+================================================================================================================================================ */
+
+/** TOOLBAR | Container
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-menutoolbar  {
+	border-bottom:1px solid $color16
+}
+
+.ms-toolbar {
+	color:$color12;
+
+/*** TOOLBAR | Container | Active button
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+	.ms-menubuttonactivehover, 
+	.ms-buttonactivehover {
+		border:1px solid $color16;
+		background-color:$no-color
+	}
+
+
+/*** TOOLBAR | Container | Inactive button
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	.ms-menubuttoninactivehover, 
+	.ms-buttoninactivehover {
+		//D margin:3px;
+		//D padding:3px 4px 4px;
+		border:1px solid $no-color;
+		background-color:$no-color
+	}
+
+
+/*** TOOLBAR | Container | Views selector
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	.ms-listheaderlabel {
+		color:$color17;
+		@include font-SP(normal,100%);
+	}
+
+	td.ms-viewselector {
+		border:1px solid $no-color;
+		color:$color17;
+		@include font-SP(normal,100%);
+		
+		&hover {
+			background-color:$no-color;
+			border:1px solid $color16
+		}	
+	}
+
+	// Remarque:
+	// For drop downs, see _listLibrary.scss from line 81
+}
+
+/* SURVEY INFORMATION
+================================================================================================================================================ */
+
+// Container
+.ms-summarystandardbody {
+	//D margin:10px
+
+	td {
+		border-bottom:1px solid $color16
+	}
+
+	tr:first-child + tr + tr + tr + tr > td {
+		border-bottom:0
+	}
+
+	.ms-formlabel,
+	.ms-formbody {
+		@include font-SP(normal,100%);
+		color:$color17
+	}
+}
+
+/* FOOTER LINKS
+================================================================================================================================================ */
+
+#diidSurveyResults,
+#diidResultsByUser {
+	color:$color-link;
+
+	&:hover {
+		text-decoration:none
+	}
+}
+
+// icon before footer links
+//.ms-summarystandardbody + table td > img  {visibility:hidden}
+
+
+// Form - Create questions for surveys - page
+// Cf _forms.scss
+
+
+
+
+/* GRAPHICAL SUMMARY
+================================================================================================================================================ */
+
+/* GRAPHICAL SUMMARY | Bars labels
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.ms-surveyHBarLabel {
+	font-size:66.6666667%;
+	@extend %font-SP;
+	/* [ReplaceColor(themeColor:"Dark1-Lightest")] */ color:$color17;
+	//D	margin:0;
+	//D padding:0;
+	/* [ReplaceColor(themeColor:"Light1")] */ background-color:$no-color;
+}
+
+
+/* GRAPHICAL SUMMARY | Bars
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-surveyHBar,
+.ms-surveyVBar,
+.ms-surveyVBarBI  {
+	/* [ReplaceColor(themeColor:"Dark1-Medium")] */ background-color:$color15;
+	border-color:$color15
+}
+
+.ms-surveyHBarB,
+.ms-surveyVBarB {
+	/* [ReplaceColor(themeColor:"Light1-Medium")] */ background-color:$color16;
+	border:5px solid $color16
+}
+

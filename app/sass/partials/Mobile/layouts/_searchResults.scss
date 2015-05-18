@@ -1,0 +1,35 @@
+/* TOC - MOBILE | LAYOUTS | Search Results page
+---------------------------------------------------
+
+* Layout
+
+*/
+
+@if ($SPO365public == true) and ($SPO365theme == true)  {
+
+
+		body .ms-srch-item {
+			margin: 0 0 20px;
+			padding: 0;
+			max-width: 100%;
+			//overflow: normal;
+			width:100%
+		}
+
+		body .ms-srch-item-path {
+			width:100%
+		}
+
+		body .ms-srch-pagingPrev {
+			left:0;top:0
+		}
+
+		// No results 
+
+		#NoResult {
+			ul {
+				margin: 10px
+			}
+		}
+
+}

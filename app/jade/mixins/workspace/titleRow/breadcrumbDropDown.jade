@@ -1,0 +1,10 @@
+mixin deltaBreadcrumbDropdown
+
+	// BreadcrumbDropDown
+	// ==============================================================================================================================
+	SharePoint:AjaxDelta#DeltaBreadcrumbDropdown(runat="server")
+		SharePoint:PopoutMenu#GlobalBreadCrumbNavPopout(Visible="false", runat="server", IconUrl="/_layouts/15/images/spcommon.png?rev=27", IconAlt="<%$Resources:wss,master_breadcrumbIconAlt%>", ThemeKey="v15breadcrumb", IconOffsetX="215", IconOffsetY="120", IconWidth="16", IconHeight="16", AnchorCss="ms-breadcrumb-anchor", AnchorOpenCss="ms-breadcrumb-anchor-open", MenuCss="ms-breadcrumb-menu ms-noList")
+			.ms-breadcrumb-top
+				asp:Label(runat="server", CssClass="ms-breadcrumb-header", Text="<%$Resources:wss,master_breadcrumbHeader%>")/
+			asp:ContentPlaceHolder#PlaceHolderTitleBreadcrumb(runat="server")
+				SharePoint:ListSiteMapPath(runat="server", SiteMapProviders="SPSiteMapProvider,SPContentMapProvider", RenderCurrentNodeAsLink="false", PathSeparator="", CssClass="ms-breadcrumb", NodeStyle-CssClass="ms-breadcrumbNode", CurrentNodeStyle-CssClass="ms-breadcrumbCurrentNode", RootNodeStyle-CssClass="ms-breadcrumbRootNode", NodeImageOffsetX="0", NodeImageOffsetY="289", NodeImageWidth="16", NodeImageHeight="16", NodeImageUrl="/_layouts/15/images/fgimg.png?rev=27", RTLNodeImageOffsetX="0", RTLNodeImageOffsetY="312", RTLNodeImageWidth="16", RTLNodeImageHeight="16", RTLNodeImageUrl="/_layouts/15/images/fgimg.png?rev=27", HideInteriorRootNodes="true", SkipLinkText="")/

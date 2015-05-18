@@ -1,0 +1,16 @@
+mixin SPTopDefault
+
+	SharePoint:ImageLink(runat="server")/
+	SharePoint:SPNoScript(runat="server")/
+	SharePoint:SPClientIDGenerator(runat="server", ServerControlID="DeltaPlaceHolderMain;DeltaPlaceHolderPageTitleInTitleArea;DeltaPlaceHolderUtilityContent")/
+	<SharePoint:SharePointForm runat="server" onsubmit="if (typeof(_spFormOnSubmitWrapper) != 'undefined') {return _spFormOnSubmitWrapper();} else {return true;}">
+
+	script(type='text/javascript').
+		//<![CDATA[ 
+		var submitHook = function () { return false; }; theForm._spOldSubmit = theForm.submit; theForm.submit = function () { if (!submitHook()) { this._spOldSubmit(); } }; 
+		//]]>
+	WebPartPages:SPWebPartManager(runat="Server")/
+	asp:ScriptManager#ScriptManager(runat="server", EnablePageMethods="false", EnablePartialRendering="true", EnableScriptGlobalization="false", EnableScriptLocalization="true")/
+	SharePoint:ajaxdelta#DeltaDelegateControls(runat="server")
+		SharePoint:DelegateControl(runat="server", ControlId="GlobalNavigation")/
+		SharePoint:DelegateControl(ControlId="GlobalSiteLink3", Scope="Farm", runat="server", Visible="false")/

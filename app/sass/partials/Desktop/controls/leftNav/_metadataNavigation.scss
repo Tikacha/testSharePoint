@@ -1,0 +1,67 @@
+/* TOC - DESKTOP | Controls | Left Navigation | Main
+---------------------------------------------------
+
+
+* Metadata navigation
+
+*/
+
+// * METADATA NAVIGATION
+// ================================================================================================================================================ */
+
+.ms-KFMenu {
+	margin:0;
+
+	// user field
+	.ms-inputuserfield{
+		border:1px $color16 solid;
+		line-height:normal
+	}
+
+	// fields
+	select,
+	textarea,
+	input {
+		border:1px $color16 solid
+	}
+}
+
+
+
+// label and filter container
+.ms-KFLabelAndBodyContainer, 
+// main header
+.ms-KFHead {
+	padding-right: 20px;
+	padding-left: 5px
+}
+
+
+// header including title and 2 buttons (apply / clear)
+.ms-KFHead {
+	/* [ReplaceColor(themeColor: "SubtleEmphasisBackground")] */ background-color:$color16;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+
+	#idKeyFiltersTitle,
+	#idKeyFiltersHeader,
+	.ms-KFLabel {
+		min-width: 250px
+	}
+
+    .ms-textLarge {
+		@include font-SP(normal,100%);  
+		font-size: 1.15em
+	}
+}
+
+
+// h3 filter title
+.ms-KFLabel {
+	@include font-SP(normal,100%);
+	padding: 10px 0 1px 0  
+}
+
+
+// filter container
+.ms-KFBody.ms-KFBodyUserFilter {}

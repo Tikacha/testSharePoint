@@ -1,0 +1,94 @@
+/* TOC - DESKTOP | WebParts | Custom Webpart | Members
+---------------------------------------------------
+
+* MEMBERS HOME PAGE
+* OUR MEMBERS
+
+*/
+
+// * MEMBERS HOME PAGE
+// ================================================================================ */
+
+
+.ms-WPBody,
+.ms-wpContentDivSpace {
+
+	#membersSection & {
+		padding: 10px 0;
+	}
+}
+
+
+#membersSection {
+	h2 {
+		background: image-url('MembersTitleIcon_50x50.png') no-repeat 0;
+		margin: 0.25em 0;
+		padding-left: 63px
+	}
+
+	ul {
+		@extend %w100p;
+		list-style-type: none;
+		margin: 0;
+		padding: 0
+	}
+
+	li {
+		display:inline-block;
+		padding: 0;
+		vertical-align: middle;
+		text-align: center;
+
+		&.w16 {
+			width:(100%/6);
+		}
+		&.w20 {
+			width:(100%/5);
+		}
+		&.w25 {
+			width:(100%/4);
+		}
+		&.w33a {
+			width:(33%);
+		}
+		&.w33 {
+			width:(100%/3);
+		}
+		&.w50 {
+			width:(100%/2);
+		}
+		&.w100 {
+			width:100%;
+		}
+	}
+
+	img {
+		max-height: 72px;
+		max-width: 135px
+	}
+}
+
+
+// * OUR MEMBERS
+// ================================================================================ */
+
+
+.ourMembers#membersSection {
+
+	li {
+		text-align: center;
+		vertical-align: top;
+		margin-bottom: 40px
+	}
+
+	.memberTitle {
+		padding:1em 5em;
+		text-align: center
+	}
+}
+
+.picMemberCont {
+	display: inline-block;
+	height: 75px;
+	vertical-align: middle
+}

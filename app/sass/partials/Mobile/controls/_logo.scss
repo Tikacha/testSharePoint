@@ -1,0 +1,113 @@
+/* TOC - MOBILE | Controls | Logo
+---------------------------------------------------
+
+* MAIN CONTAINER
+* LINK / PIC
+
+*/
+
+
+// * LOGO | MAIN CONTAINER
+// ================================================================================================================================================ */
+
+#siteIcon {
+	//float:left;
+	//height:64px;
+	//line-height:64px;
+	//min-width:64px;
+	margin:0;
+	text-align:center;
+}
+
+#DeltaSiteLogo {
+	margin: 0;
+	padding: 5px 10px
+}
+
+// * LOGO | LINK  / PIC.
+// ================================================================================================================================================ */
+
+#ms-mobile-table {
+
+	.ms-siteicon-a {
+		background: image-url('LogoICCAIAmobile.png');
+		background-image: image-url('LogoICCAIAmobile.svg'), none;
+		background-repeat:no-repeat;
+		background-position: 0;
+		display:inline-block;
+		width:60px;
+		max-height:60px;
+
+		img {
+			visibility: hidden
+		}
+	}
+	.ms-siteicon-img {
+		max-width:100%;
+		min-width:60px;
+		min-height:60px;
+		height:auto
+	}
+}
+
+.no-svg #ms-mobile-table {
+	.ms-siteicon-a {
+		background: image-url('LogoICCAIAmobile.png') no-repeat 0;
+	}
+}
+
+
+
+@media (min-width:640px) and (max-width:767px) {
+	#ms-mobile-table { 
+		.ms-siteicon-a {
+			//background: image-url('logoICCAIAwithTitleMobile.svg') no-repeat 0;
+
+			background: image-url('logoICCAIAwithTitleMobile.png');
+			background-image: image-url('logoICCAIAwithTitleMobile.svg'), none;
+			background-repeat:no-repeat;
+			background-position: 0;
+
+			max-width: 260px;
+			width: 260px;
+			height: auto;
+
+			img {
+				visibility: hidden
+			}
+		}
+	}
+
+	.no-svg #ms-mobile-table { 
+		.ms-siteicon-a {
+			background: image-url('logoICCAIAwithTitleMobile.png') no-repeat 0;
+		}
+	}
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+	#ms-mobile-table { 
+		.ms-siteicon-a {
+			//background: image-url('logoICCAIAwithTitleMobile.svg') no-repeat 0;
+
+			background: image-url('logoICCAIAwithTitleTablette.png');
+			background-image: image-url('logoICCAIAwithTitleTablette.svg'), none;
+			background-repeat:no-repeat;
+			background-position: 0;
+
+			max-width: 386px;
+			width: 386px;
+			height: auto;
+
+			img {
+				visibility: hidden
+			}
+		}
+	}
+
+	.no-svg #ms-mobile-table { 
+		.ms-siteicon-a {
+			background: image-url('logoICCAIAwithTitleTablette.png') no-repeat 0
+		}
+	}
+}

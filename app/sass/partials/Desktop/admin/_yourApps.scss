@@ -1,0 +1,90 @@
+/* TOC - ADMIN - Your Apps
+---------------------------------------------------
+
+* TITLE
+* AVAILABLE APPS
+* APP DETAILS
+* PAGING
+
+*/
+
+/* TITLE
+================================================================================================================================================ */
+
+#idStorefrontLayoutRoot {
+
+	// sections title
+	.ms-webpart-titleText.ms-webpart-titleText {
+		@include font-SP(normal,1.46em);
+	}
+
+}
+
+/* AVAILABLE APPS
+================================================================================================================================================ */
+
+
+// Available Apps - container
+.ms-storefront-myappicon {
+	margin:0 24px 10px 0
+}
+
+// Available Apps - icon
+
+.ms-storefront-appiconspan {
+	background-color:$color15;
+}
+
+// Available Apps - title
+.ms-storefront-myappicontext {
+	max-height:3em;
+	font-weight:600;
+}
+
+
+/* APP DETAILS
+================================================================================================================================================ */
+
+// App details link
+#idStorefrontMyAppIconButton {
+	color:$color15;
+	text-decoration:none
+}
+
+
+/* PAGING
+================================================================================================================================================ */
+
+// paging - container
+.ms-storefront-paging {
+	margin:0 auto 24px
+}
+
+// paging - button
+.ms-promlink-button-enabled {
+	background-color:rgba($color11, 0.85);
+	border-color:$color14
+}
+
+.ms-promlink-button {
+	border:1px solid;
+	height:16px;
+	padding:4px;
+	width:16px;
+}
+
+// paging - button left
+.ms-promlink-button-left {
+
+}
+
+// paging - button right
+.ms-promlink-button-right {
+
+}
+
+// paging - numbers
+.ms-promlink-button-inner {
+	padding-left:5px;
+	padding-right:5px
+}

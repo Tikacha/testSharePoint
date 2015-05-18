@@ -1,0 +1,104 @@
+/* TOC - DESKTOP | Controls | Left Navigation | Main
+---------------------------------------------------
+* QL Main container
+* QL
+	** Level 1
+	** Level 2
+
+
+*/
+
+
+// * QL MAIN CONTAINER
+// ================================================================================================================================================ */
+
+// QL Tree view Main container
+.ms-core-sideNavBox-removeLeftMargin {
+	margin-left:-20px
+}
+
+#sideNavBox .ms-core-listMenu-root {
+	margin:30px 0 0
+}
+
+
+// * QUICKLAUNCH
+// ================================================================================================================================================ */
+
+.ms-core-listMenu-verticalBox {
+	font-size:1em;
+
+// ** QUICKLAUNCH | Level 1
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+	
+	li.static {
+		@extend %hide;
+
+		&.selected {
+			@extend %block
+		}	
+	}
+
+	> .ms-core-listMenu-item,
+	li.static > .ms-core-listMenu-item {
+		display:block;
+		@include font-custom3(normal,133.3333333%);
+		padding:5px 10px;						/////// VOIR A CREER des VARIABLEs COMMUNE AVEC siteTemplates/_blog.scss
+		text-decoration: none;
+
+		&:link,
+		&:visited {
+			color:$color1
+		}
+
+		&:hover,
+		&:active {
+			color:$color1;
+		}
+
+		&:hover{
+			background-color: $no-color
+		}
+	}
+
+	> .ms-core-listMenu-root > li > .ms-core-listMenu-selected,
+	> .ms-core-listMenu-root > li > .ms-core-listMenu-item {
+		border-bottom:0
+	}
+
+
+
+
+
+
+
+
+
+// ** QUICKLAUNCH | Level 2
+// ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	li.static > ul.static > li.static > .ms-core-listMenu-item {
+		@include font-custom1(normal,116.6666667%);
+		padding-left:30px;
+
+		&.selected {
+			@include font-custom1(bold,116.6666667%)
+		}
+	}
+}
+
+// Specific this project 
+
+#sideNavBox ul ul li.static.selected,
+#sideNavBox ul.root > li.static.selected *,
+#sideNavBox ul.root > li.static > ul.static > li.static.seleted,
+#sideNavBox ul.root > li.static.ms-navedit-editArea,
+#sideNavBox  ul.root > li.static.HeaderHighlight {
+	display:block
+}
+
+
+
+
+
+

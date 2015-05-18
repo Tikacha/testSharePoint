@@ -1,0 +1,96 @@
+/* TOC - MOBILE | Controls | Top navigation bar
+---------------------------------------------------
+
+* TOP NAV BAR - MAIN CONTAINER
+* TOP NAV BAR - LEVEL 1
+* TOP NAV BAR - LEVEL 2
+* TOP NAV BAR - DROP DOWN LEVEL 1
+* TOP NAV BAR - DROP DOWN LEVEL 2
+
+*/
+
+// * TOP NAV BAR MAIN CONTAINER
+// ================================================================================================================================================ */
+
+// Menu button
+#RWDmenuButton {
+	background: image-url('iconMenuMobile.svg') no-repeat 0;
+	display: inline-block;
+	margin-right: 10px;
+	padding-left:30px;
+	width: 50px;
+
+	.no-svg & {
+		background: image-url('iconMenuMobile.png') no-repeat 0;
+		height:30px;
+		padding-left:40px
+	}
+}
+
+// Expand Collapse menu "mmenu"
+body .mm-light.mm-ismenu {
+	background: $color1
+}
+
+// SP top nav arrow
+.ms-core-listMenu-horizontalBox .additional-background.dynamic-children {
+	background-image: none
+}
+
+// mmenu link
+.ms-core-listMenu-item, 
+.ms-core-listMenu-item:link, 
+.ms-core-listMenu-item:visited, 
+.ms-tv-item:link, 
+.ms-tv-item:visited, 
+.ms-tv-header:link, 
+.ms-tv-header:visited,
+body .mm-light.mm-menu em.mm-counter {
+	color:$color11;
+	@include font-custom3(normal,1em)
+}
+
+li > a.ms-core-listMenu-selected.ms-core-listMenu-item:hover, 
+li > a.ms-core-listMenu-item:hover, li > a.ms-core-listMenu-item:active {
+	background-color: $color1!important
+}
+
+.ms-core-listMenu-horizontalBox .ms-core-listMenu-selected {
+	&:link, 
+	&:visited {
+		color:$color5;
+		font-size:1.1em
+	}
+}
+
+// mmenu arrow
+body .mm-list a.mm-subopen::after {
+	border-color: $color11!important
+}
+
+// .ms-breadcrumb-box {
+//	@extend %w100p;
+//	height:69px
+// }
+
+
+// .ms-breadcrumb-top {
+//	background:$no-color;
+//	white-space:nowrap
+// }
+
+
+// .ms-core-listMenu-horizontalBox {
+//	color:$color1
+// }
+
+
+#DeltaTopNavigation {
+	@extend %block;
+	// @extend %w100p;
+	background-color:$color1;
+	color:$color11;
+	height:69px;
+	//padding-left: 20px
+}
+

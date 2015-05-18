@@ -1,0 +1,240 @@
+/* TOC- ADMIN - Forms
+---------------------------------------------------
+
+* LISTS LIBRARIES FORMS
+	** Labels
+	** Cell fields
+	** Footer
+	** Bottom line
+* MODIFY VIEW FORM
+* SURVEYS
+	** VALIDATION SECTION
+* FORMS BUTTONS
+*/
+
+/* LISTS LIBRARIES FORMS (not dialog box)
+================================================================================================================================================ */
+
+
+/* Forms hors dialog box */
+.ms-formtable {
+
+
+/** LISTS LIBRARIES FORMS (not dialog box) | Labels
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	.ms-formlabel {
+		border-top:1px solid $no-color;		
+
+		h3 {
+			color:$color17;
+			@include font-SP(normal,100%);
+		}
+	}
+
+/** LISTS LIBRARIES FORMS (not dialog box) | Cell fields
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+	.ms-formbody {
+		border-top:1px solid $no-color;
+		background-color:rgba($color11,0.78);
+		color:$color17;
+
+		// fields border
+		input {
+			border:1px solid $color16;
+			color:$color12;
+
+			&[type=radio],
+			&[type=checkbox] {
+				border-color:$no-color;
+				padding-right:5px;
+				vertical-align: middle
+			}
+
+			// specificity
+			&[type=text].sp-peoplepicker-editorInput {
+				border:0
+			}
+
+			// hover mode
+			&[type=password]:hover, 
+			&[type=text]:hover, 
+			&[type=file]:hover {
+				border-color:$color15
+			}
+
+			// Focus mode
+			&[type=password]:focus, 
+			&[type=text]:focus, 
+			&[type=file]:focus {
+				border-color:$color15
+			}
+		}
+
+		textarea {
+			border:1px solid $color16;
+			color:$color12;
+
+			&:hover,
+			&:focus {
+				border-color:$color15
+			}
+		}
+
+		select,
+		.ms-inputuserfield {
+			border:1px solid $color16;
+			color:$color12
+		}
+
+		.sp-peoplepicker-topLevel, 
+		.ms-inputBox {
+			border:1px solid $color16;
+
+			&:hover,
+			&:focus {
+				border-color:$color15
+			}
+		}
+
+		.ms-formdescription,
+		.ms-metadata, 
+		.ms-descriptiontext {
+			color:$color12;
+			@include font-SP(normal,100%);
+		}
+
+		a {
+			color:$color-link
+		}
+	}
+}
+
+/** LISTS LIBRARIES FORMS (not dialog box) | Footer
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.ms-formtoolbar {
+	//D margin-bottom:7px
+
+	.ms-toolbar {
+		//D padding:0
+		color:$color12;
+
+//		input[type=button], 
+//		input[type=reset], 
+//		input[type=submit], 
+//		button {			
+//			/* [ReplaceColor(themeColor:"ButtonBackground",opacity:"1")] */ background-color:rgba($color11,0.78);
+//			/* [ReplaceColor(themeColor:"ButtonBackground")] */ background-color:rgba($color11,0.78);
+//			/* [ReplaceColor(themeColor:"ButtonBorder")] */ border:1px solid $color16;
+//			@include border-radius(3px);
+//			/* [ReplaceColor(themeColor:"ButtonText")] */ color:$color17;
+//			/* [ReplaceFont(themeFont:"body")] */ @include font-SP(normal,91.666666666666666666666666666667%);
+//			//D font-size:11px;
+//			margin-left:10px;
+//			padding:7px 10px;
+//
+//			&:hover {
+//				background-color:rgba($color15,0.125)
+//			}
+//		}
+	}
+}
+
+/** LISTS LIBRARIES FORMS (not dialog box) | Bottom line
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.ms-formline {
+	/* [ReplaceColor(themeColor:"SubtleLines")] */ border-top:1px solid $color16;
+	//D padding-right:8px;
+	//D padding-left:8px;
+}
+
+
+
+
+/* MODIFY VIEW FORM
+================================================================================================================================================ */
+
+
+// headers section
+.ms-sectionheader {
+	.ms-standardheader {
+		color:$color15;
+		@include font-SPlight(normal,120%);
+	}
+}
+
+
+
+/* SURVEYS
+================================================================================================================================================ */
+
+// Form Create questions for surveys - page
+// -----------------------------------------
+
+.ms-metadata, /*labels*/
+.ms-descriptiontext, /*labels*/
+.ms-authoringcontrols /*fields*/ {
+
+	// labels and fields
+	.ms-v4propertysheetspacing & {
+		color:$color17;
+		@include font-SP(normal,100%)
+	}
+}
+
+/** SURVEYS | Validation section
+------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+#ValidationSection  {
+	background-color:$no-color;
+
+	+ tbody {
+		background-color:$no-color;
+
+		td {
+			padding:0
+		}
+	}
+}
+
+.ms-sectionheader {
+	a {
+		color:$color-link;
+		font-size:1em
+	}
+}
+
+
+/* FORM BUTTONS
+================================================================================================================================================ */
+
+//#onetidAddMore,
+//#onetidSave,
+//#onetidSaveItem,
+//#onetidSaveItemtop,
+//#onetidCancel,
+//#onetidCanceltop,
+//#onetidCancelItem,
+button,
+input[type='button'],
+input[type='reset'], 
+input[type='submit'] {
+	/* [ReplaceColor(themeColor:"ButtonBackground",opacity:"1")] */  background-color:rgba($color11,0.78);
+	/* [ReplaceColor(themeColor:"ButtonBackground")] */  background-color:rgba($color11,0.78);
+	/* [ReplaceColor(themeColor:"ButtonBorder")] */ border:1px solid $color16;
+	@include border-radius(3px);
+	/* [ReplaceColor(themeColor:"ButtonText")] */ color:$color17;
+	/* [ReplaceFont(themeFont:"body")] */ @extend %font-SP;
+	font-size:100%;
+	//D min-width:6em;
+	//D padding:7px 10px;
+
+	&:hover {
+		background-color:rgba($color15,0.125)
+	}
+}
+

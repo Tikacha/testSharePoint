@@ -1,0 +1,39 @@
+/* TOC - DESKTOP | LAYOUTS | Search Results page
+---------------------------------------------------
+
+* Layout for public website
+
+*/
+
+// *¸Layout for public website
+// ================================================================================================================================================ */
+
+
+@if ($SPO365public == true) and ($SPO365theme == true)  {
+
+	.searchResultsPage {
+		#sideNavBox {
+			display:none
+		}
+
+		#contentBox {
+			margin-left: 0
+		}
+
+		.pageTitle {
+			padding:20px 20px 0
+		}
+
+		.ms-srch-item {
+			width:100%
+		}
+
+		// No results 
+
+		#NoResult {
+			ul {
+				margin: 10px
+			}
+		}
+	}
+}

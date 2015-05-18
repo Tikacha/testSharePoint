@@ -1,0 +1,183 @@
+/* TOC - DESKTOP | WebParts | Custom Webpart | Events
+---------------------------------------------------
+
+* EVENTS HOME PAGE
+
+*/
+
+// * EVENTS HOME PAGE
+// ================================================================================ */
+
+.ms-WPBody,
+.ms-wpContentDivSpace {
+
+	#eventsSection & {
+		padding: 10px 0;
+	}
+}
+
+#eventsSection h2 {
+	background: image-url('EventsTitleIcon_47x50.png') no-repeat 0;
+	margin: 0.25em 0;
+	padding-left: 60px
+}
+
+#eventsCont {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+
+	li {
+		height:220px;
+		overflow:hidden;
+
+		&.w33,
+		&.w50,
+		&.w100 {
+			background:$color6;
+			display:inline-block;
+			padding:0;
+			box-sizing: border-box;
+		}
+	}
+}
+
+
+
+li.w33 {
+	margin-right:1.95%;
+	width:32.025%;
+
+	&:first-child + li + li {
+		margin-right:0
+	}
+}
+
+
+li.w50 {
+	margin-right:2%;
+	width:49%;
+
+	&:first-child + li {
+		margin-right:0
+	}
+}
+
+li.w100 {
+	margin-right:0;
+	margin-bottom: 20px;
+	width:940px
+}
+
+// Left section
+// =======================================================
+.calCont {
+	background:$color2;
+	color:$color11;
+	height:220px;
+	padding:0;
+	text-align:center;
+	width:25%;
+
+	.allEvents & {
+		width:15%
+	}	
+}
+
+.calDlblCont {
+	@include font-custom2(normal,0.9em);
+	background-color: $color3;
+	padding: 20px 5px
+}
+
+.calMCont {
+	font-size:1.3em;
+	padding-top:15px;
+
+	.range & {
+		padding-top:5px
+	}
+}
+
+.calDCont {
+	@include font-custom3(normal,2.8em);
+	padding-top: 17px;
+
+	.range & {
+		padding-top:0
+	}
+}
+
+.calYCont {
+	font-size: 1em;
+	padding-top: 25px;
+
+	.range & {
+		padding-top:0
+	}	
+}
+
+.startRange {
+	background-color:$color3;
+	height: 110px
+}
+
+.endRange {
+	background-color:$color2;
+	height: 110px
+}
+
+// Right section
+// =======================================================
+.eventDetailsCont {
+	@extend %pos-rel;
+	@extend %fl;
+	margin:0 2.5%;
+	height:220px;
+	width:70%;
+
+	.allEvents & {
+		width:80%
+	}
+}
+
+// Event Title
+.eventTitle {
+	color:lighten($color10,13%);
+	font-size:1.16666667em;
+	height:60px;
+	overflow: hidden;
+	padding: 10px 0;
+
+	body .ms-WPBody & {
+		a {
+			color:lighten($color10,13%);
+			font-size:1.16666667em
+		}
+	}
+}
+
+// Summary
+.eventSum {
+	color:lighten($color10,43%);
+	font-size:1em;
+	height: 110px;
+	overflow: hidden
+}
+
+// Link details
+.seeMore {
+	background-color: $color6;
+	@extend %pos-abs;
+	bottom:5px;
+	right:0px;
+	z-index: 2;
+}
+
+// Button All events
+.all.events {
+	@include customButton(0);
+	float: right;
+	height:28px;
+	text-transform: uppercase
+}

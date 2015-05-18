@@ -1,0 +1,65 @@
+/* TOC - DESKTOP | CONTENT STYLES | Font styles
+---------------------------------------------------
+
+	* Custom font families
+	* Custom font sizes
+
+*/
+
+
+
+// * Custom Fonts Family
+// ============================================================================================================================================================================*/
+
+.ms-rteFontFace-robotoRegular {
+	-ms-name:"Roboto Regular";
+	@extend %font-robotoRegular;
+}
+
+.ms-rteFontFace-robotoLight {
+	-ms-name:"Roboto Light";
+	@extend %font-robotoLight;
+}
+
+.ms-rteFontFace-robotoBold {
+	-ms-name:"Roboto Bold";
+	@extend %font-robotoBold;
+}
+
+
+// * Custom Fonts  Size
+// ============================================================================================================================================================================*/
+
+@include customFontSizes(V05,0.5em);
+@include customFontSizes(V055,0.55em);
+@include customFontSizes(V0625,0.625em);
+@include customFontSizes(V07,0.7em);
+@include customFontSizes(V075,0.75em);
+@include customFontSizes(V08,0.8em);
+@include customFontSizes(V0875,0.875em);
+@include customFontSizes(V095,0.95em);
+@include customFontSizes(V1,1em);
+@include customFontSizes(V105,1.05em);
+@include customFontSizes(V1125,1.125em);
+@include customFontSizes(V12,1.2em);
+@include customFontSizes(V125,1.25em);
+@include customFontSizes(V13,1.3em);
+@include customFontSizes(V14,1.4em);
+@include customFontSizes(V145,1.45em);
+@include customFontSizes(V15,1.5em);
+@include customFontSizes(V16,1.6em);
+@include customFontSizes(V18,1.8em);
+@include customFontSizes(V2,2em);
+@include customFontSizes(V22,2.2em);
+@include customFontSizes(V225,2.25em);
+@include customFontSizes(V23,2.3em);
+@include customFontSizes(V235,2.35em);
+@include customFontSizes(V245,2.45em);
+@include customFontSizes(V255,2.55em);
+@include customFontSizes(V275,2.75em);
+@include customFontSizes(V3,3em);
+
+
+
+
+

@@ -1,0 +1,143 @@
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @group API
+/// @author EB mobile
+///
+
+/// This item will have:
+/// `@group API` and `@author Hugo Giraudel`
+/// inherited from the poster.
+@function dummy-functionMobile() {
+  // ...
+}
+
+/// This item overrides the `@author` annotation
+/// from the poster; it's not merged with it.
+/// @author EB mobile
+@mixin dummy-mixinMobile {
+  // ...
+}
+
+
+
+// Framework
+// ====================================================================
+
+@import "compass";
+
+
+
+// Default
+// ====================================================================
+
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/fonts";
+@import "partials/normalize";
+@import "partials/base";
+@import "partials/placeholders";
+// @import "partials/layout";
+// @import "partials/modules";
+
+
+
+// IMPORTS | Controls
+// --------------------------------------------------------------------
+
+// @import "partials/controls/ribbon/ribbon";
+// @import "partials/controls/ribbon/ribbon_newTopNavBar";
+@import "partials/Mobile/controls/logo";
+@import "partials/Mobile/controls/topNavBar";
+@import "partials/Mobile/controls/search";
+@import "partials/Mobile/controls/pageTitle";
+
+// @import "partials/Mobile/controls/leftNav/leftNavMain";
+// @import "partials/Mobile/controls/leftNav/treeView";
+// @import "partials/Mobile/controls/leftNav/metadataNavigation";
+// @import "partials/Mobile/controls/leftNav/resizer";
+
+// @import "partials/controls/calendar";
+// @import "partials/Mobile/controls/breadcrumb";
+// @import "partials/Mobile/controls/dialogBox";
+
+// For public sites only:
+@import "partials/Mobile/controls/siteElements";
+
+
+
+// IMPORTS | WebParts
+// --------------------------------------------------------------------
+
+@import "partials/Mobile/WP/webparts";
+
+
+
+// IMPORTS | WebParts | Custom Webparts
+// --------------------------------------------------------------------
+@import "partials/Mobile/WP/customWP/news";
+@import "partials/Mobile/WP/customWP/events";
+@import "partials/Mobile/WP/customWP/members";
+
+
+
+// IMPORTS | Admin
+// --------------------------------------------------------------------
+
+// @import "partials/admin/siteSettingsPage";
+// @import "partials/admin/allSiteContentPage";
+// @import "partials/admin/yourApps";
+// @import "partials/admin/listsLibrary";
+// @import "partials/admin/forms";
+// @import "partials/admin/listLibrarySettingsPage";
+// @import "partials/admin/discussionBoard";
+// @import "partials/admin/survey";
+
+
+
+// IMPORTS | Styles
+// --------------------------------------------------------------------
+
+// @import "partials/contentStyles/defaultStandardStyles";
+@import "partials/Mobile/contentStyles/standardStyles";
+// @import "partials/contentStyles/defaultMarkupStyles";
+@import "partials/Mobile/contentStyles/markupStyles";
+// @import "partials/contentStyles/standardThemedColors";
+@import "partials/Mobile/contentStyles/colors";
+// @import "partials/contentStyles/standardThemedHiglightColors";
+@import "partials/Mobile/contentStyles/highlightColors";
+//@import "partials/Mobile/contentStyles/defaultFontStyles";
+@import "partials/Mobile/contentStyles/fontStyles";
+//@import "partials/Mobile/contentStyles/defaultImgStyles";
+@import "partials/Mobile/contentStyles/imgs";
+@import "partials/Mobile/contentStyles/lists";
+@import "partials/Mobile/contentStyles/tables/tables";
+@import "partials/Mobile/contentStyles/tables/tableV1";
+@import "partials/Mobile/contentStyles/tables/tableV2";
+@import "partials/Mobile/contentStyles/tables/tableV5";
+//@import "partials/Desktop/contentStyles/tables/tableV3";
+//@import "partials/Desktop/contentStyles/tables/tableV4";
+//@import "partials/contentStyles/videos";
+
+
+
+// IMPORTS | Site Templates
+// --------------------------------------------------------------------
+
+// @import "partials/siteTemplates/blog";
+@import "partials/Mobile/siteTemplates/search";
+// NE FONCTIONNE PAS - @import "partials/siteTemplates/projectSite";
+
+
+
+// IMPORTS | Layouts
+// --------------------------------------------------------------------
+
+@import "partials/Mobile/layouts/main";
+@import "partials/Mobile/layouts/HomePagelayout";
+@import "partials/Mobile/layouts/searchResults";
+
+
+body {
+	background: red
+}

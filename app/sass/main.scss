@@ -1,0 +1,142 @@
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @group API
+/// @author EB
+///
+
+/// This item will have:
+/// `@group API` and `@author Hugo Giraudel`
+/// inherited from the poster.
+@function dummy-function() {
+  // ...
+}
+
+/// This item overrides the `@author` annotation
+/// from the poster; it's not merged with it.
+/// @author EB
+@mixin dummy-mixin {
+  // ...
+}
+
+// Framework
+// ====================================================================
+
+@import "compass";
+
+
+
+// Default
+// ====================================================================
+
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/fonts";
+@import "partials/normalize";
+@import "partials/base";
+@import "partials/placeholders";
+// @import "partials/layout";
+// @import "partials/modules";
+
+
+
+// IMPORTS | Controls
+// ====================================================================
+
+// @import "partials/Desktop/controls/ribbon/ribbonMain";
+// @import "partials/Desktop/controls/ribbon/ribbon_newTopNavBar";
+
+@import "partials/Desktop/controls/logo";
+@import "partials/Desktop/controls/topNavBar";
+@import "partials/Desktop/controls/search";
+@import "partials/Desktop/controls/pageTitle";
+
+@import "partials/Desktop/controls/leftNav/leftNavMain";
+// @import "partials/Desktop/controls/leftNav/treeView";
+// @import "partials/Desktop/controls/leftNav/metadataNavigation";
+// @import "partials/Desktop/controls/leftNav/resizer";
+
+// @import "partials/Desktop/controls/calendar";
+// @import "partials/Desktop/controls/breadcrumb";
+// @import "partials/Desktop/controls/dialogBox";
+
+// For public sites only:
+@import "partials/Desktop/controls/siteElements";
+
+
+
+// IMPORTS | WebParts
+// ====================================================================
+
+@import "partials/Desktop/WP/webparts";
+
+// IMPORTS | WebParts | Custom Webparts
+// --------------------------------------------------------------------
+@import "partials/Desktop/WP/customWP/news";
+@import "partials/Desktop/WP/customWP/events";
+@import "partials/Desktop/WP/customWP/members";
+
+
+
+// IMPORTS | Admin
+// ====================================================================
+
+// @import "partials/Desktop/admin/siteSettingsPage";
+// @import "partials/Desktop/admin/allSiteContentPage";
+// @import "partials/Desktop/admin/yourApps";
+// @import "partials/Desktop/admin/listsLibrary";
+// @import "partials/Desktop/admin/forms";
+// @import "partials/Desktop/admin/listLibrarySettingsPage";
+// @import "partials/Desktop/admin/discussionBoard";
+// @import "partials/Desktop/admin/survey";
+
+
+
+// IMPORTS | Styles
+// ====================================================================
+
+// @import "partials/Desktop/contentStyles/defaultStandardStyles";
+@import "partials/Desktop/contentStyles/standardStyles";
+// @import "partials/Desktop/contentStyles/defaultMarkupStyles";
+@import "partials/Desktop/contentStyles/markupStyles";
+// @import "partials/Desktop/contentStyles/standardThemedColors";
+@import "partials/Desktop/contentStyles/colors";
+// @import "partials/Desktop/contentStyles/standardThemedHiglightColors";
+@import "partials/Desktop/contentStyles/highlightColors";
+// @import "partials/Desktop/contentStyles/defaultFontStyles";
+@import "partials/Desktop/contentStyles/fontStyles";
+// @import "partials/Desktop/contentStyles/defaultImgStyles";
+@import "partials/Desktop/contentStyles/imgs";
+@import "partials/Desktop/contentStyles/lists";
+@import "partials/Desktop/contentStyles/tables/tables";
+@import "partials/Desktop/contentStyles/tables/tableV1";
+@import "partials/Desktop/contentStyles/tables/tableV2";
+@import "partials/Desktop/contentStyles/tables/tableV5";
+//@import "partials/Desktop/contentStyles/tables/tableV3";
+//@import "partials/Desktop/contentStyles/tables/tableV4";
+
+// @import "partials/Desktop/contentStyles/videos";
+
+
+
+// IMPORTS | Site Templates
+// ====================================================================
+
+// @import "partials/Desktop/siteTemplates/blog";
+@import "partials/Desktop/siteTemplates/search";
+// NE FONCTIONNE PAS - @import "partials/Desktop/siteTemplates/projectSite";
+
+
+
+// IMPORTS | Layouts
+// ====================================================================
+@import "partials/Desktop/layouts/main";
+@import "partials/Desktop/layouts/HomePagelayout";
+@import "partials/Desktop/layouts/searchResults";
+
+
+
+	body {
+		background: red
+	}
+

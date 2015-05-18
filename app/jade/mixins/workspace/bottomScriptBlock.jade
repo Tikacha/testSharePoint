@@ -1,0 +1,19 @@
+mixin bottomScriptBlock
+
+	<%@ Register TagPrefix="wssuc" TagName="HelpPanel" src="~/_controltemplates/15/HelpPanel.ascx" %>
+	SharePoint:AjaxDelta#DeltaHelpPanel(runat="server")
+		#helppanelCntdiv.ms-Help-PanelContainer
+			wssuc:HelpPanel(runat="server")/
+
+	SharePoint:AjaxDelta#DeltaPageInstrumentation(runat="server")
+		SharePoint:FlightedContent(runat="server", ExpFeature="UserActivityLogging", RenderIfInFlight="true")
+			SharePoint:PageInstrumentationControl#PageInstrumentationControl(runat="server")/
+
+	</SharePoint:SharePointForm>
+
+	SharePoint:AjaxDelta#DeltaPlaceHolderUtilityContent(runat="server")
+		asp:ContentPlaceHolder#PlaceHolderUtilityContent(runat="server")/
+
+
+	SharePoint:ScriptBlock(runat="server")
+		|var g_Workspace = "s4-workspace";
